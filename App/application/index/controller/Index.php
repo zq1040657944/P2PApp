@@ -13,4 +13,8 @@ class Index extends Controller
     {
     	return $this->fetch('index');
     }
+
+	public function add(){
+		echo 123;
+	}
 }
