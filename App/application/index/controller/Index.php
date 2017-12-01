@@ -17,4 +17,8 @@ class Index extends Controller
 	public function add(){
 		echo 123;
 	}
+	public function zq()
+	{
+		echo "zq";
+	}
 }
