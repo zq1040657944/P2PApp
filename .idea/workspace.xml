@@ -1,7 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8189fa09-9aa7-4ad3-ab69-f8bd164a9b8b" name="默认" comment="" />
+    <list default="true" id="8189fa09-9aa7-4ad3-ab69-f8bd164a9b8b" name="默认" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/.project" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/.travis.yml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/LICENSE.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/command.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/common.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/config.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/database.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/extra/queue.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/controller/Index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/infor.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/infor1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/infor2.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/infor3.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/infor4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/login.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/register.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/useragree.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/useragree1.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/个人中心.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/修改手机号码.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/修改登录密码.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/修改登录密码失败.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/修改登录密码成功.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/借款协议.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/借款记录.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/安全设置.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/实名认证.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/忘记密码.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/投资记录.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/重置密码.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/index/view/index/重置成功.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/route.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/application/tags.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/build.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/composer.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/extend/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/phpunit.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/public/.htaccess" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/public/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/public/index.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/public/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/public/router.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/public/static/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/runtime/.gitignore" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/tests/ExampleTest.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/tests/TestCase.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/think" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/App/vendor/.gitignore" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -10,18 +65,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/App/application/index/controller/Index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,7 +77,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -122,18 +166,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1512129039659</updated>
-      <workItem from="1512129061843" duration="378000" />
+      <workItem from="1512129061843" duration="953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="378000" />
+    <option name="totallyTimeSpent" value="953000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
