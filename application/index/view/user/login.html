@@ -36,8 +36,9 @@
                         <input id="j_needauth" type="hidden" name="j_needauth" value="false">
                         <input id="_spring_security_remember_me" type="hidden" name="_spring_security_remember_me" value="true">
                         <input id="authCode" type="text" name="authCode" value="请输入验证码" class="c-txt c-code" maxlength="4" onBlur="checkAuthcode();" onKeyUp="this.value=this.value.replace(/\D/g,'')" placeholder="请输入验证码">
+                        <div><img src="http://www.tp5.com/yzm.php" alt="captcha" alt="no pic"/></div>
                     </div>
-                    <span class="c-yzm"><img style="height: 100%;" src="http://www.tp5.com/static/images/code.jpg"></span>
+                    <span class="c-yzm"><img style="height: 100%;" src="http://www.tp5.com/yzm.php"></span>
                     <p id="j_yzmErrorDiv"></p>
                 </div>
                 <div class="remember">
@@ -134,6 +135,12 @@
         return true;
     }
 
+
+    //验证码
+    $('.c-yzm').click(function(){
+        var src = $(this).children('img').attr('src');
+        $(this).children('img').attr('src','http://www.tp5.com/yzm.php?code = '+Math.random());
+    })
 
     //登录验证
     function loginCheckAll(){
