@@ -142,7 +142,7 @@ return [
 
     // 视图输出字符串内容替换
     'view_replace_str'       => [
-        '__PUBLIC__'=>DS.'project1'.DS.'P2PApp'.DS.'public'.DS.'admin'.DS,
+        '__PUBLIC__'=>DS.'admin'.DS,
     ],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
