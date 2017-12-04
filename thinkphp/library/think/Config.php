@@ -113,6 +113,7 @@ class Config
             // 二维数组设置和获取支持
             $name    = explode('.', $name, 2);
             $name[0] = strtolower($name[0]);
+<<<<<<< HEAD
 
             if (!isset(self::$config[$range][$name[0]])) {
                 // 动态载入额外配置
@@ -122,6 +123,8 @@ class Config
                 is_file($file) && self::load($file, $name[0]);
             }
 
+=======
+>>>>>>> 汤继康
             return isset(self::$config[$range][$name[0]][$name[1]]) ? self::$config[$range][$name[0]][$name[1]] : null;
         }
     }
@@ -152,7 +155,12 @@ class Config
             // 批量设置
             if (!empty($value)) {
                 self::$config[$range][$value] = isset(self::$config[$range][$value]) ?
+<<<<<<< HEAD
                 array_merge(self::$config[$range][$value], $name) : $name;
+=======
+                array_merge(self::$config[$range][$value], $name) :
+                self::$config[$range][$value] = $name;
+>>>>>>> 汤继康
                 return self::$config[$range][$value];
             } else {
                 return self::$config[$range] = array_merge(self::$config[$range], array_change_key_case($name));

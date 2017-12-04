@@ -11,6 +11,7 @@
 
 namespace think;
 
+<<<<<<< HEAD
 use think\exception\ValidateException;
 use traits\controller\Jump;
 
@@ -19,6 +20,15 @@ Loader::import('controller/Jump', TRAIT_PATH, EXT);
 class Controller
 {
     use Jump;
+=======
+\think\Loader::import('controller/Jump', TRAIT_PATH, EXT);
+
+use think\exception\ValidateException;
+
+class Controller
+{
+    use \traits\controller\Jump;
+>>>>>>> 汤继康
 
     /**
      * @var \think\View 视图类实例

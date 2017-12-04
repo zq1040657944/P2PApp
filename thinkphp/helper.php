@@ -127,7 +127,11 @@ if (!function_exists('input')) {
         if ($pos = strpos($key, '.')) {
             // 指定参数来源
             list($method, $key) = explode('.', $key, 2);
+<<<<<<< HEAD
             if (!in_array($method, ['get', 'post', 'put', 'patch', 'delete', 'route', 'param', 'request', 'session', 'cookie', 'server', 'env', 'path', 'file'])) {
+=======
+            if (!in_array($method, ['get', 'post', 'put', 'patch', 'delete', 'param', 'request', 'session', 'cookie', 'server', 'env', 'path', 'file'])) {
+>>>>>>> 汤继康
                 $key    = $method . '.' . $key;
                 $method = 'param';
             }

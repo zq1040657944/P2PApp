@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>快易赚</name>
+=======
+	<name>app</name>
+>>>>>>> 汤继康
 	<comment>Create By HBuilder</comment>
 	<projects>
 	</projects>
@@ -22,7 +26,11 @@
 	</natures>
 	<filteredResources>
 		<filter>
+<<<<<<< HEAD
 			<id>1512182406437</id>
+=======
+			<id>1512183355815</id>
+>>>>>>> 汤继康
 			<name></name>
 			<type>10</type>
 			<matcher>

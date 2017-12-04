@@ -16,7 +16,11 @@ class RouteNotFoundException extends HttpException
 
     public function __construct()
     {
+<<<<<<< HEAD
         parent::__construct(404, 'Route Not Found');
+=======
+        parent::__construct(404);
+>>>>>>> 汤继康
     }
 
 }

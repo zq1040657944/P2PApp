@@ -5283,6 +5283,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
                 			if(self.options.down.style == "circle"){//单webview下拉刷新
 	                			plus.webview.currentWebview().beginPullToRefresh();
 	                		}else{//双webview模式
+<<<<<<< HEAD
 	                			var webview = self.options.webview;
 	                			if(webview){
 	                				webview.setBounce({
@@ -5291,6 +5292,13 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 			                        }
 			                    });
 	                			}
+=======
+                				plus.webview.currentWebview().setBounce({
+		                        offset: {
+		                            top: self.options.down.height + "px"
+		                        }
+		                    });
+>>>>>>> 汤继康
 	                		}
                 		},15);
                 }.bind(this));
