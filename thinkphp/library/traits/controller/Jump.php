@@ -36,13 +36,27 @@ trait Jump
      */
     protected function success($msg = '', $url = null, $data = '', $wait = 3, array $header = [])
     {
+<<<<<<< HEAD
         if (is_null($url) && !is_null(Request::instance()->server('HTTP_REFERER'))) {
             $url = Request::instance()->server('HTTP_REFERER');
+=======
+        $code = 1;
+        if (is_numeric($msg)) {
+            $code = $msg;
+            $msg  = '';
+        }
+        if (is_null($url) && isset($_SERVER["HTTP_REFERER"])) {
+            $url = $_SERVER["HTTP_REFERER"];
+>>>>>>> 汤继康
         } elseif ('' !== $url) {
             $url = (strpos($url, '://') || 0 === strpos($url, '/')) ? $url : Url::build($url);
         }
         $result = [
+<<<<<<< HEAD
             'code' => 1,
+=======
+            'code' => $code,
+>>>>>>> 汤继康
             'msg'  => $msg,
             'data' => $data,
             'url'  => $url,
@@ -70,13 +84,25 @@ trait Jump
      */
     protected function error($msg = '', $url = null, $data = '', $wait = 3, array $header = [])
     {
+<<<<<<< HEAD
+=======
+        $code = 0;
+        if (is_numeric($msg)) {
+            $code = $msg;
+            $msg  = '';
+        }
+>>>>>>> 汤继康
         if (is_null($url)) {
             $url = Request::instance()->isAjax() ? '' : 'javascript:history.back(-1);';
         } elseif ('' !== $url) {
             $url = (strpos($url, '://') || 0 === strpos($url, '/')) ? $url : Url::build($url);
         }
         $result = [
+<<<<<<< HEAD
             'code' => 0,
+=======
+            'code' => $code,
+>>>>>>> 汤继康
             'msg'  => $msg,
             'data' => $data,
             'url'  => $url,
@@ -107,7 +133,11 @@ trait Jump
         $result = [
             'code' => $code,
             'msg'  => $msg,
+<<<<<<< HEAD
             'time' => Request::instance()->server('REQUEST_TIME'),
+=======
+            'time' => $_SERVER['REQUEST_TIME'],
+>>>>>>> 汤继康
             'data' => $data,
         ];
         $type     = $type ?: $this->getResponseType();

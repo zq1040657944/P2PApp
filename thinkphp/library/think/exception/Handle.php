@@ -21,16 +21,23 @@ use think\Response;
 
 class Handle
 {
+<<<<<<< HEAD
     protected $render;
+=======
+
+>>>>>>> 汤继康
     protected $ignoreReport = [
         '\\think\\exception\\HttpException',
     ];
 
+<<<<<<< HEAD
     public function setRender($render)
     {
         $this->render = $render;
     }
 
+=======
+>>>>>>> 汤继康
     /**
      * Report or log an exception.
      *
@@ -83,6 +90,7 @@ class Handle
      */
     public function render(Exception $e)
     {
+<<<<<<< HEAD
         if ($this->render && $this->render instanceof \Closure) {
             $result = call_user_func_array($this->render, [$e]);
             if ($result) {
@@ -90,6 +98,8 @@ class Handle
             }
         }
 
+=======
+>>>>>>> 汤继康
         if ($e instanceof HttpException) {
             return $this->renderHttpException($e);
         } else {

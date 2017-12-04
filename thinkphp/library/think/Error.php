@@ -110,9 +110,12 @@ class Error
                 $handle = new $class;
             } else {
                 $handle = new Handle;
+<<<<<<< HEAD
                 if ($class instanceof \Closure) {
                     $handle->setRender($class);
                 }
+=======
+>>>>>>> 汤继康
             }
         }
         return $handle;
