@@ -13,9 +13,9 @@ return [
     // 数据库类型
     'type'            => 'mysql',
     // 服务器地址
-    'hostname'        => '127.0.0.1',
+    'hostname'        => '101.201.66.194',
     // 数据库名
-    'database'        => 'p2papp',
+    'database'        => 'p2pApp',
     // 用户名
     'username'        => 'root',
     // 密码
