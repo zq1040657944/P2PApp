@@ -120,6 +120,7 @@ abstract class Driver
     public function remember($name, $value, $expire = null)
     {
         if (!$this->has($name)) {
+<<<<<<< HEAD
             while ($this->has($name . '_lock')) {
                 // 存在锁定则等待
             }
@@ -137,6 +138,12 @@ abstract class Driver
                 // 解锁
                 $this->rm($name . '_lock');
             }
+=======
+            if ($value instanceof \Closure) {
+                $value = call_user_func($value);
+            }
+            $this->set($name, $value, $expire);
+>>>>>>> 汤继康
         } else {
             $value = $this->get($name);
         }
@@ -153,9 +160,13 @@ abstract class Driver
      */
     public function tag($name, $keys = null, $overlay = false)
     {
+<<<<<<< HEAD
         if (is_null($name)) {
 
         } elseif (is_null($keys)) {
+=======
+        if (is_null($keys)) {
+>>>>>>> 汤继康
             $this->tag = $name;
         } else {
             $key = 'tag_' . md5($name);
@@ -168,7 +179,11 @@ abstract class Driver
             } else {
                 $value = array_unique(array_merge($this->getTagItem($name), $keys));
             }
+<<<<<<< HEAD
             $this->set($key, implode(',', $value), 0);
+=======
+            $this->set($key, implode(',', $value));
+>>>>>>> 汤继康
         }
         return $this;
     }
@@ -191,7 +206,11 @@ abstract class Driver
             } else {
                 $value = $name;
             }
+<<<<<<< HEAD
             $this->set($key, $value, 0);
+=======
+            $this->set($key, $value);
+>>>>>>> 汤继康
         }
     }
 
@@ -206,7 +225,11 @@ abstract class Driver
         $key   = 'tag_' . md5($tag);
         $value = $this->get($key);
         if ($value) {
+<<<<<<< HEAD
             return array_filter(explode(',', $value));
+=======
+            return explode(',', $value);
+>>>>>>> 汤继康
         } else {
             return [];
         }

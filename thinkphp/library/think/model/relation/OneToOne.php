@@ -276,7 +276,11 @@ abstract class OneToOne extends Relation
             if (isset($result->$key)) {
                 throw new Exception('bind attr has exists:' . $key);
             } else {
+<<<<<<< HEAD
                 $result->setAttr($key, $model ? $model->$attr : null);
+=======
+                $result->setAttr($key, $model->$attr);
+>>>>>>> 汤继康
             }
         }
     }
@@ -311,4 +315,14 @@ abstract class OneToOne extends Relation
         return $data;
     }
 
+<<<<<<< HEAD
+=======
+    /**
+     * 执行基础查询（进执行一次）
+     * @access protected
+     * @return void
+     */
+    protected function baseQuery()
+    {}
+>>>>>>> 汤继康
 }

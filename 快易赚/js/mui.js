@@ -5283,11 +5283,28 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
                 			if(self.options.down.style == "circle"){//单webview下拉刷新
 	                			plus.webview.currentWebview().beginPullToRefresh();
 	                		}else{//双webview模式
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+	                			var webview = self.options.webview;
+	                			if(webview){
+	                				webview.setBounce({
+			                        offset: {
+			                            top: self.options.down.height + "px"
+			                        }
+			                    });
+	                			}
+=======
+>>>>>>> 716e38aa78358978aeaa011da7458db8bd18da37
                 				plus.webview.currentWebview().setBounce({
 		                        offset: {
 		                            top: self.options.down.height + "px"
 		                        }
 		                    });
+<<<<<<< HEAD
+=======
+>>>>>>> 汤继康
+>>>>>>> 716e38aa78358978aeaa011da7458db8bd18da37
 	                		}
                 		},15);
                 }.bind(this));

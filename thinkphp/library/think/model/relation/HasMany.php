@@ -24,7 +24,11 @@ class HasMany extends Relation
      * @param Model  $parent     上级模型对象
      * @param string $model      模型名
      * @param string $foreignKey 关联外键
+<<<<<<< HEAD
      * @param string $localKey   当前模型主键
+=======
+     * @param string $localKey   关联主键
+>>>>>>> 汤继康
      */
     public function __construct(Model $parent, $model, $foreignKey, $localKey)
     {
@@ -77,7 +81,11 @@ class HasMany extends Relation
         }
 
         if (!empty($range)) {
+<<<<<<< HEAD
             $data = $this->eagerlyOneToMany(new $this->model, [
+=======
+            $data = $this->eagerlyOneToMany($this, [
+>>>>>>> 汤继康
                 $this->foreignKey => [
                     'in',
                     $range,
@@ -114,7 +122,11 @@ class HasMany extends Relation
         $localKey = $this->localKey;
 
         if (isset($result->$localKey)) {
+<<<<<<< HEAD
             $data = $this->eagerlyOneToMany(new $this->model, [$this->foreignKey => $result->$localKey], $relation, $subRelation, $closure);
+=======
+            $data = $this->eagerlyOneToMany($this, [$this->foreignKey => $result->$localKey], $relation, $subRelation, $closure);
+>>>>>>> 汤继康
             // 关联数据封装
             if (!isset($data[$result->$localKey])) {
                 $data[$result->$localKey] = [];
@@ -159,11 +171,19 @@ class HasMany extends Relation
         if ($closure) {
             call_user_func_array($closure, [ & $this->query]);
         }
+<<<<<<< HEAD
         $localKey = $this->localKey ?: $this->parent->getPk();
         return $this->query->where([
             $this->foreignKey => [
                 'exp',
                 '=' . $this->parent->getTable() . '.' . $localKey,
+=======
+
+        return $this->query->where([
+            $this->foreignKey => [
+                'exp',
+                '=' . $this->parent->getTable() . '.' . $this->parent->getPk(),
+>>>>>>> 汤继康
             ],
         ])->fetchSql()->count();
     }
@@ -238,6 +258,7 @@ class HasMany extends Relation
      */
     public function has($operator = '>=', $count = 1, $id = '*', $joinType = 'INNER')
     {
+<<<<<<< HEAD
         $table    = $this->query->getTable();
         $model    = basename(str_replace('\\', '/', get_class($this->parent)));
         $relation = basename(str_replace('\\', '/', $this->model));
@@ -247,6 +268,12 @@ class HasMany extends Relation
             ->field($model . '.*')
             ->join($table . ' ' . $relation, $model . '.' . $this->localKey . '=' . $relation . '.' . $this->foreignKey, $joinType)
             ->group($relation . '.' . $this->foreignKey)
+=======
+        $table = $this->query->getTable();
+        return $this->parent->db()->alias('a')
+            ->join($table . ' b', 'a.' . $this->localKey . '=b.' . $this->foreignKey, $joinType)
+            ->group('b.' . $this->foreignKey)
+>>>>>>> 汤继康
             ->having('count(' . $id . ')' . $operator . $count);
     }
 

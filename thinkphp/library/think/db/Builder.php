@@ -11,7 +11,10 @@
 
 namespace think\db;
 
+<<<<<<< HEAD
 use BadMethodCallException;
+=======
+>>>>>>> 汤继康
 use PDO;
 use think\Exception;
 
@@ -47,7 +50,11 @@ abstract class Builder
     /**
      * 获取当前的连接对象实例
      * @access public
+<<<<<<< HEAD
      * @return Connection
+=======
+     * @return void
+>>>>>>> 汤继康
      */
     public function getConnection()
     {
@@ -57,7 +64,11 @@ abstract class Builder
     /**
      * 获取当前的Query对象实例
      * @access public
+<<<<<<< HEAD
      * @return Query
+=======
+     * @return void
+>>>>>>> 汤继康
      */
     public function getQuery()
     {
@@ -81,7 +92,10 @@ abstract class Builder
      * @param array     $data 数据
      * @param array     $options 查询参数
      * @return array
+<<<<<<< HEAD
      * @throws Exception
+=======
+>>>>>>> 汤继康
      */
     protected function parseData($data, $options)
     {
@@ -118,8 +132,13 @@ abstract class Builder
                     $result[$item] = $val;
                 } else {
                     $key = str_replace('.', '_', $key);
+<<<<<<< HEAD
                     $this->query->bind('data__' . $key, $val, isset($bind[$key]) ? $bind[$key] : PDO::PARAM_STR);
                     $result[$item] = ':data__' . $key;
+=======
+                    $this->query->bind('__data__' . $key, $val, isset($bind[$key]) ? $bind[$key] : PDO::PARAM_STR);
+                    $result[$item] = ':__data__' . $key;
+>>>>>>> 汤继康
                 }
             }
         }
@@ -302,7 +321,11 @@ abstract class Builder
 
         // 查询规则和条件
         if (!is_array($val)) {
+<<<<<<< HEAD
             $val = is_null($val) ? ['null', ''] : ['=', $val];
+=======
+            $val = ['=', $val];
+>>>>>>> 汤继康
         }
         list($exp, $value) = $val;
 
@@ -337,11 +360,14 @@ abstract class Builder
             $bindName = md5($bindName);
         }
 
+<<<<<<< HEAD
         if (is_object($value) && method_exists($value, '__toString')) {
             // 对象数据写入
             $value = $value->__toString();
         }
 
+=======
+>>>>>>> 汤继康
         $bindType = isset($binds[$field]) ? $binds[$field] : PDO::PARAM_STR;
         if (is_scalar($value) && array_key_exists($field, $binds) && !in_array($exp, ['EXP', 'NOT NULL', 'NULL', 'IN', 'NOT IN', 'BETWEEN', 'NOT BETWEEN']) && strpos($exp, 'TIME') === false) {
             if (strpos($value, ':') !== 0 || !$this->query->isBind(substr($value, 1))) {
@@ -499,7 +525,11 @@ abstract class Builder
     /**
      * limit分析
      * @access protected
+<<<<<<< HEAD
      * @param mixed $limit
+=======
+     * @param mixed $lmit
+>>>>>>> 汤继康
      * @return string
      */
     protected function parseLimit($limit)
@@ -551,11 +581,15 @@ abstract class Builder
             foreach ($order as $key => $val) {
                 if (is_numeric($key)) {
                     if ('[rand]' == $val) {
+<<<<<<< HEAD
                         if (method_exists($this, 'parseRand')) {
                             $array[] = $this->parseRand();
                         } else {
                             throw new BadMethodCallException('method not exists:' . get_class($this) . '-> parseRand');
                         }
+=======
+                        $array[] = $this->parseRand();
+>>>>>>> 汤继康
                     } elseif (false === strpos($val, '(')) {
                         $array[] = $this->parseKey($val, $options);
                     } else {
@@ -579,7 +613,11 @@ abstract class Builder
      */
     protected function parseGroup($group)
     {
+<<<<<<< HEAD
         return !empty($group) ? ' GROUP BY ' . $this->parseKey($group) : '';
+=======
+        return !empty($group) ? ' GROUP BY ' . $group : '';
+>>>>>>> 汤继康
     }
 
     /**
@@ -660,16 +698,24 @@ abstract class Builder
     /**
      * 设置锁机制
      * @access protected
+<<<<<<< HEAD
      * @param bool|string $lock
+=======
+     * @param bool $locl
+>>>>>>> 汤继康
      * @return string
      */
     protected function parseLock($lock = false)
     {
+<<<<<<< HEAD
         if (is_bool($lock)) {
             return $lock ? ' FOR UPDATE ' : '';
         } elseif (is_string($lock)) {
             return ' ' . trim($lock) . ' ';
         }
+=======
+        return $lock ? ' FOR UPDATE ' : '';
+>>>>>>> 汤继康
     }
 
     /**
@@ -738,9 +784,14 @@ abstract class Builder
      * @param array     $options 表达式
      * @param bool      $replace 是否replace
      * @return string
+<<<<<<< HEAD
      * @throws Exception
      */
     public function insertAll($dataSet, $options = [], $replace = false)
+=======
+     */
+    public function insertAll($dataSet, $options, $replace = false)
+>>>>>>> 汤继康
     {
         // 获取合法的字段
         if ('*' == $options['field']) {
@@ -786,7 +837,11 @@ abstract class Builder
     }
 
     /**
+<<<<<<< HEAD
      * 生成select insert SQL
+=======
+     * 生成slectinsert SQL
+>>>>>>> 汤继康
      * @access public
      * @param array     $fields 数据
      * @param string    $table 数据表
@@ -807,7 +862,11 @@ abstract class Builder
     /**
      * 生成update SQL
      * @access public
+<<<<<<< HEAD
      * @param array     $data 数据
+=======
+     * @param array     $fields 数据
+>>>>>>> 汤继康
      * @param array     $options 表达式
      * @return string
      */

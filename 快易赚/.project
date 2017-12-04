@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>appt</name>
+=======
+<<<<<<< HEAD
+	<name>快易赚</name>
+=======
+	<name>app</name>
+>>>>>>> 汤继康
+>>>>>>> 716e38aa78358978aeaa011da7458db8bd18da37
 	<comment>Create By HBuilder</comment>
 	<projects>
 	</projects>
@@ -22,7 +30,15 @@
 	</natures>
 	<filteredResources>
 		<filter>
+<<<<<<< HEAD
 			<id>1512182838502</id>
+=======
+<<<<<<< HEAD
+			<id>1512182406437</id>
+=======
+			<id>1512183355815</id>
+>>>>>>> 汤继康
+>>>>>>> 716e38aa78358978aeaa011da7458db8bd18da37
 			<name></name>
 			<type>10</type>
 			<matcher>
