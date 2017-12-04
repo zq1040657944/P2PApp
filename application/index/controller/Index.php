@@ -11,6 +11,6 @@ class Index extends Controller
 {
     public function index()
     {
-    	return $this->fetch('index');
+      return "我是首页的控制器";
     }
 }
