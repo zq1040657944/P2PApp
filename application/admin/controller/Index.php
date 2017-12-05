@@ -25,4 +25,3 @@ class Index extends Controller
 		$this->redirect('Login/index');
 	}
 }
-?>

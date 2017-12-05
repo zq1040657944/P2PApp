@@ -34,46 +34,5 @@ $(function(){
 	$mask.on('touchend',function(){
 		if(state)onClick('off');
 	}); 	
-	$drag.draggable({
-		cursor:'auto',
-		onStartDrag:function(){
-			$drag.css('right','auto');
-			iniX = $(this).offset().left;
-			iniY = $(this).offset().top;
-		},
-		onDrag:function(e){
-			var d = e.data;
-			if (d.left < 0){d.left = 0}
-			if (d.top < 0){d.top = 0}
-			if (d.left + $(d.target).outerWidth() > winX){
-				d.left = winX - $(d.target).outerWidth();
-			}
-			if (d.top + $(d.target).outerHeight() > winY){
-				d.top = winY - $(d.target).outerHeight();
-			}
-			posX = $(this).offset().left;
-			posY = $(this).offset().top;
-		},
-		onStopDrag:function(){
-			$drag.css('position','fixed')
-			var x = posX < winX/2 ? posX : winX - posX - $drag.width();
-			var y = posY < winY/2 ? posY : winY - posY - $drag.height();
-			if(x < y){
-				if(posX < winX/2){
-					$drag.animate({left:0},speed);
-				}else{
-					$drag.animate({left:winX - $drag.width()},speed);
-				}
-			}else{
-				if(posY < winY/2){
-					$drag.animate({top:0},speed);
-				}else{
-					$drag.animate({top:winY - $drag.height()},speed);
-				}
-			}
-			if(posX == iniX && posY == iniY){
-				onClick('on');
-			}
-		}
-	});
 });
+
