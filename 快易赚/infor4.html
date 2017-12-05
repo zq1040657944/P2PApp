@@ -40,7 +40,7 @@
 <script src="script/jquery-ui.min.js"></script>
 <!-- 页面头部 -->
 <section>
-  <div class="navigation-bar"> <a href="#" class="z-01"></a> <span>项目列表</span> <a href="#" class="z-02"></a> </div>
+  <div class="navigation-bar"> <a href="#" class="z-01"></a> <span>产品订单</span> <a href="#" class="z-02"></a> </div>
 </section>
 <!-- 中间内容 -->
 <div class="main">
@@ -55,13 +55,13 @@
   </div>
   <!--标的详细-->
   <div class="project-status">
-    <div class="project-base-info">
+    <div class="project-base-info info">
       <div class="col-xs-4 ui-border-right">
-        <p class="text-nowrap"><span class="ui-fc-blue ui-fs-18">12.00</span> %</p>
+        <p class="text-nowrap"><span class="ui-fc-blue ui-fs-18 rate">12.00</span> %</p>
         <p class="ui-fs-12 text-nowrap">年化收益</p>
       </div>
       <div class="col-xs-4 ui-border-right">
-        <p class="text-nowrap"><span class="ui-fs-18 ui-fc-blue">6 </span>个月</p>
+        <p class="text-nowrap"><span class="ui-fs-18 ui-fc-blue month">6 </span>个月</p>
         <p class="ui-fs-12">项目期限</p>
       </div>
       <div class="col-xs-4">
@@ -265,6 +265,9 @@
       </div>
     </div>
   </div>
+  <!--利息的计算-->
+  <spen id="Interest"></spen>
+  <!--end-->
 </div>
  <script type="text/javascript">
 	    //初始化轮播组件
@@ -301,8 +304,6 @@
 	            $(window).scrollTop($('.c-tabstit-wrap').offset().top-55);
 	            
 	        })
-	        
-	
 	    });
 
 	</script>
@@ -323,17 +324,98 @@
                  <input type="button" class="left-a pos1 minus" id="jian" value="">
                  <div class="input_c">
                      <input type="text" name="amount" id="investmentAmount" value="10000" class="num" maxlength="9" placeholder="请输入50的整数倍">
+                     <input type="text" name="amount" id="investmentAmount1" value="400" class="num" maxlength="9" placeholder="不得小于100元">
                      <span class="fr">元</span>
                  </div>
                  <input type="button" class="left-a pos2 plus" id="plus" value="">
              </div>
          </div>
          <div class="ft_r fr">
-		    <input id="submit" type="button" value="立即抢购" class="btn btn_orange w_10">
-         </div>	    	
-       	</form>	
-	</article>
-	<script type="text/javascript" src="script/detail.js"></script>
-
+		    <input id="submit" type="button" value="确认订单" class="btn btn_orange w_10">
+         </div>
+</article>
 </body>
 </html>
+<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//页面数据信息
+		$.ajax({
+					   type: "post",
+					   url: "http://www.mywebsitezhang.xin/index.php/index/order/shopinfo",
+//					   async:false,
+					   dataType:'jsonp',
+					   jsonp:'callback',
+					   success: function(e){
+					   	if(e==''){
+					   		alert("数据有误");
+					   	}else{
+					   	var str='';
+					   	str+='<div class="project-base-info">\
+      <div class="col-xs-4 ui-border-right">\
+        <p class="text-nowrap"><span class="ui-fc-blue ui-fs-18 rate">'+e.data['salary']+'</span> %</p>\
+        <p class="ui-fs-12 text-nowrap">年化收益</p>\
+      </div>\
+      <div class="col-xs-4 ui-border-right">\
+        <p class="text-nowrap"><span class="ui-fs-18 ui-fc-blue month">'+e.data['time']+' </span>个月</p>\
+        <p class="ui-fs-12">项目期限</p>\
+      </div>\
+      <div class="col-xs-4">\
+        <p class="text-nowrap"><span class="ui-fc-blue ui-fs-18"><span class="">'+e.data['money']+'</span></span> 元</p>\
+        <p class="ui-fs-12">项目金额</p>\
+      </div>\
+    </div>';
+    var strr='<p class="sec_ce_pc ng-binding interest" style=" position: relative; bottom:50px;">'+e.data['salary']+'<span class="sec_ce_b">%</span></p>';
+    $(".interest").html(strr);
+    $(".info").html(str); 
+				}	}  
+			});
+		//减号
+		$("#jian").click(function(){
+		var num=$(".num").val();
+		var str=num*1-100
+		if(str<100){
+			return;
+		}
+		$(".num").val(str);
+		//年化率
+		var rate=$(".rate").html();
+		//时间
+		var month=$(".month").html();
+		var Interest=rate/100/12*month*str;
+		$("#Interest").html('收益'+Interest+'元');
+		});
+		//加号
+		$("#plus").click(function(){
+		var num=$(".num").val();
+		var str=num*1+100
+		$(".num").val(str);
+		//年化率
+		var rate=$(".rate").html();
+		//时间
+		var month=$(".month").html();
+		var Interest=rate/100/12*month*str;
+		$("#Interest").html('收益'+Interest+'元');
+		})
+		//确认订单
+		$("#submit").click(function(){
+			//判断投资金额是否小于100，小于100不能提交
+			var num=$(".num").val();
+			if(num<100){
+				return;
+			}
+			$.ajax({
+					   type: "post",
+					   url: "http://www.mywebsitezhang.xin/index.php/index/order/orderinfo",
+					   data:{num:num,sid:1,uid:1},
+					   async:false,
+					   dataType:'jsonp',
+					   jsonp:'callback',
+					   success: function(msg){
+					     console.log(msg)
+					   }
+			});
+		})
+	})
+</script>
+

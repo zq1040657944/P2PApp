@@ -18,6 +18,9 @@ class User extends Model{
      * 1006 数据库操作失败
      * 1007 手机号码不存在
      * 200 成功返回 {userid}返回用户信息
+     * 100 成功返回 {userid}返回用户信息
+     * 104 参数错误
+     * 1005 用户不存在
      */
     public function userLogin($username,$pwd,$authCode,$sessionCode){
         //验证验证码是否正确
@@ -48,7 +51,6 @@ class User extends Model{
         }
        return ["code"=>$code,"msg"=>$msg];
     }
-
     /**
      * @param $tel
      * @return bool
@@ -145,7 +147,34 @@ class User extends Model{
         }
         return ['code'=>$code,'msg'=>$msg];
     }
+    //获取用户信息
+    public function getUserInfo($id)
+    {
+        if($id == ""){
+            $success = array(
+                'code' => "1004",
+                "msg"  => "参数错误"
+            );
+        return $success;
+        }
+        //查询用户的详细信息
+        $userInfo = Db::name('userinfo')->where('uid',$id)->find();
+        //查询信息
+        $user = Db::name('user')->where('id',$id)->find();
+        if(empty($userInfo)){
+           $success = array(
+               'code' => "1005",
+               'msg'  => "没有查询到用户",
+           );
+        return $success;
+       }
+        $success =array(
+            'code' => '100',
+            'msg'  => 'OK',
+            'tel' => $user['tel'],
+            'idcard' => $userInfo['idcard'],
+            'realname' => $userInfo['realname']
+        );
+        return $success;
+    }
 }
-
-
-?>
