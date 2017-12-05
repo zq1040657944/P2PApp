@@ -34,8 +34,4 @@ $(function(){
 	$mask.on('touchend',function(){
 		if(state)onClick('off');
 	}); 	
-<<<<<<< HEAD
-});
-=======
-});
->>>>>>> origin/dev5
+})
