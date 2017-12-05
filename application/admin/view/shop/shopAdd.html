@@ -2,12 +2,11 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>轮播图管理</title>
+		<title>产品管理</title>
 		<base href="__PUBLIC__">
 		<!-- basic styles -->
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-
 		<!--[if IE 7]>
 		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
@@ -36,7 +35,7 @@
 		<!-- ace settings handler -->
 
 		<script src="assets/js/ace-extra.min.js"></script>
-
+		<script language="javascript" type="text/javascript" src="assets/js/WdatePicker.js"></script>
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 		<!--[if lt IE 9]>
@@ -69,11 +68,11 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="javascript:void(0);">Home</a>
 							</li>
 
 							<li>
-								<a href="#">Slideshow</a>
+								<a href="javascript:void(0);">Shop</a>
 							</li>
 						</ul><!-- .breadcrumb -->
 						
@@ -90,10 +89,10 @@
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
-								Slideshow
+								商品
 								<small>
 									<i class="icon-double-angle-right"></i>
-									Tables add
+									商品 添加
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -113,26 +112,64 @@
 
 								<div id="dropzone">
 									 <!-- class="dropzone" -->
-									<form action="slideshow/actionAdd" method="post" enctype="multipart/form-data" >
+									<form action="shop/dataAdd" method="post" >
 										<center>
 										<table style="margin-top:80px">
 										<tr>
-											<td>标题</td>
-											<td><input type="text" name="title">
+											<td>产品名称：</td>
+											<td><input type="text" name="sname">
 											</td>
 										</tr>
 										<tr>
-											<td>轮播图</td>
-											<td><input name="file" type="file" /></td>
-										</tr>
-										<tr>
-											<td>是否选用</td>
+											<td>期限类型：</td>
 											<td>
-												是<input name="status" type="radio" value='1' checked/>
-												否<input name="status" type="radio" value='0' />
+												3个月<input name="type" type="radio" value='0' checked/>
+												&nbsp;6个月<input name="type" type="radio" value='1' />
+												&nbsp;12个月<input name="type" type="radio" value='2' />
+												&nbsp;12个月以上<input name="type" type="radio" value='3' />
 											</td>
 										</tr>
 										<tr>
+											<td>年化率：</td>
+											<td>
+												<input name="salary" type="text" style="width:50px;"/>&nbsp;&nbsp;%
+											</td>
+										</tr>
+										<tr>
+											<td>项目金额：</td>
+											<td>
+												<input name="money" type="text" />
+											</td>
+										</tr>
+										<tr>
+											<td>产品状态：</td>
+											<td>
+												即将上线<input name="status" type="radio" value='1' checked/>
+												&nbsp;正在筹集<input name="status" type="radio" value='2' />
+												&nbsp;正在回款<input name="status" type="radio" value='3' />
+												&nbsp;回款完毕<input name="status" type="radio" value='4' />
+											</td>
+										</tr>
+										<tr>
+											<td>项目期限：</td>
+											<td>
+												<input name="time" type="text" style="width:50px;"/>&nbsp;&nbsp;天
+											</td>
+										</tr>
+										<tr>
+											<td>锁定期：</td>
+											<td>
+												<input name="locktime" type="text" style="width:50px;"/>&nbsp;&nbsp;天
+											</td>
+										</tr>
+										<tr>
+											<td>上线时间：</td>
+											<td>
+												<input class="Wdate" type="text" name="onlinetime" onClick="WdatePicker()">
+											</td>
+										</tr>
+										<tr>
+											<td></td>
 											<td><input value="UPDATE" class="button button-pill button-primary" type="submit" style="margin-top:10px"></td>
 										</tr>
 										</table>
@@ -269,3 +306,4 @@
 	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 </body>
 </html>
+<script src="http://www.lanrenzhijia.com/ajaxjs/1.7.2/jquery-1.7.2.min.js"></script>

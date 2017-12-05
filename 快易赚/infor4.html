@@ -41,7 +41,6 @@
 <!-- 页面头部 -->
 <section>
   <div class="navigation-bar"> <a href="#" class="z-01"></a> <span>产品订单</span> <a href="#" class="z-02"></a> </div>
-
 </section>
 <!-- 中间内容 -->
 <div class="main">
@@ -63,7 +62,6 @@
       </div>
       <div class="col-xs-4 ui-border-right">
         <p class="text-nowrap"><span class="ui-fs-18 ui-fc-blue month">6 </span>个月</p>
-
         <p class="ui-fs-12">项目期限</p>
       </div>
       <div class="col-xs-4">
@@ -284,7 +282,6 @@
 	                $('.c-tabstit').removeClass('fixed');
 	            }
 	        });
-	
 	        //tab切换
 	        var tabMap = [
 	            'c-xmxqinfo',
@@ -304,13 +301,9 @@
 	            var index = $(this).data('index');
 	            $('.'+tabMap[index]).show();
 	            $(window).scrollTop($('.c-tabstit-wrap').offset().top-55);
-	            
 	        })
-	       
 	    });
-
 	</script>
-
 <!-- 页面底部 -->
 <article class="foot_bottom clearfix pt_10  border_t Js_input">
     	<input type="hidden" name="fpId" id="fpId" value="ADRUNlYyVToFYVRiUDdeawoxVWwCaAJgBT4FNQBjU2Q=">
@@ -336,6 +329,11 @@
 		    <input id="submit" type="button" value="确认订单" class="btn btn_orange w_10">
          </div>
 </article>
+</body>
+</html>
+         </div>	    	
+       	<!--</form>-->	
+	</article>
 </body>
 </html>
 <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
@@ -400,7 +398,6 @@
 		var Interest=rate/100/12*month*str;
 		$("#Interest").html('收益'+Interest+'元');
 		})
-		
 		//确认订单
 		$("#submit").click(function(){
 			//判断投资金额是否小于100，小于100不能提交
