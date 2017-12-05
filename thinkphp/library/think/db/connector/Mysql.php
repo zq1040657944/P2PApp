@@ -31,7 +31,6 @@ class Mysql extends Connection
      */
     protected function parseDsn($config)
     {
-<<<<<<< HEAD
         if (!empty($config['socket'])) {
             $dsn = 'mysql:unix_socket=' . $config['socket'];
         } elseif (!empty($config['hostport'])) {
@@ -41,14 +40,6 @@ class Mysql extends Connection
         }
         $dsn .= ';dbname=' . $config['database'];
 
-=======
-        $dsn = 'mysql:dbname=' . $config['database'] . ';host=' . $config['hostname'];
-        if (!empty($config['hostport'])) {
-            $dsn .= ';port=' . $config['hostport'];
-        } elseif (!empty($config['socket'])) {
-            $dsn .= ';unix_socket=' . $config['socket'];
-        }
->>>>>>> 汤继康
         if (!empty($config['charset'])) {
             $dsn .= ';charset=' . $config['charset'];
         }
