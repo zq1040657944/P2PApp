@@ -34,5 +34,9 @@ $(function(){
 	$mask.on('touchend',function(){
 		if(state)onClick('off');
 	});
+<<<<<<< HEAD
 })
 
+=======
+});
+>>>>>>> 56c877e77b05659744680e60ca0522bde4b56a59

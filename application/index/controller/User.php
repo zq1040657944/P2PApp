@@ -27,20 +27,36 @@ class User extends Controller{
         $Usercheck=$userModel->userLogin($username,$pwd,$authCode,$sessionCode);
         return $request->param("callback")."(".json_encode($Usercheck).")";
     }
+<<<<<<< HEAD
     public function userReg()
     {
         $request = Request::instance();
         $this->callback = $request->param("callback");
         $tel = $request->param("tel");
         $password = $request->param('password');
+=======
+    public function userReg(){
+        $request=Request::instance();
+        $this->callback=$request->param("callback");
+        $tel=$request->param("tel");
+        $password=$request->param('password');
+>>>>>>> 56c877e77b05659744680e60ca0522bde4b56a59
         //验证码
         $authCode = $request->param("authCode");
         //手机验证码
+<<<<<<< HEAD
         $telauthcode = $request->param("telauthcode");
         $userModel = new \app\index\model\User();
         $return = $userModel->modelReg($tel, $password, $authCode, $telauthcode);
         return $request->param("callback") . "(" . json_encode($return) . ")";
     }
+=======
+        $telauthcode=$request->param("telauthcode");
+        $userModel=new \app\index\model\User();
+        $return=$userModel->modelReg($tel,$password,$authCode,$telauthcode);
+        return $request->param("callback")."(".json_encode($return).")";
+}
+>>>>>>> 56c877e77b05659744680e60ca0522bde4b56a59
     /**
     *获取用户信息接口
      * @auth 常晓飞
