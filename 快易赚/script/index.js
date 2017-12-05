@@ -34,7 +34,6 @@ $(function(){
 	$mask.on('touchend',function(){
 		if(state)onClick('off');
 	}); 	
-<<<<<<< HEAD
 	$drag.draggable({
 		cursor:'auto',
 		onStartDrag:function(){
@@ -77,7 +76,6 @@ $(function(){
 			}
 		}
 	});
-=======
 //	$drag.draggable({
 //		cursor:'auto',
 //		onStartDrag:function(){
@@ -120,5 +118,4 @@ $(function(){
 //			}
 //		}
 //	});
->>>>>>> 汤继康
 });
