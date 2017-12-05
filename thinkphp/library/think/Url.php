@@ -272,11 +272,7 @@ class Url
                 $domain .= '.' . $rootDomain;
             }
         }
-<<<<<<< HEAD
         if (false !== strpos($domain, '://')) {
-=======
-        if (false !== strpos($domain, ':')) {
->>>>>>> 汤继康
             $scheme = '';
         } else {
             $scheme = $request->isSsl() || Config::get('is_https') ? 'https://' : 'http://';

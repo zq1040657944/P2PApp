@@ -338,13 +338,8 @@ abstract class Connection
      * @param bool          $master 是否在主服务器读操作
      * @param bool          $pdo 是否返回PDO对象
      * @return mixed
-<<<<<<< HEAD
      * @throws PDOException
      * @throws \Exception
-=======
-     * @throws BindParamException
-     * @throws PDOException
->>>>>>> 汤继康
      */
     public function query($sql, $bind = [], $master = false, $pdo = false)
     {
@@ -405,13 +400,8 @@ abstract class Connection
      * @param string        $sql sql指令
      * @param array         $bind 参数绑定
      * @return int
-<<<<<<< HEAD
      * @throws PDOException
      * @throws \Exception
-=======
-     * @throws BindParamException
-     * @throws PDOException
->>>>>>> 汤继康
      */
     public function execute($sql, $bind = [])
     {
@@ -562,11 +552,7 @@ abstract class Connection
      * @access protected
      * @param bool   $pdo 是否返回PDOStatement
      * @param bool   $procedure 是否存储过程
-<<<<<<< HEAD
      * @return PDOStatement|array
-=======
-     * @return array
->>>>>>> 汤继康
      */
     protected function getResult($pdo = false, $procedure = false)
     {
@@ -632,12 +618,8 @@ abstract class Connection
     /**
      * 启动事务
      * @access public
-<<<<<<< HEAD
      * @return bool|mixed
      * @throws \Exception
-=======
-     * @return void
->>>>>>> 汤继康
      */
     public function startTrans()
     {
@@ -661,11 +643,7 @@ abstract class Connection
                 return $this->close()->startTrans();
             }
             throw $e;
-<<<<<<< HEAD
         } catch (\Exception $e) {
-=======
-        } catch (\ErrorException $e) {
->>>>>>> 汤继康
             if ($this->isBreak($e)) {
                 return $this->close()->startTrans();
             }
@@ -805,11 +783,7 @@ abstract class Connection
     /**
      * 是否断线
      * @access protected
-<<<<<<< HEAD
      * @param \PDOException|\Exception  $e 异常对象
-=======
-     * @param \PDOException  $e 异常对象
->>>>>>> 汤继康
      * @return bool
      */
     protected function isBreak($e)

@@ -40,11 +40,7 @@
 <script src="script/jquery-ui.min.js"></script>
 <!-- 页面头部 -->
 <section>
-<<<<<<< HEAD
-  <div class="navigation-bar"> <a href="#" class="z-01"></a> <span>项目列表</span> <a href="#" class="z-02"></a> </div>
-=======
   <div class="navigation-bar"> <a href="#" class="z-01"></a> <span>产品订单</span> <a href="#" class="z-02"></a> </div>
->>>>>>> 汤继康
 </section>
 <!-- 中间内容 -->
 <div class="main">
@@ -53,25 +49,12 @@
     <aside class="sec_ce">
       <p class="sec_ce_id">募集进度</p>
       <img src="images/zhuti.png" alt="">
-<<<<<<< HEAD
       <p class="sec_ce_pc ng-binding">12<span class="sec_ce_b">%</span></p>
-=======
-      <p class="sec_ce_pc ng-binding "><span class="interest" style=" position: relative; bottom:50px;">12</span><span class="sec_ce_b">%</span></p>
->>>>>>> 汤继康
       <div class="sec_ce_pt"> <span>按月付息，到期还本</span> </div>
     </aside>
   </div>
   <!--标的详细-->
   <div class="project-status">
-<<<<<<< HEAD
-    <div class="project-base-info">
-      <div class="col-xs-4 ui-border-right">
-        <p class="text-nowrap"><span class="ui-fc-blue ui-fs-18">12.00</span> %</p>
-        <p class="ui-fs-12 text-nowrap">年化收益</p>
-      </div>
-      <div class="col-xs-4 ui-border-right">
-        <p class="text-nowrap"><span class="ui-fs-18 ui-fc-blue">6 </span>个月</p>
-=======
     <div class="project-base-info info">
       <div class="col-xs-4 ui-border-right">
         <p class="text-nowrap"><span class="ui-fc-blue ui-fs-18 rate">12.00</span> %</p>
@@ -79,7 +62,6 @@
       </div>
       <div class="col-xs-4 ui-border-right">
         <p class="text-nowrap"><span class="ui-fs-18 ui-fc-blue month">6 </span>个月</p>
->>>>>>> 汤继康
         <p class="ui-fs-12">项目期限</p>
       </div>
       <div class="col-xs-4">
@@ -283,12 +265,11 @@
       </div>
     </div>
   </div>
-<<<<<<< HEAD
-=======
+
   <!--利息的计算-->
   <spen id="Interest"></spen>
   <!--end-->
->>>>>>> 汤继康
+
 </div>
  <script type="text/javascript">
 	    //初始化轮播组件
@@ -325,19 +306,12 @@
 	            $(window).scrollTop($('.c-tabstit-wrap').offset().top-55);
 	            
 	        })
-<<<<<<< HEAD
-	        
-	
-=======
->>>>>>> 汤继康
 	    });
 
 	</script>
 
 <!-- 页面底部 -->
 <article class="foot_bottom clearfix pt_10  border_t Js_input">
-<<<<<<< HEAD
-    	<form action="/member/buy.do" method="post" id="investForm">
     	<input type="hidden" name="fpId" id="fpId" value="ADRUNlYyVToFYVRiUDdeawoxVWwCaAJgBT4FNQBjU2Q=">
     	<input type="hidden" id="staticImg" value="http://m.niwodai.com/mobile/2015/images/">
 		<input type="hidden" id="amountJoinMin" name="amountMin" class="amountMin" value="50">
@@ -346,41 +320,23 @@
 	    <input type="hidden" id="amountIncrease" name="increase" class="increase" value="50">
 	    <input type="hidden" name="businessType" value="0">
 	    <input type="hidden" id="token" name="token" value="2bb0b56e-7905-4e97-a6b2-de62d4a06a8a">
-=======
-    	<!--<form action="/member/buy.do" method="post" id="investForm">-->
-    	
->>>>>>> 汤继康
          <div class="ft_l fl">
              <div class="money">
                  <input type="button" class="left-a pos1 minus" id="jian" value="">
                  <div class="input_c">
-<<<<<<< HEAD
                      <input type="text" name="amount" id="investmentAmount" value="10000" class="num" maxlength="9" placeholder="请输入50的整数倍">
-=======
                      <input type="text" name="amount" id="investmentAmount1" value="400" class="num" maxlength="9" placeholder="不得小于100元">
->>>>>>> 汤继康
                      <span class="fr">元</span>
                  </div>
                  <input type="button" class="left-a pos2 plus" id="plus" value="">
              </div>
          </div>
          <div class="ft_r fr">
-<<<<<<< HEAD
-		    <input id="submit" type="button" value="立即抢购" class="btn btn_orange w_10">
-         </div>	    	
-       	</form>	
-=======
 		    <input id="submit" type="button" value="确认订单" class="btn btn_orange w_10">
-         </div>	    	
-       	<!--</form>-->	
->>>>>>> 汤继康
-	</article>
-	<script type="text/javascript" src="script/detail.js"></script>
-
+         </div>
+</article>
 </body>
 </html>
-<<<<<<< HEAD
-=======
 <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript">
 	$(function(){
@@ -432,8 +388,7 @@
 		var month=$(".month").html();
 		var Interest=rate/100/12*month*str;
 		$("#Interest").html('收益'+Interest+'元');
-		})
-		
+		});
 		//加号
 		$("#plus").click(function(){
 		var num=$(".num").val();
@@ -446,7 +401,6 @@
 		var Interest=rate/100/12*month*str;
 		$("#Interest").html('收益'+Interest+'元');
 		})
-		
 		//确认订单
 		$("#submit").click(function(){
 			//判断投资金额是否小于100，小于100不能提交
@@ -467,6 +421,4 @@
 			});
 		})
 	})
-	
 </script>
->>>>>>> 汤继康
