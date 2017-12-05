@@ -12,7 +12,6 @@ class Order extends Controller
         $str= date('Ymd') . str_pad(mt_rand(1, 99999), 5, '0', STR_PAD_LEFT);
         return $str;
     }
-
     //生成订单数据
     public function OrderInfo(){
         //jsonp的参数
@@ -25,7 +24,6 @@ class Order extends Controller
        $data['money']=Request::instance()->param('num');
        $data['creattime']=time(); //订单时间
        $data['ordernumber']=$this->Ordernumber();
-
       $order=new \app\index\model\Order();
       $adds=$order->OrderAdd($data);
       if($adds){
@@ -41,12 +39,10 @@ class Order extends Controller
       }
       return $this->callback."(".json_encode($datainfo).")";
     }
-
     /*
      * 产品的详细数据
      * 产品的id
      */
-
     public function Shopinfo(){
         $this->callback=Request::instance()->param('callback');
         //产品的id是模拟的 $sid=1;
@@ -67,5 +63,4 @@ class Order extends Controller
        }
         return $this->callback ."(".json_encode($datainfo).")";
     }
-
 }

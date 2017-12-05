@@ -25,10 +25,7 @@ class Session
      */
     public static function prefix($prefix = '')
     {
-<<<<<<< HEAD
         empty(self::$init) && self::boot();
-=======
->>>>>>> 汤继康
         if (empty($prefix) && null !== $prefix) {
             return self::$prefix;
         } else {
@@ -60,11 +57,7 @@ class Session
             $isDoStart = true;
         }
 
-<<<<<<< HEAD
         if (isset($config['prefix']) && ('' === self::$prefix || null === self::$prefix)) {
-=======
-        if (isset($config['prefix']) && (self::$prefix === '' || self::$prefix === null)) {
->>>>>>> 汤继康
             self::$prefix = $config['prefix'];
         }
         if (isset($config['var_session_id']) && isset($_REQUEST[$config['var_session_id']])) {
@@ -355,11 +348,7 @@ class Session
      * @param bool $delete 是否删除关联会话文件
      * @return void
      */
-<<<<<<< HEAD
     public static function regenerate($delete = false)
-=======
-    private static function regenerate($delete = false)
->>>>>>> 汤继康
     {
         session_regenerate_id($delete);
     }
