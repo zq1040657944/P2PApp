@@ -7,11 +7,14 @@
 <title>首页</title>
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <script type="text/javascript" src="script/jquery.js"></script>
+<script>
+	var username,password;
+</script>
 </head>
 <body>
 <!-- 页面头部 -->
 <section>
-  <div class="navigation-bar"> <a href="#" class="z-01"></a> <span>注册</span> <a href="#" class="z-02"></a> </div>
+  <div class="navigation-bar"> <a href="#" class="z-01"></a> <span>欢迎登录</span> <a href="#" class="z-02"></a> </div>
 </section>
 <!-- 中间内容 -->
 <div class="register">
@@ -37,7 +40,7 @@
             <input id="_spring_security_remember_me" type="hidden" name="_spring_security_remember_me" value="true">
             <input id="authCode" type="text" name="authCode" value="请输入验证码" class="c-txt c-code" maxlength="4" onBlur="checkAuthcode();" onKeyUp="this.value=this.value.replace(/\D/g,'')" placeholder="请输入验证码">
           </div>
-          <span class="c-yzm"><img style="height: 100%;" src="images/code.jpg"></span>
+          <span class="c-yzm"><img style="height: 100%;" src="http://www.mywebsitezhang.xin/yzm.php"></span>
           <p id="j_yzmErrorDiv"></p>
         </div>
         <div class="remember">
@@ -61,7 +64,7 @@
 
 					  var usernameRegex="^[a-zA-Z0-9\u4E00-\u9FA5_]+$";
 					  var mobileOrEmailRegex="^((1[3|4|5|8][0-9]{9})|(([a-zA-Z0-9]+[_|\-|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}))$";
-					  var username=$("#j_username").val();
+					  username=$("#j_username").val();
 					  var nullFlag=(username==""||username=="请输入用户名/手机号/邮箱");
 					  if(nullFlag==true)
 					  {
@@ -76,7 +79,7 @@
 					  var usernameFlag=usernamePattern.test(username);
 					  var mobileOrEmailPattern=new RegExp(mobileOrEmailRegex);
 					  var mobileOrEmailFlag=mobileOrEmailPattern.test(username);
-					  var usernameFlag=validateInputLength(username,'请输入用户名/手机号/邮箱','2','1','4','128');
+//					  var usernameFlag=validateInputLength(username,'请输入用户名/手机号/邮箱','2','1','4','128');
 					  var legalFlag=usernameFlag||mobileOrEmailFlag||usernameFlag;
 					  if(!legalFlag)
 					  {
@@ -92,8 +95,9 @@
 				  }
 		          //验证密码
 		          function checkPassword(){
-		        	  var passwordRegex="^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,26}$";
-		        	  var password=$("#j_password").val();
+//		        	  var passwordRegex="^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,26}$";
+		        	   password=$("#j_password").val();
+		        	   
 		        	  var nullFlag=(password==""||password=="请输入密码");
 					  if(nullFlag==true){
 						  $("#j_passwordErrorDiv").empty();
@@ -102,15 +106,15 @@
 					  }else{
 						  $("#j_passwordErrorDiv").empty();
 					  }
-		        	  var passwordPattern = new RegExp(passwordRegex);
-		        	  var legalFlag=passwordPattern.test(password);
-		        	  if(legalFlag==false){
-		        		  $("#j_passwordErrorDiv").empty();
-						  $("#j_passwordErrorDiv").html("用户名或者密码输入错误");
-						  return false;		
-		        	  }else{
-		        		  $("#j_passwordErrorDiv").empty();
-		        	  } 
+//		        	  var passwordPattern = new RegExp(passwordRegex);
+//		        	  var legalFlag=passwordPattern.test(password);
+//		        	  if(legalFlag==false){
+//		        		  $("#j_passwordErrorDiv").empty();
+//						  $("#j_passwordErrorDiv").html("用户名或者密码输入错误");
+//						  return false;		
+//		        	  }else{
+//		        		  $("#j_passwordErrorDiv").empty();
+//		        	  } 
 		        	  return true;
 		          }
 		          
@@ -121,7 +125,7 @@
 		        		if("false"==needAuth){
 		        			return true;
 		        		}
-		        	  var authCode=$("#authCode").val();
+		        	  authCode=$("#authCode").val();
 		        	  var nullFlag=(authCode==""||authCode=="请输入验证码");
 					  if(nullFlag==true){
 						  $("#j_yzmErrorDiv").empty();
@@ -159,13 +163,13 @@
 		        		}
 						$("#j_yzmErrorDiv").empty();
 					};
-					reloadcode();
+//					reloadcode();
 		         });
-		         function reloadcode(){
-					var verify=document.getElementById("authCodeImage");
-					verify.setAttribute('src','/authimg?'+Math.random());
-					
-				 }
+//		         function reloadcode(){
+//					var verify=document.getElementById("authCodeImage");
+//					verify.setAttribute('src','/authimg?'+Math.random());
+//					
+//				 }
 //----------登陆页记住用户名js部分----------------------------------------------------------------------------------		         
 		       //记住用户名
 		          function remeberName(){
@@ -278,6 +282,7 @@
 			     });
 			     $("#authCode").focusin(function(){
 			     	if($("#authCode").val() == "请输入验证码") {
+			   
 			     		$("#authCode").val("");
 			     		$("#authCode").css("color","#4a4a4a");
 			     	}
@@ -288,6 +293,42 @@
 			     			$("#authCode").css("color","#4a4a4a");
 			     		}
 			     	});
+			     	//用户点击登录访问jsonp接口
+			     	$(".btn-submit").click(function(){
+			     		var username=$("#j_username").val();
+			     		var authCode=$('#authCode').val();
+							$.ajax({
+								url:"http://www.mywebsitezhang.xin/index.php/index/user/login",
+								type:"get",
+								data:{
+								  'username':username,
+								  'password':password,
+								  'authCode':authCode,
+								},
+								dataType:'jsonp',
+								jsonp:'callback',	
+								success:function(msg){
+								
+									if(msg.code=="1002"){
+										alert(msg.msg);
+										return false;
+									}else if(msg.code=="1001"){
+										alert(msg.msg);
+										return false;
+									}else{
+										alert("登录成功");
+//										 setCookie('userid',msg.msg);
+										sessionStorage.setItem("userid",msg.msg);
+									}
+								}
+							})
+			     	})
+			     	
+			     	//刷新验证码
+			    $('.c-yzm').click(function(){
+        		var src = $(this).children('img').attr('src');
+       			 $(this).children('img').attr('src','http://www.mywebsitezhang.xin/yzm.php?code = '+Math.random());
+   				 })
  			</script>
 </body>
 </html>
