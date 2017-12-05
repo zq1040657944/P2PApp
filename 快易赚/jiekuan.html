@@ -38,40 +38,60 @@
     </div>
     <div class="mui-input-row">
         <label>婚姻状况</label>
-        <input type="text" class="mui-input-clear" placeholder="请填写您的婚姻状况">
+        <input type="text" class="mui-input-clear Marital" placeholder="请填写您的婚姻状况(已婚/未婚)" onblur="Marital_status()">
     </div>
+    <span id="hunyin" style="color: red;"></span>
     <div class="mui-input-row">
-        <label>职业:</label>
-        <input type="text" class="mui-input-clear" placeholder="请认真填写您的职业">
-    </div>
+		<label class="mui-navigate-right" href="#">职业</label>
+		<select name="select" id="select_k1" >
+		<option value="0" selected="true">请选择您的职业</option>
+		<option value="IT工程师">IT工程师</option>
+		<option value="教师">教师</option>
+		<option value="医生">医生</option>
+		<option value="程师(非IT)">工程师(非IT)</option>
+		<option value="白领">白领</option>
+		<option value="农民">农民</option>
+		</select>
+	</div>
     <div class="mui-input-row">
         <label>籍贯</label>
-        <input type="text" class="mui-input-clear" placeholder="请填写籍贯">
+        <input type="text" class="mui-input-clear jiguan" placeholder="请填写籍贯">
     </div>
     <div class="mui-input-row">
-        <label>学历</label>
-        <input type="text" class="mui-input-clear" placeholder="请填写您的学历">
-    </div>
+		<label class="mui-navigate-right" href="#">学历</label>
+		<select name="select" id="select_k1" >
+		<option value="0" selected="true">请选择学历</option>
+		<option value="博士后">博士后</option>
+		<option value="博士">博士</option>
+		<option value="硕士">硕士</option>
+		<option value="研究生">研究生</option>
+		<option value="本科">本科</option>
+		<option value="专科">专科</option>
+		</select>
+	</div>
     <div class="mui-input-row">
         <label>资金用途</label>
-        <input type="text" class="mui-input-clear" placeholder="请填写资金的用途">
+        <input type="text" class="mui-input-clear purpose" placeholder="请填写资金的用途" onblur="purpose()">
     </div>
+    <span id="purpose" style="color: red;"></span>
     <div class="mui-input-row">
         <label>还款来源</label>
-        <input type="text" class="mui-input-clear" placeholder="请输入还款来源">
+        <input type="text" class="mui-input-clear fromMoney" placeholder="请输入还款来源" onblur="fromMoney()">
     </div>
+    <span id="fromMoney" style="color: red;"></span>
    <div class="mui-input-row">
         <label>借款金额</label>
-        <input type="text" class="mui-input-clear" placeholder="最低金额为100">
+        <input type="text" class="mui-input-clear money" placeholder="最低金额为100" onblur="money()">
     </div>
-   	<!--使用单选框-->
+     <span id="money" style="color: red;"></span>
     <div class="mui-input-row">
         <label>资金使用的时间</label>
-        <input type="text" class="mui-input-clear" placeholder="请输入1--24之间的数字">
+        <input type="text" class="mui-input-clear usemoney" placeholder="请输入1--24之间的数字" onblur="usemoney()">
     </div>
+    <span id="usemoney" style="color: red;"></span>
     <div class="mui-input-row">
         <label>利息</label>
-        <input type="text" class="mui-input-clear" placeholder="资金使用时间">
+        <input type="text" class="mui-input-clear" placeholder="资金使用时间" readonly="readonly" value="">
     </div>
     <div class="mui-button-row">
         <button type="button" class="mui-btn mui-btn-primary" >确认</button>
@@ -82,23 +102,103 @@
 </body>
 </html>
 <script>
+//调用
 	$(document).ready(function(){
 		id='1';
 		$.ajax({
 		   type: "post",
-		   url: "http://www.mywebsitezhang.xin/index.php/index/toloan/userinfo",
+		   url: "http://www.mywebsitezhang.xin/index.php/index/user/getUserInfo",
 		   data: {"id":id},
 		   dataType: 'jsonp',
 		   jsonp: "callback",
 		   success: function(msg){
 		   	//借款人的姓名
-		    $(".name").val(msg.username);
+		    $(".name").val(msg.realname);
 		    //借款人的身份证号
 		    $(".idcard").val(msg.idcard);
 		    //借款人的手机号
-		    $(".telphone").val(msg.telphone);
+		    $(".telphone").val(msg.tel);
 		   }
 		});
    });
-   $("")
+   //婚姻状况
+   function Marital_status(){
+     var marital = $(".Marital").val();
+      var label = $(".Marital").prev().text();
+     if(marital==""){
+     	 $("#hunyin").text(label+"不能为空");
+     	 return false;
+     }
+     if(marital == "已婚" || marital == "未婚"){
+		 $("#hunyin").text("");
+     }else{
+       $("#hunyin").text(label+"格式错误");
+       return false
+     }
+   }
+  //资金用途
+  function purpose(){
+  	var purpose = $(".purpose").val();
+  	if(purpose == ""){
+  		$("#purpose").text("资金用途不能为空");
+  		return false;
+  	}else{
+  	   $("#purpose").text("");
+  	}
+  }
+  //还款来源
+  function fromMoney()
+  {
+  	var fromMoney = $(".fromMoney").val();
+  	 if(fromMoney == ""){
+  	 	$("#fromMoney").text("还款来源不能为空");
+  		return false;
+  	 }else{
+  	   $("#fromMoney").text("");
+  	 }
+  }
+  //借款金额
+  function money()
+  {
+  	var money = $(".money").val();
+  	var reg=/[0-9]/;
+  	if(money == ""){
+  		$("#money").text("借款金额不能为空");
+  		return false;
+  	}else if(!reg.test(money)){
+  	   $("#money").text("借款金额格式错误");
+  		return false;
+  	}
+  	if(money<100){
+  	   $("#money").text("借款金额不能低于100元");
+  		return false;
+  	}else if(money>100000){
+  	$("#money").text("借款金额不能高于10万");
+  		return false;
+  	}else{
+     	$("#money").text("");
+  	}
+  }
+  //借款使用时间
+  function usemoney()
+  {
+  	var usemoney = $(".usemoney").val();
+  	var reg=/[1-24]/;
+  	if(usemoney == ""){
+  	  $("#usemoney").text("使用时间不能为空");
+  		return false;
+  	 }else if(!reg.test(usemoney)){
+  	   $("#usemoney").text("使用时间格式错误");
+  		return false;
+  	 }
+  	if(usemoney<1){
+  	 $("#usemoney").text("使用时间最少一个月");
+  		return false;
+  	}else if(usemoney > 24){
+  	 $("#usemoney").text("使用时间不能大于24个月");
+  		return false;
+  	}else{
+  	$("#usemoney").text("");
+  	}
+  }
 </script>
