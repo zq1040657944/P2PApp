@@ -267,6 +267,7 @@
   </div>
   <!--利息的计算-->
   <spen id="Interest"></spen>
+  <!--end-->
 </div>
  <script type="text/javascript">
 	    //初始化轮播组件
@@ -281,7 +282,6 @@
 	                $('.c-tabstit').removeClass('fixed');
 	            }
 	        });
-	
 	        //tab切换
 	        var tabMap = [
 	            'c-xmxqinfo',
@@ -301,11 +301,9 @@
 	            var index = $(this).data('index');
 	            $('.'+tabMap[index]).show();
 	            $(window).scrollTop($('.c-tabstit-wrap').offset().top-55);
-	            
 	        })
 	    });
 	</script>
-
 <!-- 页面底部 -->
 <article class="foot_bottom clearfix pt_10  border_t Js_input">
     	<input type="hidden" name="fpId" id="fpId" value="ADRUNlYyVToFYVRiUDdeawoxVWwCaAJgBT4FNQBjU2Q=">
@@ -329,8 +327,7 @@
          </div>
          <div class="ft_r fr">
 		    <input id="submit" type="button" value="确认订单" class="btn btn_orange w_10">
-         </div>	    	
-
+         </div>
 </article>
 </body>
 </html>
@@ -367,9 +364,6 @@
     $(".info").html(str); 
 				}	}  
 			});
-		
-		
-
 		//减号
 		$("#jian").click(function(){
 		var num=$(".num").val();
