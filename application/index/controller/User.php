@@ -27,20 +27,20 @@ class User extends Controller{
         $Usercheck=$userModel->userLogin($username,$pwd,$authCode,$sessionCode);
         return $request->param("callback")."(".json_encode($Usercheck).")";
     }
-<<<<<<< HEAD
-    public function userReg(){
-        $request=Request::instance();
-        $this->callback=$request->param("callback");
-        $tel=$request->param("tel");
-        $password=$request->param('password');
+    public function userReg()
+    {
+        $request = Request::instance();
+        $this->callback = $request->param("callback");
+        $tel = $request->param("tel");
+        $password = $request->param('password');
         //验证码
-        $authCode=$request->param("authCode");
+        $authCode = $request->param("authCode");
         //手机验证码
-        $telauthcode=$request->param("telauthcode");
-        $userModel=new \app\index\model\User();
-        $return=$userModel->modelReg($tel,$password,$authCode,$telauthcode);
-        return $request->param("callback")."(".json_encode($return).")";
-=======
+        $telauthcode = $request->param("telauthcode");
+        $userModel = new \app\index\model\User();
+        $return = $userModel->modelReg($tel, $password, $authCode, $telauthcode);
+        return $request->param("callback") . "(" . json_encode($return) . ")";
+    }
     /**
     *获取用户信息接口
      * @auth 常晓飞
@@ -55,6 +55,5 @@ class User extends Controller{
         $userModel=new \app\index\model\User();
         $info = $userModel->getUserInfo($id);
         return $request->param("callback")."(".json_encode($info).")";
->>>>>>> 00f543c9be70fe692629ffda3c9ff91ced9d07cd
     }
 }

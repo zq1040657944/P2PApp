@@ -12,10 +12,7 @@
 namespace think\db;
 
 use PDO;
-<<<<<<< HEAD
 use think\App;
-=======
->>>>>>> 汤继康
 use think\Cache;
 use think\Collection;
 use think\Config;
@@ -118,10 +115,7 @@ class Query
     {
         $this->connection = Db::connect($config);
         $this->setBuilder();
-<<<<<<< HEAD
         $this->prefix = $this->connection->getConfig('prefix');
-=======
->>>>>>> 汤继康
         return $this;
     }
 
@@ -423,14 +417,9 @@ class Query
             }
             $result = $pdo->fetchColumn();
             if ($force) {
-<<<<<<< HEAD
                 $result += 0;
             }
 
-=======
-                $result = is_numeric($result) ? $result + 0 : $result;
-            }
->>>>>>> 汤继康
             if (isset($cache)) {
                 // 缓存数据
                 $this->cacheData($key, $result, $cache);
@@ -1198,15 +1187,8 @@ class Query
             $this->options['multi'][$logic][$field][] = $where[$field];
         } elseif (is_null($condition)) {
             // 字段相等查询
-<<<<<<< HEAD
             $where[$field]                            = ['eq', $op];
             $this->options['multi'][$logic][$field][] = $where[$field];
-=======
-            $where[$field] = ['eq', $op];
-            if ('AND' != $logic) {
-                $this->options['multi'][$logic][$field][] = $where[$field];
-            }
->>>>>>> 汤继康
         } else {
             $where[$field] = [$op, $condition, isset($param[2]) ? $param[2] : null];
             if ('exp' == strtolower($op) && isset($param[2]) && is_array($param[2])) {
@@ -1463,32 +1445,19 @@ class Query
     /**
      * 查询缓存
      * @access public
-<<<<<<< HEAD
      * @param mixed             $key    缓存key
      * @param integer|\DateTime $expire 缓存有效期
      * @param string            $tag    缓存标签
-=======
-     * @param mixed   $key    缓存key
-     * @param integer $expire 缓存有效期
-     * @param string  $tag    缓存标签
->>>>>>> 汤继康
      * @return $this
      */
     public function cache($key = true, $expire = null, $tag = null)
     {
         // 增加快捷调用方式 cache(10) 等同于 cache(true, 10)
-<<<<<<< HEAD
         if ($key instanceof \DateTime || (is_numeric($key) && is_null($expire))) {
             $expire = $key;
             $key    = true;
         }
 
-=======
-        if (is_numeric($key) && is_null($expire)) {
-            $expire = $key;
-            $key    = true;
-        }
->>>>>>> 汤继康
         if (false !== $key) {
             $this->options['cache'] = ['key' => $key, 'expire' => $expire, 'tag' => $tag];
         }
@@ -1522,11 +1491,7 @@ class Query
     /**
      * 指定查询lock
      * @access public
-<<<<<<< HEAD
      * @param bool|string $lock 是否lock
-=======
-     * @param boolean $lock 是否lock
->>>>>>> 汤继康
      * @return $this
      */
     public function lock($lock = false)
@@ -2117,11 +2082,7 @@ class Query
         }
 
         // 执行操作
-<<<<<<< HEAD
         $result = 0 === $sql ? 0 : $this->execute($sql, $bind);
-=======
-        $result = $this->execute($sql, $bind);
->>>>>>> 汤继康
         if ($result) {
             $sequence  = $sequence ?: (isset($options['sequence']) ? $options['sequence'] : null);
             $lastInsId = $this->getLastInsID($sequence);
@@ -2376,11 +2337,7 @@ class Query
             $modelName = $this->model;
             if (count($resultSet) > 0) {
                 foreach ($resultSet as $key => $result) {
-<<<<<<< HEAD
                     /** @var Model $model */
-=======
-                    /** @var Model $result */
->>>>>>> 汤继康
                     $model = new $modelName($result);
                     $model->isUpdate(true);
 
@@ -2436,20 +2393,13 @@ class Query
      * @param mixed     $value   缓存数据
      * @param array     $options 缓存参数
      * @param array     $bind    绑定参数
-<<<<<<< HEAD
      * @return string
-=======
->>>>>>> 汤继康
      */
     protected function getCacheKey($value, $options, $bind = [])
     {
         if (is_scalar($value)) {
             $data = $value;
-<<<<<<< HEAD
         } elseif (is_array($value) && is_string($value[0]) && 'eq' == strtolower($value[0])) {
-=======
-        } elseif (is_array($value) && 'eq' == strtolower($value[0])) {
->>>>>>> 汤继康
             $data = $value[1];
         }
         if (isset($data)) {
@@ -2617,17 +2567,11 @@ class Query
      * @param integer  $count    每次处理的数据数量
      * @param callable $callback 处理回调方法
      * @param string   $column   分批处理的字段名
-<<<<<<< HEAD
      * @param string   $order    排序规则
      * @return boolean
      * @throws \LogicException
      */
     public function chunk($count, $callback, $column = null, $order = 'asc')
-=======
-     * @return boolean
-     */
-    public function chunk($count, $callback, $column = null)
->>>>>>> 汤继康
     {
         $options = $this->getOptions();
         if (isset($options['table'])) {
@@ -2635,7 +2579,6 @@ class Query
         } else {
             $table = '';
         }
-<<<<<<< HEAD
         $column = $column ?: $this->getPk($table);
         if (is_array($column)) {
             $column = $column[0];
@@ -2648,11 +2591,6 @@ class Query
         }
         $bind      = $this->bind;
         $resultSet = $this->options($options)->limit($count)->order($column, $order)->select();
-=======
-        $column    = $column ?: $this->getPk($table);
-        $bind      = $this->bind;
-        $resultSet = $this->limit($count)->order($column, 'asc')->select();
->>>>>>> 汤继康
         if (strpos($column, '.')) {
             list($alias, $key) = explode('.', $column);
         } else {
@@ -2671,13 +2609,8 @@ class Query
             $resultSet = $this->options($options)
                 ->limit($count)
                 ->bind($bind)
-<<<<<<< HEAD
                 ->where($column, 'asc' == strtolower($order) ? '>' : '<', $lastId)
                 ->order($column, $order)
-=======
-                ->where($column, '>', $lastId)
-                ->order($column, 'asc')
->>>>>>> 汤继康
                 ->select();
             if ($resultSet instanceof Collection) {
                 $resultSet = $resultSet->all();
