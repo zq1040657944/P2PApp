@@ -64,11 +64,7 @@ class Lang
 
     /**
      * 加载语言定义(不区分大小写)
-<<<<<<< HEAD
      * @param array|string $file 语言文件
-=======
-     * @param string $file 语言文件
->>>>>>> 汤继康
      * @param string $range 语言作用域
      * @return mixed
      */
@@ -164,12 +160,9 @@ class Lang
         if (isset($_GET[self::$langDetectVar])) {
             // url中设置了语言变量
             $langSet = strtolower($_GET[self::$langDetectVar]);
-<<<<<<< HEAD
         } elseif (isset($_COOKIE[self::$langCookieVar])) {
             // Cookie中设置了语言变量
             $langSet = strtolower($_COOKIE[self::$langCookieVar]);
-=======
->>>>>>> 汤继康
         } elseif (isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
             // 自动侦测浏览器语言
             preg_match('/^([a-z\d\-]+)/i', $_SERVER['HTTP_ACCEPT_LANGUAGE'], $matches);

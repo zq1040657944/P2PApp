@@ -27,7 +27,6 @@ class User extends Controller{
         $Usercheck=$userModel->userLogin($username,$pwd,$authCode,$sessionCode);
         return $request->param("callback")."(".json_encode($Usercheck).")";
     }
-<<<<<<< HEAD
     public function userReg(){
         $request=Request::instance();
         $this->callback=$request->param("callback");
@@ -40,7 +39,7 @@ class User extends Controller{
         $userModel=new \app\index\model\User();
         $return=$userModel->modelReg($tel,$password,$authCode,$telauthcode);
         return $request->param("callback")."(".json_encode($return).")";
-=======
+}
     /**
     *获取用户信息接口
      * @auth 常晓飞
@@ -55,6 +54,5 @@ class User extends Controller{
         $userModel=new \app\index\model\User();
         $info = $userModel->getUserInfo($id);
         return $request->param("callback")."(".json_encode($info).")";
->>>>>>> 00f543c9be70fe692629ffda3c9ff91ced9d07cd
     }
 }
