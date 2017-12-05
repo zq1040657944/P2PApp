@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="format-detection" content="telephone=no,email=no,adress=no"/>
-<title>首页</title>
+<title>登录</title>
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <script type="text/javascript" src="script/jquery.js"></script>
 <script>
@@ -40,7 +40,7 @@
             <input id="_spring_security_remember_me" type="hidden" name="_spring_security_remember_me" value="true">
             <input id="authCode" type="text" name="authCode" value="请输入验证码" class="c-txt c-code" maxlength="4" onBlur="checkAuthcode();" onKeyUp="this.value=this.value.replace(/\D/g,'')" placeholder="请输入验证码">
           </div>
-          <span class="c-yzm"><img style="height: 100%;" src="http://www.tp5.com/yzm.php"></span>
+          <span class="c-yzm"><img style="height: 100%;" src="http://www.mywebsitezhang.xin/yzm.php"></span>
           <p id="j_yzmErrorDiv"></p>
         </div>
         <div class="remember">
@@ -48,11 +48,24 @@
           <span>记住用户名</span><a href="#">忘记密码?</a> </div>
         <input class="btn-submit" style="border:none; cursor:pointer;" type="button" value="登　录" onClick="">
       </form>
-      <div class="m-ljzc"> 没有账号？<a href="#">立即注册</a> </div>
+     <div class="m-ljzc"><a href="" class="sdkqq">QQ</a></div>
+      <div class="m-ljzc"> 没有账号？<a href="./register.html">立即注册</a> </div>
     </div>
   </div>
 </div>
 <script>
+      window.onload=function () {
+      	  var obj=$(".sdkqq");
+          $.ajax({
+              type:"get",
+              url:"http://www.mywebsitezhang.xin/index.php/index/sdkqq/createUrl",
+              dataType:"jsonp",
+              jsonp:"callback",
+              success:function(msg){
+                  obj.attr("href",msg.url);
+              }
+          })
+      }
 		//<![CDATA[
 		           var loginError = false;
 		           
@@ -298,7 +311,7 @@
 			     		var username=$("#j_username").val();
 			     		var authCode=$('#authCode').val();
 							$.ajax({
-								url:"http://www.tp5.com/index.php/index/user/login",
+								url:"http://www.mywebsitezhang.xin/index.php/index/user/login",
 								type:"get",
 								data:{
 								  'username':username,
@@ -327,7 +340,7 @@
 			     	//刷新验证码
 			    $('.c-yzm').click(function(){
         		var src = $(this).children('img').attr('src');
-       			 $(this).children('img').attr('src','http://www.tp5.com/yzm.php?code = '+Math.random());
+       			 $(this).children('img').attr('src','http://www.mywebsitezhang.xin/yzm.php?code = '+Math.random());
    				 })
  			</script>
 </body>

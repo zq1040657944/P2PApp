@@ -15,7 +15,8 @@ class User extends Model{
      * 1002 用户名或密码不正确
      * 1004 电话号码已经存在
      * 1005 手机验证码不存在
-     * 1006 入库失败
+     * 1006 数据库操作失败
+     * 1007 手机号码不存在
      * 200 成功返回 {userid}返回用户信息
      */
     public function userLogin($username,$pwd,$authCode,$sessionCode){
@@ -31,6 +32,9 @@ class User extends Model{
 
             if($Usertel['password']==md5($pwd)){
                 //用户名和密码及验证吗都正确
+                $time=date("Y-m-d H:i:s",time());
+                $data=['lasttime'=>$time];
+                Db::table("p_user")->where("tel",$username)->update($data);
                 $code=200;
                 //把用户id传到前台去
                 $msg=$Usertel['id'];
@@ -88,6 +92,56 @@ class User extends Model{
         }else{
             $code=1004;
             $msg="电话号码已经存在";
+        }
+        return ['code'=>$code,'msg'=>$msg];
+    }
+    /**
+     * 判断此用户有没有绑定第三方登录或注册
+     * 如果绑定 就跳到首页
+     * 没有绑定 就去绑定
+     * 如果没有注册就去注册
+     */
+    public function sdkCheck($openid,$type){
+        $userSdk=Db::table("p_user")->where("openid",$openid)->find();
+        if(empty($userSdk)){
+            //用户没有绑定或者还没有注册
+            //把用户的openid返回前台 和登录类型
+            return ['userid'=>""];
+
+        }else{
+            //用户已经绑定跳到首页把userid传到首页记住id
+            return ['userid'=>$userSdk['id']];
+
+        }
+    }
+
+    /***
+     * @param $tel
+     * @param $password
+     * @param $openid
+     * @param $type
+     * 第三方登陆绑定用户
+     */
+    public function bindModel($tel,$password,$openid,$type){
+        //判断密码是否是否为空如果为空就是绑定 不为空就是注册（相当于注册）
+        $time=date("Y-m-d H:i:s",time());
+        if(!empty($password)){
+            //相当于注册
+            $data=['tel'=>$tel,'password'=>md5($password),'opentype'=>$type,'openid'=>$openid,'creattime'=>$time,'lasttime'=>$time];
+            $res=Db::table("p_user")->insert($data);
+            $lastUserid=Db::table("p_user")->getLastInsID();
+        }else{
+            //绑定
+            $data=['openid'=>$openid,"opentype"=>$type,'lasttime'=>$time];
+            $res=Db::table("p_user")->where("tel",$tel)->update($data);
+            $lastUserid="数据库操作失败";
+        }
+        if($res){
+            $code="200";
+            $msg=$lastUserid;
+        }else{
+            $code="1006";
+            $msg="数据库操作失败";
         }
         return ['code'=>$code,'msg'=>$msg];
     }
