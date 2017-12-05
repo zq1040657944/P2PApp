@@ -18,11 +18,8 @@ use think\db\Builder;
  */
 class Pgsql extends Builder
 {
-<<<<<<< HEAD
     protected $insertSql    = 'INSERT INTO %TABLE% (%FIELD%) VALUES (%DATA%) %COMMENT%';
     protected $insertAllSql = 'INSERT INTO %TABLE% (%FIELD%) %DATA% %COMMENT%';
-=======
->>>>>>> 汤继康
 
     /**
      * limit分析

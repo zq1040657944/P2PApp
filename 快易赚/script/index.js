@@ -33,6 +33,7 @@ $(function(){
 	}); 	
 	$mask.on('touchend',function(){
 		if(state)onClick('off');
+<<<<<<< HEAD
 	}); 	
 //	$drag.draggable({
 //		cursor:'auto',
@@ -77,3 +78,8 @@ $(function(){
 //		}
 //	});
 });
+=======
+	});
+})
+
+>>>>>>> f3a8af7d53ca0d4d4294a60a2f415ab190ffb191

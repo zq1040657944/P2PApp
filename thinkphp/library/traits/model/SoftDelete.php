@@ -63,7 +63,6 @@ trait SoftDelete
             $this->data[$name] = $this->autoWriteTimestamp($name);
             $result            = $this->isUpdate()->save();
         } else {
-<<<<<<< HEAD
             // 删除条件
             $where = $this->getWhere();
             // 删除当前模型数据
@@ -84,12 +83,6 @@ trait SoftDelete
         $this->trigger('after_delete', $this);
         // 清空原始数据
         $this->origin = [];
-=======
-            $result = $this->getQuery()->delete($this->data);
-        }
-
-        $this->trigger('after_delete', $this);
->>>>>>> 汤继康
         return $result;
     }
 

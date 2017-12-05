@@ -82,7 +82,6 @@ class Db
                 Log::record('[ DB ] INIT ' . $options['type'], 'info');
             }
             if (true === $name) {
-<<<<<<< HEAD
                 $name = md5(serialize($config));
             }
             self::$instance[$name] = new $class($options);
@@ -93,15 +92,6 @@ class Db
     public static function clear() {
         self::$instance = null;
     }
-=======
-                return new $class($options);
-            } else {
-                self::$instance[$name] = new $class($options);
-            }
-        }
-        return self::$instance[$name];
-    }
->>>>>>> 汤继康
 
     /**
      * 数据库连接参数解析

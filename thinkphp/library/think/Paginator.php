@@ -49,12 +49,9 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
         'fragment' => '',
     ];
 
-<<<<<<< HEAD
     /** @var mixed simple模式下的下个元素 */
     protected $nextItem;
 
-=======
->>>>>>> 汤继康
     public function __construct($items, $listRows, $currentPage = null, $total = null, $simple = false, $options = [])
     {
         $this->options = array_merge($this->options, $options);
@@ -71,14 +68,10 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
         if ($simple) {
             $this->currentPage = $this->setCurrentPage($currentPage);
             $this->hasMore     = count($items) > ($this->listRows);
-<<<<<<< HEAD
             if ($this->hasMore) {
                 $this->nextItem = $items->slice($this->listRows, 1);
             }
             $items = $items->slice(0, $this->listRows);
-=======
-            $items             = $items->slice(0, $this->listRows);
->>>>>>> 汤继康
         } else {
             $this->total       = $total;
             $this->lastPage    = (int) ceil($total / $listRows);
@@ -148,15 +141,9 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
      */
     public static function getCurrentPage($varPage = 'page', $default = 1)
     {
-<<<<<<< HEAD
         $page = (int) Request::instance()->param($varPage);
 
         if (filter_var($page, FILTER_VALIDATE_INT) !== false && $page >= 1) {
-=======
-        $page = Request::instance()->request($varPage);
-
-        if (filter_var($page, FILTER_VALIDATE_INT) !== false && (int) $page >= 1) {
->>>>>>> 汤继康
             return $page;
         }
 
@@ -301,16 +288,11 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
     public function each(callable $callback)
     {
         foreach ($this->items as $key => $item) {
-<<<<<<< HEAD
             $result = $callback($item, $key);
             if (false === $result) {
                 break;
             } elseif (!is_object($item)) {
                 $this->items[$key] = $result;
-=======
-            if ($callback($item, $key) === false) {
-                break;
->>>>>>> 汤继康
             }
         }
 
@@ -383,7 +365,6 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
 
     public function toArray()
     {
-<<<<<<< HEAD
         if ($this->simple) {
             return [
                 'per_page'     => $this->listRows,
@@ -402,21 +383,6 @@ abstract class Paginator implements ArrayAccess, Countable, IteratorAggregate, J
             ];
         }
 
-=======
-        try {
-            $total = $this->total();
-        } catch (\DomainException $e) {
-            $total = null;
-        }
-
-        return [
-            'total'        => $total,
-            'per_page'     => $this->listRows(),
-            'current_page' => $this->currentPage(),
-            'last_page'    => $this->lastPage,
-            'data'         => $this->items->toArray(),
-        ];
->>>>>>> 汤继康
     }
 
     /**
