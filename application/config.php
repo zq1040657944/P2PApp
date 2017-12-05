@@ -70,7 +70,7 @@ return [
     // 操作方法后缀
     'action_suffix'          => '',
     // 自动搜索控制器
-    'controller_auto_search' => false,
+    'controller_auto_search' => true,
 
     // +----------------------------------------------------------------------
     // | URL设置
@@ -139,10 +139,13 @@ return [
         // 标签库标签结束标记
         'taglib_end'   => '}',
     ],
+
     // 视图输出字符串内容替换
     'view_replace_str'       => [
-        '__PUBLIC__'=>DS.'P2PApp'.DS.'public'.DS.'admin'.DS,
-    ],
+		'__CSS__' => DS.'static'.DS.'css'.DS,
+		'__JS__'  => DS.'static'.DS.'script'.DS,
+		'__IMG__' => DS.'static'.DS.'images'.DS,
+	],
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
     'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
@@ -239,4 +242,6 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+
+	
 ];

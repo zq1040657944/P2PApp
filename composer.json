@@ -1,11 +1,4 @@
 {
-<<<<<<< HEAD
-    "name": "asus/p2p-app",
-    "require-dev": {
-        "topthink/think-captcha": "^2.0"
-    },
-    "require": {}
-=======
     "name": "topthink/think",
     "description": "the new thinkphp framework",
     "type": "project",
@@ -39,5 +32,4 @@
     "config": {
         "preferred-install": "dist"
     }
->>>>>>> 汤继康
 }
