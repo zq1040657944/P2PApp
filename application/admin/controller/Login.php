@@ -19,6 +19,8 @@ class Login extends Controller
 	public function login(){
 		$post = Request::instance();
 		$data = $post->post();
+		// echo "<pre>";
+		// print_r($data);exit;
 		$arr = $this->decodePwd($data);
 		
 		// $checkRes = $data['result'];
