@@ -5286,6 +5286,8 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 <<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 	                			var webview = self.options.webview;
 	                			if(webview){
 	                				webview.setBounce({
@@ -5296,6 +5298,7 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 	                			}
 =======
 >>>>>>> 716e38aa78358978aeaa011da7458db8bd18da37
+>>>>>>> f3a8af7d53ca0d4d4294a60a2f415ab190ffb191
                 				plus.webview.currentWebview().setBounce({
 		                        offset: {
 		                            top: self.options.down.height + "px"
@@ -5303,8 +5306,11 @@ Function.prototype.bind = Function.prototype.bind || function(to) {
 		                    });
 <<<<<<< HEAD
 =======
+<<<<<<< HEAD
+=======
 >>>>>>> 汤继康
 >>>>>>> 716e38aa78358978aeaa011da7458db8bd18da37
+>>>>>>> f3a8af7d53ca0d4d4294a60a2f415ab190ffb191
 	                		}
                 		},15);
                 }.bind(this));
