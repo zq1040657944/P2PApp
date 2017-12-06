@@ -33,5 +33,11 @@ $(function(){
 	}); 	
 	$mask.on('touchend',function(){
 		if(state)onClick('off');
+<<<<<<< HEAD
 	});
 });
+=======
+	}); 	
+});
+
+>>>>>>> dev3

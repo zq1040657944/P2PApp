@@ -3,9 +3,7 @@ namespace app\admin\Controller;
 
 use think\Controller;
 use think\Session;
-/**
-*快易贷后台首页
-*/
+
 
 class Index extends Controller
 {

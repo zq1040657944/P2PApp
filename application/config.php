@@ -141,11 +141,15 @@ return [
     ],
 
     // 视图输出字符串内容替换
+<<<<<<< HEAD
     'view_replace_str'       => [
 		'__CSS__' => DS.'static'.DS.'css'.DS,
 		'__JS__'  => DS.'static'.DS.'script'.DS,
 		'__IMG__' => DS.'static'.DS.'images'.DS,
 	],
+=======
+        '__PUBLIC__'=>DS.'P2PApp'.DS.'public'.DS.'admin'.DS,
+>>>>>>> dev3
     // 默认跳转页面对应的模板文件
     'dispatch_success_tmpl'  => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
     'dispatch_error_tmpl'    => THINK_PATH . 'tpl' . DS . 'dispatch_jump.tpl',
