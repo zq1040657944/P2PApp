@@ -12,38 +12,21 @@
 <script type="text/javascript" src="script/idangerous.swiper.js"></script>
 </head>
 <body>
-<!--浮动-->
-<div class="dropMask"></div>
-<div class="dragBtn"></div>
-<div class="dropBox">
-  <div class="dropSkin"></div>
-  <ul class="dropList">
-    <li class="nth-child_1"> <a href="index.html" class="dropIco"></a>
-      <p>首页</p>
-    </li>
-    <li class="nth-child_2"> <a href="list.html" class="dropIco"></a>
-      <p>投资</p>
-    </li>
-    <li class="nth-child_3"> <a href="个人中心.html" class="dropIco"></a>
-      <p>我的账户</p>
-    </li>
-    <li class="nth-child_4"> <a href="register.html" class="dropIco"></a>
-      <p>注册</p>
-    </li>
-    <li class="nth-child_5"> <a href="login.html" class="dropIco"></a>
-      <p>登录</p>
-    </li>
-  </ul>
-</div>
 <script src="script/jquery-ui.min.js"></script>
 <script src="script/index.js"></script>
 <!-- 页面头部 -->
-<header class="header"><a href="#" class="logo"><img src="images/logo.png"></a><a href="#" class="topleft" id="allmm"><i><img src="images/add.png" width="13"></i>&nbsp;
+<header class="header">
+	<a href="#" class="logo"><img src="images/logo.png"></a>
+	<a href="#" class="topleft" id="allmm"><i><img src="images/add.png" width="13"></i>&nbsp;
   <e>合肥</e>
   </a>
   <!-- 登录和未登录 -->
   <div class="nav-top-bar" onClick="$(this).next().stop().slideToggle(200,'easeOutQuad')"></div>
-  <div class="header-nav"> <a href="#"> <img src="images/register.png" /> 注册 </a> <a href="#"> <img src="images/login.png" /> 登录 </a> <a href="#"> <img src="images/invest.png" /> 投资 </a> </div>
+  <div class="header-nav"> 
+  	<a href="register.html"><img src="images/register.png" /> 注册 </a>
+    <a href="login.html"><img src="images/login.png" /> 登录 </a> 
+    <a href="#"> <img src="images/invest.png" /> 投资 </a> 
+  </div>
 </header>
 <!-- 中间内容 -->
 <div class="main">
@@ -100,16 +83,12 @@
   <div class="mx10 pb10"> <a href="#" class="index-more"><i>查看全部项目</i></a> </div>
 </div>
 <!-- 页面底部 -->
-<<<<<<< HEAD
 <nav class="footer border_t" id="footer"> 
-	<a href="index.html" class="" id="jx"><span></span>首页</a> 
+	<a href="index.html" class="nav_on" id="jx"><span></span>首页</a> 
 	<a href="list.html" id="lc" class=""><span></span>理财</a> 
 	<a href="toloan.html" id="jk" class=""><span></span>借款</a> 
-	<a href="个人中心.html" id="cf" class=""><span></span>我的账户</a> 
+	<a href="usercenter.html" id="cf" class=""><span></span>我的账户</a> 
 </nav>
-=======
-<nav class="footer border_t" id="footer"> <a href="index.html" class="" id="jx"><span></span>首页</a> <a href="list.html" id="lc" class="nav_on"><span></span>理财</a> <a href="#" id="jk" class=""><span></span>借款</a> <a href="个人中心.html" id="cf" class=""><span></span>我的账户</a> </nav>
->>>>>>> 汤继康
 <!--合作机构-->
 <div id="allmenu" style="display:none;">
   <div class="pt45" style="margin-top: 0px;">

@@ -11,6 +11,5 @@
 
 return [
     'connector' => 'Sync'
-
 ];
 
