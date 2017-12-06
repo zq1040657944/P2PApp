@@ -32,4 +32,9 @@
     "config": {
         "preferred-install": "dist"
     }
+    "name": "asus/p2p-app",
+    "require-dev": {
+        "topthink/think-captcha": "^2.0"
+    },
+    "require": {}
 }

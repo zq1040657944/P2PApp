@@ -1,8 +1,9 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:90:"D:\phpStudy\PHPTutorial\WWW\Now\P2PApp\public/../application/admin\view\shop\shopList.html";i:1512472342;s:44:"../application/admin/view/common/header.html";i:1512435487;s:41:"../application/admin/view/common/nav.html";i:1512455057;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>轮播图管理</title>
+		<title>产品管理</title>
 		<!-- basic styles -->
 		<base href="__PUBLIC__">
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -43,7 +44,63 @@
 	</head>
 
 	<body>
-		{include file='../application/admin/view/common/header.html' /}
+		<div class="navbar navbar-default" id="navbar">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				<div class="navbar-header pull-left">
+					<a href="#" class="navbar-brand">
+						<small>
+							<i class="icon-leaf"></i>
+							ACE后台管理系统
+						</small>
+					</a><!-- /.brand -->
+				</div><!-- /.navbar-header -->
+
+				<div class="navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="javascript:void(0);" class="dropdown-toggle">
+								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+								<span class="user-info">
+									<small>欢迎光临,</small>
+									Jason
+								</span>
+
+								<i class="icon-caret-down"></i>
+							</a>
+
+							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#">
+										<i class="icon-cog"></i>
+										设置
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<i class="icon-user"></i>
+										个人资料
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="__URL__/loginOut">
+										<i class="icon-off"></i>
+										退出
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul><!-- /.ace-nav -->
+				</div><!-- /.navbar-header -->
+			</div><!-- /.container -->
+		</div>
 
 		<div class="main-container" id="main-container">
 			<script type="text/javascript">
@@ -55,7 +112,182 @@
 					<span class="menu-text"></span>
 				</a>
 
-				{include file='../application/admin/view/common/nav.html' /}
+				<div class="sidebar" id="sidebar">
+	<script type="text/javascript">
+		try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+	</script>
+
+	<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+		<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+			<button class="btn btn-success">
+				<i class="icon-signal"></i>
+			</button>
+
+			<button class="btn btn-info">
+				<i class="icon-pencil"></i>
+			</button>
+
+			<button class="btn btn-warning">
+				<i class="icon-group"></i>
+			</button>
+
+			<button class="btn btn-danger">
+				<i class="icon-cogs"></i>
+			</button>
+		</div>
+
+		<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+			<span class="btn btn-success"></span>
+
+			<span class="btn btn-info"></span>
+
+			<span class="btn btn-warning"></span>
+
+			<span class="btn btn-danger"></span>
+		</div>
+	</div><!-- #sidebar-shortcuts -->
+
+	<ul class="nav nav-list">
+		<li>
+			<a href="index.html">
+				<i class="icon-dashboard"></i>
+				<span class="menu-text">首页</span>
+			</a>
+		</li>
+
+		<li>
+			<a href="javascript:void(0);" class="dropdown-toggle">
+				<i class="icon-desktop"></i>
+				<span class="menu-text"> 前台组件 </span>
+
+				<b class="arrow icon-angle-down"></b>
+			</a>
+
+			<ul class="submenu">
+				<li>
+					<a href="javascript:void(0);" class="dropdown-toggle">
+						<i class="icon-double-angle-right"></i>
+
+						轮播图管理
+						<b class="arrow icon-angle-down"></b>
+					</a>
+
+					<ul class="submenu">
+						<li>
+							<a href="slideshow/index">
+								<i class="icon-plus"></i>
+								添加新图片
+							</a>
+						</li>
+
+						<li>
+							<a href="slideshow/slideShow">
+								<i class="icon-eye-open"></i>
+								查看图片列表
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="dropdown-toggle">
+						<i class="icon-double-angle-right"></i>
+
+						产品管理
+						<b class="arrow icon-angle-down"></b>
+					</a>
+
+					<ul class="submenu">
+						<li>
+							<a href="shop/index">
+								<i class="icon-plus"></i>
+								添加新产品
+							</a>
+						</li>
+
+						<li>
+							<a href="shop/shopList">
+								<i class="icon-eye-open"></i>
+								查看产品列表
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="javascript:void(0);" class="dropdown-toggle">
+				<i class="icon-list"></i>
+				<span class="menu-text"> 表格 </span>
+
+				<b class="arrow icon-angle-down"></b>
+			</a>
+
+			<ul class="submenu">
+				<li>
+					<a href="tables.html">
+						<i class="icon-double-angle-right"></i>
+						简单 &amp; 动态
+					</a>
+				</li>
+
+				<li>
+					<a href="jqgrid.html">
+						<i class="icon-double-angle-right"></i>
+						jqGrid plugin
+					</a>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="javascript:void(0);" class="dropdown-toggle">
+				<i class="icon-edit"></i>
+				<span class="menu-text"> 表单 </span>
+
+				<b class="arrow icon-angle-down"></b>
+			</a>
+
+			<ul class="submenu">
+				<li>
+					<a href="form-elements.html">
+						<i class="icon-double-angle-right"></i>
+						表单组件
+					</a>
+				</li>
+
+				<li>
+					<a href="form-wizard.html">
+						<i class="icon-double-angle-right"></i>
+						向导提示 &amp; 验证
+					</a>
+				</li>
+
+				<li>
+					<a href="wysiwyg.html">
+						<i class="icon-double-angle-right"></i>
+						编辑器
+					</a>
+				</li>
+
+				<li>
+					<a href="dropzone.html">
+						<i class="icon-double-angle-right"></i>
+						文件上传
+					</a>
+				</li>
+			</ul>
+		</li>
+	</ul><!-- /.nav-list -->
+
+	<div class="sidebar-collapse" id="sidebar-collapse">
+		<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+	</div>
+
+	<script type="text/javascript">
+		try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+	</script>
+</div>
 
 				<div class="main-content">
 					<div class="breadcrumbs" id="breadcrumbs">
@@ -66,11 +298,11 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="javascript:void(0);">Home</a>
 							</li>
 
 							<li>
-								<a href="#">Slideshow</a>
+								<a href="javascript:void(0);">Shop</a>
 							</li>
 						</ul><!-- .breadcrumb -->
 
@@ -87,10 +319,10 @@
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
-								Slideshow
+								商品
 								<small>
 									<i class="icon-double-angle-right"></i>
-									Tables show
+									商品 列表
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -111,53 +343,92 @@
 															</label>
 														</th>
 														<!-- <th>ID</th> -->
-														<th>标题</th>
-														<th class="hidden-480">图片</th>
+														<th>名称</th>
+														<th class="hidden-480">类型</th>
 
 														<th>
 															<i class="icon-time bigger-110 hidden-480"></i>
-															添加时间
+															年化率
 														</th>
+														<th class="hidden-480">项目金额</th>
 														<th class="hidden-480">状态</th>
+														<th>
+															<i class="icon-time bigger-110 hidden-480"></i>
+															项目期限
+														</th>
+														<th>
+															<i class="icon-time bigger-110 hidden-480"></i>
+															锁定期
+														</th>
+														<th>
+															<i class="icon-time bigger-110 hidden-480"></i>
+															上线时间
+														</th>
+														<th>已募集金额</th>
 														<td>操作&nbsp;&nbsp;
-															<a style="text-decoration:none" href="slideshow/index"><i title="去添加" class="icon-plus bigger-120"></i></a>
+															<a style="text-decoration:none" href="shop/index"><i title="去添加" class="icon-plus bigger-120"></i></a>
 														</th>
 													</tr>
 												</thead>
-						<?php foreach($data as $k=>$v){?>
 						<tbody>
+							<?php foreach ($data as $k => $v){?>
 							<tr>
 								<td class="center" style="vertical-align:middle;">
-									<input type="checkbox" value="<?=$v['id']?>" class="ace" />
+									<input type="checkbox" value="" class="ace" />
 									<span class="lbl"></span>
 								</td>
 							<td style="vertical-align:middle;">
-								<?=$v['title']?>
-							</td>
-							<td><img src="../uploads/<?=$v['file']?>" width="80px"></td>
-							<td class="hidden-480" style="vertical-align:middle;">
-								<?php $time = date('Y-m-d H:i:s',$v['createtime']);echo $time?>
+								<?=$v['sname']?>
 							</td>
 							<td style="vertical-align:middle;">
-								<?php if($v['status'] == 1){?>
-								<a href="javascript:void(0);" class="clickSet" status="<?=$v['status']?>" style="text-decoration:none">
-									<i class="icon-ok bigger-120"></i>
-								</a>
-								<?php }else{?>
-								<a href="javascript:void(0);" class="clickSet" status="<?=$v['status']?>" style="text-decoration:none">
-									<i class="icon-remove bigger-120"></i>
-								</a>
-								<?php }?>
+								<?php switch ($v['type']){
+										case 0:
+										  echo "3个月";break;
+										case 1:
+										  echo "6个月";break;
+										case 2:
+										  echo "一年";break;
+										case 3:
+										  echo "一年以上";break;
+								}?>
+							</td>
+							<td style="vertical-align:middle;">
+								<?php $res = $v['salary']*100;echo $res.'%';?>
+							</td>
+							<td style="vertical-align:middle;">
+								<?=$v['money']?>
+							</td>
+							<td style="vertical-align:middle;">
+								<?php switch ($v['status']){
+										case 1:
+										  echo "准备上线";break;
+										case 2:
+										  echo "正在募集";break;
+										case 3:
+										  echo "正在回款";break;
+										case 4:
+										  echo "回款完毕";break;
+								}?>
+							</td>
+							<td style="vertical-align:middle;">
+								<?=$v['time']?>
+							</td>
+							<td><?=$v['locktime']?></td>
+							<td class="hidden-480" style="vertical-align:middle;">
+								<?=$v['onlinetime']?>
+							</td>
+							<td style="vertical-align:middle;">
+								<?=$v['intermoney']?>
 							</td>
 
 							<td style="vertical-align:middle;">
-								<button class="btn btn-xs btn-danger killData" d="<?=$v['id']?>">
+								<button class="btn btn-xs btn-danger killData" d="<?=$v['sid']?>">
 									<i class="icon-trash bigger-120"></i>
 								</button>
 							</td>
 							</tr>
+							<?php }?>
 						</tbody>
-						<?php }?>
 
 											</table>
 										</div><!-- /.table-responsive -->

@@ -64,3 +64,36 @@
 [ sql ] [ DB ] CONNECT:[ UseTime:0.153133s ] mysql:host=101.201.66.194;port=3306;dbname=p2pApp;charset=utf8
 [ sql ] [ SQL ] SHOW COLUMNS FROM `p_shop` [ RunTime:0.076842s ]
 [ sql ] [ SQL ] SELECT * FROM `p_shop` WHERE  `sid` = 2 LIMIT 1 [ RunTime:0.119000s ]
+---------------------------------------------------------------
+[ 2017-12-06T11:02:30+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/order/shopinfo?callback=jQuery18205671193384711397_1512529350191&sid=2&_=1512529350246
+[ info ] www.mywebsitezhang.xin/index.php/index/order/shopinfo?callback=jQuery18205671193384711397_1512529350191&sid=2&_=1512529350246 [运行时间：0.523181s][吞吐率：1.91req/s] [内存消耗：2,332.10kb] [文件加载：41]
+[ info ] [ LANG ] C:\Users\hp\Desktop\App\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'order',
+    2 => 'shopinfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'www.mywebsitezhang.xin',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'UM_distinctid=15f6fbb1e5427d-013b02f86952bf-3e63430c-100200-15f6fbb1e55910; tj_cid=b823d35e-8972-17a9-5879-791bfee82375; bdshare_firstime=1511682024863; CNZZDATA1266198848=1389686593-1509408054-%7C1511682000; PHPSESSID=lq03q8lhod5vsaqt6cat33dqn1',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery18205671193384711397_1512529350191',
+  'sid' => '2',
+  '_' => '1512529350246',
+)
+[ info ] [ RUN ] app\index\controller\Order->Shopinfo[ C:\Users\hp\Desktop\App\application\index\controller\Order.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.127659s ] mysql:host=101.201.66.194;port=3306;dbname=p2pApp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_shop` [ RunTime:0.197987s ]
+[ sql ] [ SQL ] SELECT * FROM `p_shop` WHERE  `sid` = 2 LIMIT 1 [ RunTime:0.102497s ]

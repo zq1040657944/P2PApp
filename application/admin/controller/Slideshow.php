@@ -5,6 +5,7 @@ use think\Controller;
 use think\Session;
 use think\Request;
 use think\Db;
+use app\admin\model\Slideshowm;
 
 /**
 *快易贷后台轮播图
@@ -12,6 +13,7 @@ use think\Db;
 
 class Slideshow extends Controller
 {
+	//登录验证
 	public function _initialize(){
 		$key1 = Session::get('joinname');
 		$key2 = Session::get('joind');
@@ -50,10 +52,51 @@ class Slideshow extends Controller
 	
 	//展示页面
 	public function slideShow(){
-		$result = Db::name('slideshow')
-        ->select();
+		$slideshow = new Slideshowm();
+		$result = $slideshow->actionShow();
 		return $this->fetch('slideshow',[
 			'data' => $result,
 		]);
+	}
+
+	//删除数据
+	public function killData(){
+		$d = Request::instance()->post('d');
+		$slideshow = new Slideshowm();
+		$result = $slideshow->actionKill($d);
+		if($result){
+			$arr = [
+				'code' => '200',
+				'msg' => '操作成功！'
+			];
+		}else{
+			$arr = [
+				'code' => '0001',
+				'msg' => '操作失败！'
+			];
+		}
+		echo json_encode($arr);
+	}
+
+	//即点即改
+	public function clintSet(){
+		$s = Request::instance()->post('s');
+		$d = Request::instance()->post('d');
+		$s = ($s==1)?0:1;
+
+		$slideshow = new Slideshowm();
+		$result = $slideshow->actionSet($s,$d);
+		if($result){
+			$arr = [
+				'code' => '200',
+				'msg' => '操作成功！'
+			];
+		}else{
+			$arr = [
+				'code' => '0001',
+				'msg' => '操作失败！'
+			];
+		}
+		echo json_encode($arr);
 	}
 }

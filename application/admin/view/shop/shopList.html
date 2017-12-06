@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>轮播图管理</title>
+		<title>产品管理</title>
 		<!-- basic styles -->
 		<base href="__PUBLIC__">
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
@@ -66,11 +66,11 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="javascript:void(0);">Home</a>
 							</li>
 
 							<li>
-								<a href="#">Slideshow</a>
+								<a href="javascript:void(0);">Shop</a>
 							</li>
 						</ul><!-- .breadcrumb -->
 
@@ -87,10 +87,10 @@
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
-								Slideshow
+								商品
 								<small>
 									<i class="icon-double-angle-right"></i>
-									Tables show
+									商品 列表
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -111,53 +111,92 @@
 															</label>
 														</th>
 														<!-- <th>ID</th> -->
-														<th>标题</th>
-														<th class="hidden-480">图片</th>
+														<th>名称</th>
+														<th class="hidden-480">类型</th>
 
 														<th>
 															<i class="icon-time bigger-110 hidden-480"></i>
-															添加时间
+															年化率
 														</th>
+														<th class="hidden-480">项目金额</th>
 														<th class="hidden-480">状态</th>
+														<th>
+															<i class="icon-time bigger-110 hidden-480"></i>
+															项目期限
+														</th>
+														<th>
+															<i class="icon-time bigger-110 hidden-480"></i>
+															锁定期
+														</th>
+														<th>
+															<i class="icon-time bigger-110 hidden-480"></i>
+															上线时间
+														</th>
+														<th>已募集金额</th>
 														<td>操作&nbsp;&nbsp;
-															<a style="text-decoration:none" href="slideshow/index"><i title="去添加" class="icon-plus bigger-120"></i></a>
+															<a style="text-decoration:none" href="shop/index"><i title="去添加" class="icon-plus bigger-120"></i></a>
 														</th>
 													</tr>
 												</thead>
-						<?php foreach($data as $k=>$v){?>
 						<tbody>
+							<?php foreach ($data as $k => $v){?>
 							<tr>
 								<td class="center" style="vertical-align:middle;">
-									<input type="checkbox" value="<?=$v['id']?>" class="ace" />
+									<input type="checkbox" value="" class="ace" />
 									<span class="lbl"></span>
 								</td>
 							<td style="vertical-align:middle;">
-								<?=$v['title']?>
-							</td>
-							<td><img src="../uploads/<?=$v['file']?>" width="80px"></td>
-							<td class="hidden-480" style="vertical-align:middle;">
-								<?php $time = date('Y-m-d H:i:s',$v['createtime']);echo $time?>
+								<?=$v['sname']?>
 							</td>
 							<td style="vertical-align:middle;">
-								<?php if($v['status'] == 1){?>
-								<a href="javascript:void(0);" class="clickSet" status="<?=$v['status']?>" style="text-decoration:none">
-									<i class="icon-ok bigger-120"></i>
-								</a>
-								<?php }else{?>
-								<a href="javascript:void(0);" class="clickSet" status="<?=$v['status']?>" style="text-decoration:none">
-									<i class="icon-remove bigger-120"></i>
-								</a>
-								<?php }?>
+								<?php switch ($v['type']){
+										case 0:
+										  echo "3个月";break;
+										case 1:
+										  echo "6个月";break;
+										case 2:
+										  echo "一年";break;
+										case 3:
+										  echo "一年以上";break;
+								}?>
+							</td>
+							<td style="vertical-align:middle;">
+								<?php $res = $v['salary']*100;echo $res.'%';?>
+							</td>
+							<td style="vertical-align:middle;">
+								<?=$v['money']?>
+							</td>
+							<td style="vertical-align:middle;">
+								<?php switch ($v['status']){
+										case 1:
+										  echo "准备上线";break;
+										case 2:
+										  echo "正在募集";break;
+										case 3:
+										  echo "正在回款";break;
+										case 4:
+										  echo "回款完毕";break;
+								}?>
+							</td>
+							<td style="vertical-align:middle;">
+								<?=$v['time']?>
+							</td>
+							<td><?=$v['locktime']?></td>
+							<td class="hidden-480" style="vertical-align:middle;">
+								<?=$v['onlinetime']?>
+							</td>
+							<td style="vertical-align:middle;">
+								<?=$v['intermoney']?>
 							</td>
 
 							<td style="vertical-align:middle;">
-								<button class="btn btn-xs btn-danger killData" d="<?=$v['id']?>">
+								<button class="btn btn-xs btn-danger killData" d="<?=$v['sid']?>">
 									<i class="icon-trash bigger-120"></i>
 								</button>
 							</td>
 							</tr>
+							<?php }?>
 						</tbody>
-						<?php }?>
 
 											</table>
 										</div><!-- /.table-responsive -->

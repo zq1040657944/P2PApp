@@ -1,13 +1,13 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:89:"D:\phpStudy\PHPTutorial\WWW\Now\P2PApp\public/../application/admin\view\shop\shopAdd.html";i:1512470216;s:44:"../application/admin/view/common/header.html";i:1512435487;s:41:"../application/admin/view/common/nav.html";i:1512455057;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>轮播图管理</title>
+		<title>产品管理</title>
 		<base href="__PUBLIC__">
 		<!-- basic styles -->
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-
 		<!--[if IE 7]>
 		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
@@ -36,7 +36,7 @@
 		<!-- ace settings handler -->
 
 		<script src="assets/js/ace-extra.min.js"></script>
-
+		<script language="javascript" type="text/javascript" src="assets/js/WdatePicker.js"></script>
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 		<!--[if lt IE 9]>
@@ -46,7 +46,63 @@
 	</head>
 
 	<body>
-		{include file='../application/admin/view/common/header.html' /}
+		<div class="navbar navbar-default" id="navbar">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				<div class="navbar-header pull-left">
+					<a href="#" class="navbar-brand">
+						<small>
+							<i class="icon-leaf"></i>
+							ACE后台管理系统
+						</small>
+					</a><!-- /.brand -->
+				</div><!-- /.navbar-header -->
+
+				<div class="navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="javascript:void(0);" class="dropdown-toggle">
+								<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />
+								<span class="user-info">
+									<small>欢迎光临,</small>
+									Jason
+								</span>
+
+								<i class="icon-caret-down"></i>
+							</a>
+
+							<ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#">
+										<i class="icon-cog"></i>
+										设置
+									</a>
+								</li>
+
+								<li>
+									<a href="#">
+										<i class="icon-user"></i>
+										个人资料
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="__URL__/loginOut">
+										<i class="icon-off"></i>
+										退出
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul><!-- /.ace-nav -->
+				</div><!-- /.navbar-header -->
+			</div><!-- /.container -->
+		</div>
 
 		<div class="main-container" id="main-container">
 			<script type="text/javascript">
@@ -58,7 +114,182 @@
 					<span class="menu-text"></span>
 				</a>
 
-				{include file='../application/admin/view/common/nav.html' /}
+				<div class="sidebar" id="sidebar">
+	<script type="text/javascript">
+		try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+	</script>
+
+	<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+		<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+			<button class="btn btn-success">
+				<i class="icon-signal"></i>
+			</button>
+
+			<button class="btn btn-info">
+				<i class="icon-pencil"></i>
+			</button>
+
+			<button class="btn btn-warning">
+				<i class="icon-group"></i>
+			</button>
+
+			<button class="btn btn-danger">
+				<i class="icon-cogs"></i>
+			</button>
+		</div>
+
+		<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+			<span class="btn btn-success"></span>
+
+			<span class="btn btn-info"></span>
+
+			<span class="btn btn-warning"></span>
+
+			<span class="btn btn-danger"></span>
+		</div>
+	</div><!-- #sidebar-shortcuts -->
+
+	<ul class="nav nav-list">
+		<li>
+			<a href="index.html">
+				<i class="icon-dashboard"></i>
+				<span class="menu-text">首页</span>
+			</a>
+		</li>
+
+		<li>
+			<a href="javascript:void(0);" class="dropdown-toggle">
+				<i class="icon-desktop"></i>
+				<span class="menu-text"> 前台组件 </span>
+
+				<b class="arrow icon-angle-down"></b>
+			</a>
+
+			<ul class="submenu">
+				<li>
+					<a href="javascript:void(0);" class="dropdown-toggle">
+						<i class="icon-double-angle-right"></i>
+
+						轮播图管理
+						<b class="arrow icon-angle-down"></b>
+					</a>
+
+					<ul class="submenu">
+						<li>
+							<a href="slideshow/index">
+								<i class="icon-plus"></i>
+								添加新图片
+							</a>
+						</li>
+
+						<li>
+							<a href="slideshow/slideShow">
+								<i class="icon-eye-open"></i>
+								查看图片列表
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="javascript:void(0);" class="dropdown-toggle">
+						<i class="icon-double-angle-right"></i>
+
+						产品管理
+						<b class="arrow icon-angle-down"></b>
+					</a>
+
+					<ul class="submenu">
+						<li>
+							<a href="shop/index">
+								<i class="icon-plus"></i>
+								添加新产品
+							</a>
+						</li>
+
+						<li>
+							<a href="shop/shopList">
+								<i class="icon-eye-open"></i>
+								查看产品列表
+							</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="javascript:void(0);" class="dropdown-toggle">
+				<i class="icon-list"></i>
+				<span class="menu-text"> 表格 </span>
+
+				<b class="arrow icon-angle-down"></b>
+			</a>
+
+			<ul class="submenu">
+				<li>
+					<a href="tables.html">
+						<i class="icon-double-angle-right"></i>
+						简单 &amp; 动态
+					</a>
+				</li>
+
+				<li>
+					<a href="jqgrid.html">
+						<i class="icon-double-angle-right"></i>
+						jqGrid plugin
+					</a>
+				</li>
+			</ul>
+		</li>
+
+		<li>
+			<a href="javascript:void(0);" class="dropdown-toggle">
+				<i class="icon-edit"></i>
+				<span class="menu-text"> 表单 </span>
+
+				<b class="arrow icon-angle-down"></b>
+			</a>
+
+			<ul class="submenu">
+				<li>
+					<a href="form-elements.html">
+						<i class="icon-double-angle-right"></i>
+						表单组件
+					</a>
+				</li>
+
+				<li>
+					<a href="form-wizard.html">
+						<i class="icon-double-angle-right"></i>
+						向导提示 &amp; 验证
+					</a>
+				</li>
+
+				<li>
+					<a href="wysiwyg.html">
+						<i class="icon-double-angle-right"></i>
+						编辑器
+					</a>
+				</li>
+
+				<li>
+					<a href="dropzone.html">
+						<i class="icon-double-angle-right"></i>
+						文件上传
+					</a>
+				</li>
+			</ul>
+		</li>
+	</ul><!-- /.nav-list -->
+
+	<div class="sidebar-collapse" id="sidebar-collapse">
+		<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+	</div>
+
+	<script type="text/javascript">
+		try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+	</script>
+</div>
 
 				<div class="main-content">
 					<div class="breadcrumbs" id="breadcrumbs">
@@ -69,11 +300,11 @@
 						<ul class="breadcrumb">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Home</a>
+								<a href="javascript:void(0);">Home</a>
 							</li>
 
 							<li>
-								<a href="#">Slideshow</a>
+								<a href="javascript:void(0);">Shop</a>
 							</li>
 						</ul><!-- .breadcrumb -->
 						
@@ -90,10 +321,10 @@
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
-								Slideshow
+								商品
 								<small>
 									<i class="icon-double-angle-right"></i>
-									Tables add
+									商品 添加
 								</small>
 							</h1>
 						</div><!-- /.page-header -->
@@ -113,26 +344,64 @@
 
 								<div id="dropzone">
 									 <!-- class="dropzone" -->
-									<form action="slideshow/actionAdd" method="post" enctype="multipart/form-data" >
+									<form action="shop/dataAdd" method="post" >
 										<center>
 										<table style="margin-top:80px">
 										<tr>
-											<td>标题</td>
-											<td><input type="text" name="title">
+											<td>产品名称：</td>
+											<td><input type="text" name="sname">
 											</td>
 										</tr>
 										<tr>
-											<td>轮播图</td>
-											<td><input name="file" type="file" /></td>
-										</tr>
-										<tr>
-											<td>是否选用</td>
+											<td>期限类型：</td>
 											<td>
-												是<input name="status" type="radio" value='1' checked/>
-												否<input name="status" type="radio" value='0' />
+												3个月<input name="type" type="radio" value='0' checked/>
+												&nbsp;6个月<input name="type" type="radio" value='1' />
+												&nbsp;12个月<input name="type" type="radio" value='2' />
+												&nbsp;12个月以上<input name="type" type="radio" value='3' />
 											</td>
 										</tr>
 										<tr>
+											<td>年化率：</td>
+											<td>
+												<input name="salary" type="text" style="width:50px;"/>&nbsp;&nbsp;%
+											</td>
+										</tr>
+										<tr>
+											<td>项目金额：</td>
+											<td>
+												<input name="money" type="text" />
+											</td>
+										</tr>
+										<tr>
+											<td>产品状态：</td>
+											<td>
+												即将上线<input name="status" type="radio" value='1' checked/>
+												&nbsp;正在筹集<input name="status" type="radio" value='2' />
+												&nbsp;正在回款<input name="status" type="radio" value='3' />
+												&nbsp;回款完毕<input name="status" type="radio" value='4' />
+											</td>
+										</tr>
+										<tr>
+											<td>项目期限：</td>
+											<td>
+												<input name="time" type="text" style="width:50px;"/>&nbsp;&nbsp;天
+											</td>
+										</tr>
+										<tr>
+											<td>锁定期：</td>
+											<td>
+												<input name="locktime" type="text" style="width:50px;"/>&nbsp;&nbsp;天
+											</td>
+										</tr>
+										<tr>
+											<td>上线时间：</td>
+											<td>
+												<input class="Wdate" type="text" name="onlinetime" onClick="WdatePicker()">
+											</td>
+										</tr>
+										<tr>
+											<td></td>
 											<td><input value="UPDATE" class="button button-pill button-primary" type="submit" style="margin-top:10px"></td>
 										</tr>
 										</table>
@@ -269,3 +538,4 @@
 	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
 </body>
 </html>
+<script src="http://www.lanrenzhijia.com/ajaxjs/1.7.2/jquery-1.7.2.min.js"></script>
