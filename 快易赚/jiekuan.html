@@ -40,7 +40,7 @@
         <label>婚姻状况</label>
         <input type="text" class="mui-input-clear Marital" placeholder="请填写您的婚姻状况(已婚/未婚)" onblur="Marital_status()">
     </div>
-    <span id="hunyin" style="color: red;"></span>
+    <span id="hunyin" style="color: red;" class="intext"></span>
     <div class="mui-input-row">
 		<label class="mui-navigate-right" href="#">职业</label>
 		<select name="select" id="select_k1" >
@@ -55,11 +55,12 @@
 	</div>
     <div class="mui-input-row">
         <label>籍贯</label>
-        <input type="text" class="mui-input-clear jiguan" placeholder="请填写籍贯">
+        <input type="text" class="mui-input-clear jiguan" placeholder="请认真填写籍贯,以便工作人员审核" onblur="jiguan()">
     </div>
+    <span id="jiguan" style="color: red;" class="intext"></span>
     <div class="mui-input-row">
 		<label class="mui-navigate-right" href="#">学历</label>
-		<select name="select" id="select_k1" >
+		<select name="select" id="select_k3" >
 		<option value="0" selected="true">请选择学历</option>
 		<option value="博士后">博士后</option>
 		<option value="博士">博士</option>
@@ -73,29 +74,31 @@
         <label>资金用途</label>
         <input type="text" class="mui-input-clear purpose" placeholder="请填写资金的用途" onblur="purpose()">
     </div>
-    <span id="purpose" style="color: red;"></span>
+    <span id="purpose" style="color: red;" class="intext"></span>
     <div class="mui-input-row">
         <label>还款来源</label>
         <input type="text" class="mui-input-clear fromMoney" placeholder="请输入还款来源" onblur="fromMoney()">
     </div>
-    <span id="fromMoney" style="color: red;"></span>
+    <span id="fromMoney" style="color: red;" class="intext"></span>
    <div class="mui-input-row">
         <label>借款金额</label>
-        <input type="text" class="mui-input-clear money" placeholder="最低金额为100" onblur="money()">
+        <input type="text" class="mui-input-clear money" placeholder="最低金额为1000元" onblur="money()">
     </div>
-     <span id="money" style="color: red;"></span>
+     <span id="money" style="color: red;" class="intext"></span>
+	    <div class="mui-input-row">
+			<label class="mui-navigate-right" href="#">借款时间</label>
+			<select name="select" id="select_k2" class="num">
+			</select>
+		</div>
     <div class="mui-input-row">
-        <label>资金使用的时间</label>
-        <input type="text" class="mui-input-clear usemoney" placeholder="请输入1--24之间的数字" onblur="usemoney()">
+        <label>月还款金额</label>
+        <input type="text" class="mui-input-clear Interest" placeholder="0" readonly="readonly" value="">
     </div>
-    <span id="usemoney" style="color: red;"></span>
-    <div class="mui-input-row">
-        <label>利息</label>
-        <input type="text" class="mui-input-clear" placeholder="资金使用时间" readonly="readonly" value="">
-    </div>
+        <button type="button" class="mui-btn mui-btn-success">计算月还款金额</button>
+        <div class="agreement" style="margin-left: 50px; color: red;">月还款金额采用等额本息还款</div>
+        <div class="agreement" style="margin-left: 20px; color: red;"><input type="radio" checked>我已阅读并同意快易贷的<a href="useragree.html" class="reg-xy">《隐私条款》</a>和 <a href="useragree1.html" class="reg-xy">《服务条款》</a> </div>
     <div class="mui-button-row">
-        <button type="button" class="mui-btn mui-btn-primary" >确认</button>
-        <button type="button" class="mui-btn mui-btn-danger" >取消</button>
+        <button type="button" class="mui-btn mui-btn-primary money_pay" >申请借款</button>
     </div>
 </form>
 </div>
@@ -103,8 +106,10 @@
 </html>
 <script>
 //调用
+var check;
 	$(document).ready(function(){
-		id='1';
+		var id='1';
+		//调用用户信息的接口（负责人：常晓飞）
 		$.ajax({
 		   type: "post",
 		   url: "http://www.mywebsitezhang.xin/index.php/index/user/getUserInfo",
@@ -112,6 +117,7 @@
 		   dataType: 'jsonp',
 		   jsonp: "callback",
 		   success: function(msg){
+		       console.log(msg);
 		   	//借款人的姓名
 		    $(".name").val(msg.realname);
 		    //借款人的身份证号
@@ -120,6 +126,21 @@
 		    $(".telphone").val(msg.tel);
 		   }
 		});
+		//调用借款时间的规则接口（张琪）
+        $.ajax({
+            type: "post",
+            url: "http://www.mywebsitezhang.xin/index.php/index/toloan/getToloanRule",
+            dataType: 'jsonp',
+            jsonp: "callback",
+            success: function(msg){
+                console.log(msg);
+                 var str ="";
+               　       $.each(msg, function(i, item){
+               		   str +='<option value='+item['from_month']+'><span>'+item['from_month']+'</span>月</option>';
+　　				  });
+               $("#select_k2").html(str);
+            }
+        });
    });
    //婚姻状况
    function Marital_status(){
@@ -133,16 +154,20 @@
 		 $("#hunyin").text("");
      }else{
        $("#hunyin").text(label+"格式错误");
-       return false
+         return false
      }
    }
   //资金用途
   function purpose(){
   	var purpose = $(".purpose").val();
+  	var han = /^[\u4e00-\u9fa5]+$/;
   	if(purpose == ""){
   		$("#purpose").text("资金用途不能为空");
-  		return false;
-  	}else{
+        return false;
+  	}else if(!han.test(purpose)){
+        $("#purpose").text("资金用途请为数字");
+        return false;
+    }else{
   	   $("#purpose").text("");
   	}
   }
@@ -150,10 +175,14 @@
   function fromMoney()
   {
   	var fromMoney = $(".fromMoney").val();
+      var han = /^[\u4e00-\u9fa5]+$/;
   	 if(fromMoney == ""){
   	 	$("#fromMoney").text("还款来源不能为空");
-  		return false;
-  	 }else{
+         return false;
+  	 }else if(!han.test(fromMoney)){
+         $("#fromMoney").text("还款来源请为汉字");
+         return false;
+     }else{
   	   $("#fromMoney").text("");
   	 }
   }
@@ -163,42 +192,158 @@
   	var money = $(".money").val();
   	var reg=/[0-9]/;
   	if(money == ""){
-  		$("#money").text("借款金额不能为空");
+  		mui.alert('借款金额不能为空','提示','确定');
   		return false;
   	}else if(!reg.test(money)){
   	   $("#money").text("借款金额格式错误");
   		return false;
   	}
-  	if(money<100){
-  	   $("#money").text("借款金额不能低于100元");
+  	if(money<1000){
+  	   $("#money").text("借款金额不能低于1000元");
   		return false;
-  	}else if(money>100000){
-  	$("#money").text("借款金额不能高于10万");
+  	}else if(money>1000000){
+  	$("#money").text("借款金额不能高于100万");
   		return false;
   	}else{
      	$("#money").text("");
   	}
   }
-  //借款使用时间
-  function usemoney()
+  //籍贯的正则验证
+  function jiguan()
   {
-  	var usemoney = $(".usemoney").val();
-  	var reg=/[1-24]/;
-  	if(usemoney == ""){
-  	  $("#usemoney").text("使用时间不能为空");
-  		return false;
-  	 }else if(!reg.test(usemoney)){
-  	   $("#usemoney").text("使用时间格式错误");
-  		return false;
-  	 }
-  	if(usemoney<1){
-  	 $("#usemoney").text("使用时间最少一个月");
-  		return false;
-  	}else if(usemoney > 24){
-  	 $("#usemoney").text("使用时间不能大于24个月");
-  		return false;
-  	}else{
-  	$("#usemoney").text("");
-  	}
+      var jiguan = $(".jiguan").val();
+      var han = /^[\u4e00-\u9fa5]+$/;
+      if(jiguan == ""){
+          $("#jiguan").text("籍贯不能为空");
+          return false;
+      }else if(!han.test(jiguan)){
+          $("#jiguan").text("请输入汉字");
+          return false;
+      }else{
+          $("#jiguan").text("");
+      }
   }
+  //计算还款金额
+  $(document).on("click",".mui-btn-success",function(){
+		//点击之前判断用户的借款金额，借款月份是否选择
+		var money = $(".money").val();
+		var reg=/[0-9]/;
+		if(money == ""){
+            check =false;
+            mui.alert('借款金额不能为空','提示','确定');
+            return false;
+	  	}else if(!reg.test(money)){
+            check =false;
+            mui.alert('借款金额为纯数字','提示','确定');
+            check =false;
+	  		return false;
+	  	}
+	  	if(money<1000){
+            check =false;
+            mui.alert('借款金额不能低于1000','提示','确定');
+	  		return false;
+	  	}else if(money>1000000){
+            check =false;
+            mui.alert('借款金额不能高于100万','提示','确定');
+	  		return false;
+	  	}
+	  	//借款时间的选中
+        var month = "";
+        $("#select_k2").each(function(i,item){
+                month = $(this).val();
+        })
+      //调用借款的
+      $.ajax({
+          type: "post",
+          url: "http://www.mywebsitezhang.xin/index.php/index/toloan/getAverageCapitalMethod",
+          data: {"money":money,"month":month},
+          dataType: 'jsonp',
+          jsonp: "callback",
+          success: function(msg){
+              console.log(msg);
+              if(msg.code == 400){
+                    $(".Interest").val(msg.month_stillMoney+"元");
+              }
+          }
+      })
+  	})
+    //借款申请提交
+    $(document).on("click",".money_pay",function(){
+        mui(".mui-input-group input").each(function () {
+            //若当前input为空，则alert提醒
+            if(!this.value||(this.value)==""){
+                var label = this.previousElementSibling;
+                mui.alert(label.innerText+"不允许为空");
+                check = false;
+                return false;
+            }else{
+                check = true;
+            }
+        });
+        $(".intext").each(function(i,item){
+            error_info = $(this).text();
+            if(error_info != ""){
+                var label = $(this).prev().text();
+                mui.alert(error_info);
+                check = false;
+                return false;
+            }else{
+                check = true;
+            }
+        });
+        console.log(check);
+//校验通过，继续执行业务逻辑
+        if(check){
+           //获取表单提交的数据信息
+            //获取当前用户的id
+            var uid = 1;
+            //获取真实姓名
+            var name = $(".name").val();
+            //获取身份账号
+            var idcard = $(".idcard").val();
+            //获取手机号
+            var telphone = $(".telphone").val();
+            //获取用户的婚姻状况
+            var marital = $(".Marital").val();
+            //获取职业的选择
+            var Occupation = "";
+            $("#select_k1").each(function(i,item){
+                Occupation = $(this).val();
+            });
+            //获取籍贯
+            var jiguan = $(".jiguan").val();
+            //获取学历
+            var Occupation = "";
+            $("#select_k1").each(function(i,item){
+                Occupation = $(this).val();
+            });
+            //获取资金用途
+            var capital = "";
+            $("#select_k3").each(function(i,item){
+                capital = $(this).val();
+            });
+            //获取还款来源
+            var fromMoney = $(".fromMoney").val();
+            //获取借款金额
+            var money = $(".money").val();
+            //获取借款时间
+            var month = "";
+            $("#select_k2").each(function(i,item){
+                month = $(this).val();
+            })
+            $.ajax({
+                type: "post",
+                url: "http://www.mywebsitezhang.xin/index.php/index/toloan/setToloanInfo",
+                data: {"uid":uid,"name":name,"idcard":idcard,"tel":telphone,"is_married":marital,"bronsite":jiguan,"knowledge":Occupation,"moneyroad":capital,"moneyinfo":fromMoney,"money":money,"usetime":month},
+                dataType: 'jsonp',
+                jsonp: "callback",
+                success: function(msg){
+                    console.log(msg);
+                    if(msg.code == "400"){
+                        mui.alert("借款申请已提交,请等待工作人员审核");
+                    }
+                }
+            });
+        }
+    })
 </script>
