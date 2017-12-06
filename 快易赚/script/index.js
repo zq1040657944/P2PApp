@@ -35,4 +35,3 @@ $(function(){
 		if(state)onClick('off');
 	}); 	
 });
-
