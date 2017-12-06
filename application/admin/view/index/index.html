@@ -2,16 +2,14 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>控制台 - Bootstrap后台管理系统模版Ace下载</title>
-		<meta name="keywords" content="Bootstrap模版,Bootstrap模版下载,Bootstrap教程,Bootstrap中文" />
-		<meta name="description" content="站长素材提供Bootstrap模版,Bootstrap教程,Bootstrap中文翻译等相关Bootstrap插件下载" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>P2PApp控制台</title>
+		<base href="__PUBLIC__">
 		<!-- basic styles -->
-		<link href="/admin/assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="/admin/assets/css/font-awesome.min.css" />
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 
 		<!--[if IE 7]>
-		  <link rel="stylesheet" href="/admin/assets/css/font-awesome-ie7.min.css" />
+		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
 		<![endif]-->
 
 		<!-- page specific plugin styles -->
@@ -22,25 +20,25 @@
 
 		<!-- ace styles -->
 
-		<link rel="stylesheet" href="/admin/assets/css/ace.min.css" />
-		<link rel="stylesheet" href="/admin/assets/css/ace-rtl.min.css" />
-		<link rel="stylesheet" href="/admin/assets/css/ace-skins.min.css" />
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
 
 		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="/admin/assets/css/ace-ie.min.css" />
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
 		<![endif]-->
 
 		<!-- inline styles related to this page -->
 
 		<!-- ace settings handler -->
 
-		<script src="/admin/assets/js/ace-extra.min.js"></script>
+		<script src="assets/js/ace-extra.min.js"></script>
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
 		<!--[if lt IE 9]>
-		<script src="/admin/assets/js/html5shiv.js"></script>
-		<script src="/admin/assets/js/respond.min.js"></script>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
 	</head>
 
@@ -298,9 +296,7 @@
 										个人资料
 									</a>
 								</li>
-
 								<li class="divider"></li>
-
 								<li>
 									<a href="__URL__/loginOut">
 									<a href="#">
@@ -470,8 +466,10 @@
 								</li>
 							</ul>
 						</li>
-
 						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-list"></i>
+								<span class="menu-text">订单管理</span>
 							<a href="javascript:void(0);" class="dropdown-toggle">
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-list"></i>
@@ -480,55 +478,20 @@
 							</a>
 							<ul class="submenu">
 								<li>
-									<a href="tables.html">
+									<a href="ordermanagement/orderlist">
 										<i class="icon-double-angle-right"></i>
-										简单 &amp; 动态
+										已付订单
 									</a>
 								</li>
 
 								<li>
-									<a href="jqgrid.html">
+									<a href="admin/ordermanagement/orderlist/stu/n">
 										<i class="icon-double-angle-right"></i>
-										jqGrid plugin
+										未付订单
 									</a>
 								</li>
 							</ul>
 						</li>
-						<li>
-							<a href="javascript:void(0);" class="dropdown-toggle">
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-edit"></i>
-								<span class="menu-text"> 表单 </span>
-								<b class="arrow icon-angle-down"></b>
-							</a>
-							<ul class="submenu">
-								<li>
-									<a href="form-elements.html">
-										<i class="icon-double-angle-right"></i>
-										表单组件
-									</a>
-								</li>
-								<li>
-									<a href="form-wizard.html">
-										<i class="icon-double-angle-right"></i>
-										向导提示 &amp; 验证
-									</a>
-								</li>
-								<li>
-									<a href="wysiwyg.html">
-										<i class="icon-double-angle-right"></i>
-										编辑器
-									</a>
-								</li>
-								<li>
-									<a href="dropzone.html">
-										<i class="icon-double-angle-right"></i>
-										文件上传
-									</a>
-								</li>
-							</ul>
-						</li>
-
 						<li>
 							<a href="widgets.html">
 								<i class="icon-list-alt"></i>
@@ -1886,42 +1849,42 @@
 		<!--[if !IE]> -->
 
 		<script type="text/javascript">
-			window.jQuery || document.write("<script src='/admin/assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
+			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
 		</script>
 
 		<!-- <![endif]-->
 
 		<!--[if IE]>
 <script type="text/javascript">
- window.jQuery || document.write("<script src='/admin/assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
+ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");
 </script>
 <![endif]-->
 
 		<script type="text/javascript">
-			if("ontouchend" in document) document.write("<script src='/admin/assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
+			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
 		</script>
-		<script src="/admin/assets/js/bootstrap.min.js"></script>
-		<script src="/admin/assets/js/typeahead-bs2.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/typeahead-bs2.min.js"></script>
 
 		<!-- page specific plugin scripts -->
 
 		<!--[if lte IE 8]>
-		  <script src="/admin/assets/js/excanvas.min.js"></script>
+		  <script src="assets/js/excanvas.min.js"></script>
 		<![endif]-->
 
-		<script src="/admin/assets/js/jquery-ui-1.10.3.custom.min.js"></script>
-		<script src="/admin/assets/js/jquery.ui.touch-punch.min.js"></script>
-		<script src="/admin/assets/js/jquery.slimscroll.min.js"></script>
-		<script src="/admin/assets/js/jquery.easy-pie-chart.min.js"></script>
-		<script src="/admin/assets/js/jquery.sparkline.min.js"></script>
-		<script src="/admin/assets/js/flot/jquery.flot.min.js"></script>
-		<script src="/admin/assets/js/flot/jquery.flot.pie.min.js"></script>
-		<script src="/admin/assets/js/flot/jquery.flot.resize.min.js"></script>
+		<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="assets/js/jquery.slimscroll.min.js"></script>
+		<script src="assets/js/jquery.easy-pie-chart.min.js"></script>
+		<script src="assets/js/jquery.sparkline.min.js"></script>
+		<script src="assets/js/flot/jquery.flot.min.js"></script>
+		<script src="assets/js/flot/jquery.flot.pie.min.js"></script>
+		<script src="assets/js/flot/jquery.flot.resize.min.js"></script>
 
 		<!-- ace scripts -->
 
-		<script src="/admin/assets/js/ace-elements.min.js"></script>
-		<script src="/admin/assets/js/ace.min.js"></script>
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.min.js"></script>
 
 		<!-- inline scripts related to this page -->
 
@@ -2116,8 +2079,6 @@
 					if(this.checked) $(this).closest('li').addClass('selected');
 					else $(this).closest('li').removeClass('selected');
 				});
-				
-			
 			})
 		</script>
 	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
