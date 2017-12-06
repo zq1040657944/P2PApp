@@ -13,16 +13,13 @@ class User extends Model{
      * 返回规则
      * 1001 验证码不正确
      * 1002 用户名或密码不正确
-<<<<<<< HEAD
      * 1004 电话号码已经存在
      * 1005 手机验证码不存在
      * 1006 入库失败
      * 200 成功返回 {userid}返回用户信息
-=======
      * 100 成功返回 {userid}返回用户信息
      * 104 参数错误
      * 1005 用户不存在
->>>>>>> 00f543c9be70fe692629ffda3c9ff91ced9d07cd
      */
     public function userLogin($username,$pwd,$authCode,$sessionCode){
         //验证验证码是否正确
@@ -50,8 +47,6 @@ class User extends Model{
         }
        return ["code"=>$code,"msg"=>$msg];
     }
-<<<<<<< HEAD
-
     /**
      * @param $tel
      * @return bool
@@ -98,11 +93,6 @@ class User extends Model{
         }
         return ['code'=>$code,'msg'=>$msg];
     }
-}
-
-
-?>
-=======
     //获取用户信息
     public function getUserInfo($id)
     {
@@ -134,4 +124,3 @@ class User extends Model{
         return $success;
     }
 }
->>>>>>> 00f543c9be70fe692629ffda3c9ff91ced9d07cd
