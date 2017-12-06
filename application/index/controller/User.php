@@ -76,15 +76,16 @@ class User extends Controller{
         $res=$userModel->bindModel($tel,$password,$openid,$type);
         return $this->request->param("callback")."(".json_encode($res).")";
     }
-    public function userReg()
-    {
-        $request = Request::instance();
-        $this->callback = $request->param("callback");
-        $tel = $request->param("tel");
-        $password = $request->param('password');
+    public function userReg(){
+        $request=Request::instance();
+        $this->callback=$request->param("callback");
+        $tel=$request->param("tel");
+        $password=$request->param('password');
+
         //验证码
         $authCode = $request->param("authCode");
         //手机验证码
+
         $telauthcode = $request->param("telauthcode");
         $userModel = new \app\index\model\User();
         $return = $userModel->modelReg($tel, $password, $authCode, $telauthcode);

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>我的银行卡</title>
+   	<link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/common.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>	 
+</head>
+<body>
+	<div class="loading"><img src="images/ajax-loader.gif"/></div>
+	<div data-role="page" class="touzi bank" id="set-bank">
+		<header data-role="header" data-position="fixed">
+			<a href="#" data-rel="back" class="ui-btn ui-icon-carat-l ui-btn-icon-left ui-nodisc-icon" data-transition="slide" data-direction="revserse">返回</a> 
+			<h3>银行卡</h3>
+		</header>
+		<div class="ui-content" data-role="content">
+			<div id='mycard'></div>
+			<a href="set-gobank.html" data-transition="slide">添加新卡</a>
+		</div>
+		
+	    <script src="script/jquery.js"></script>
+   		<script src="script/jquery.mobile-1.4.5.min.js"></script>
+   		<script type="text/javascript">
+   			
+   			//获取另一个html页面的参数  uid （用户ID）
+			function parseUrl(){
+				var url = location.href; //获取当前URL
+				
+				var i = url.indexOf('?'); //获取？的索引  以便寻找参数
+				
+				if(i == -1) return ; // 当参数 为 -1 就返回空
+				var queryStr = url.substr(i+1); //获取地址栏的参数串 参数名1=参数值1&参数名2=参数值2
+				
+				var arr1 = queryStr.split('&');  //用& 把它们split分割成一个数组  ['参数1=>参数值1',....]\
+				
+				var arr2 = []; //定义新的数组
+				
+				for(i in arr1){ //遍历arr1中的元素
+					var ta = arr1[i].split('=');  // 分割成这个样子  ["uid", "1"]
+					
+					arr2[ta[0]] = ta[1]; //更改成这个样子	
+				}
+				return arr2;
+			}
+   			
+   			$(window).load(function(){
+				$(".loading").fadeOut();
+				var param = [];
+				param = parseUrl();  //获取参数数组
+				
+				//uid
+				var uid= param.uid;
+				
+				//当页面加载的时候 就发送一次ajax 获取我的银行卡
+				$.ajax({
+					type:"POST",
+					url:"http://www.mywebsitezhang.xin/index.php/index/payment/myCard",
+					data:{
+						uid:uid,
+					},
+					dataType:"jsonp",
+					jsonp:'card',
+					success:function(data){
+						if(data.code == 2010){ //当前没有绑卡 请绑新卡
+							alert(data.msg);
+							window.location.href='set-gobank.html?uid='+uid; //跳转到添加新卡的页面
+						}else if(data.code == 2009){ //绑卡的情况
+							console.log(data.data);
+							getCard(data.data);
+						}
+					}
+				});
+				
+				//处理银行卡列表
+				function getCard(data){
+					var str = "";
+							$.each(data,function(k,v){
+								str+='<ul>';
+								str+='<li>';
+								str+='<small>开户行</small>';
+								str+='<span>'+v.open_bank+'</span>';
+								str+='</li>';
+								str+='<li>';
+								str+='<small>账号</small>';
+								str+='<span>'+v.number+'</span>';
+								str+='</li>';
+								str+='</ul>';
+							});
+							$('#mycard').append(str);
+				}
+				
+			})
+   		</script>
+	</div>
+</body>
+</html>
