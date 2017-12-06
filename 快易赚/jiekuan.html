@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+<title>首页</title>
+<link href="css/mui.min.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/idangerous.swiper.css" />
+<script type="text/javascript" src="script/jquery.js"></script>
+<script type="text/javascript" src="script/banner.js"></script>
+<script type="text/javascript" src="script/idangerous.swiper.js"></script>
+ <script src="script/mui.min.js"></script>
+ <script type="text/javascript" charset="utf-8">
+      	mui.init();
+ </script>
+</head>
+<body>
+	<!--借款姐界面的头部-->
+<section>
+  <div class="navigation-bar"> <a href="javascript:history.go(-1)" class="z-01"></a> <span>借款</span> <a href="index.html" class="z-02"></a> </div>
+</section>
+<!--借款界面的内容申请单-->
+<div>
+	<form class="mui-input-group">
+    <div class="mui-input-row">
+        <label>姓名</label>
+    <input type="text" class="name" placeholder="请输入借款人的姓名"  value="" readonly="readonly">
+    </div>
+    <div class="mui-input-row">
+        <label>身份证号</label>
+        <input type="text" class="idcard" placeholder="请输入正确的身份证号" value="" readonly="readonly">
+    </div>
+     <div class="mui-input-row">
+        <label>手机号</label>
+        <input type="text" class="telphone" placeholder="请输入手机号" value="" readonly="readonly">
+    </div>
+    <div class="mui-input-row">
+        <label>婚姻状况</label>
+        <input type="text" class="mui-input-clear Marital" placeholder="请填写您的婚姻状况(已婚/未婚)" onblur="Marital_status()">
+    </div>
+    <span id="hunyin" style="color: red;" class="intext"></span>
+    <div class="mui-input-row">
+		<label class="mui-navigate-right" href="#">职业</label>
+		<select name="select" id="select_k1" >
+		<option value="0" selected="true">请选择您的职业</option>
+		<option value="IT工程师">IT工程师</option>
+		<option value="教师">教师</option>
+		<option value="医生">医生</option>
+		<option value="程师(非IT)">工程师(非IT)</option>
+		<option value="白领">白领</option>
+		<option value="农民">农民</option>
+		</select>
+	</div>
+    <div class="mui-input-row">
+        <label>籍贯</label>
+        <input type="text" class="mui-input-clear jiguan" placeholder="请认真填写籍贯,以便工作人员审核" onblur="jiguan()">
+    </div>
+    <span id="jiguan" style="color: red;" class="intext"></span>
+    <div class="mui-input-row">
+		<label class="mui-navigate-right" href="#">学历</label>
+		<select name="select" id="select_k3" >
+		<option value="0" selected="true">请选择学历</option>
+		<option value="博士后">博士后</option>
+		<option value="博士">博士</option>
+		<option value="硕士">硕士</option>
+		<option value="研究生">研究生</option>
+		<option value="本科">本科</option>
+		<option value="专科">专科</option>
+		</select>
+	</div>
+    <div class="mui-input-row">
+        <label>资金用途</label>
+        <input type="text" class="mui-input-clear purpose" placeholder="请填写资金的用途" onblur="purpose()">
+    </div>
+    <span id="purpose" style="color: red;" class="intext"></span>
+    <div class="mui-input-row">
+        <label>还款来源</label>
+        <input type="text" class="mui-input-clear fromMoney" placeholder="请输入还款来源" onblur="fromMoney()">
+    </div>
+    <span id="fromMoney" style="color: red;" class="intext"></span>
+   <div class="mui-input-row">
+        <label>借款金额</label>
+        <input type="text" class="mui-input-clear money" placeholder="最低金额为1000元" onblur="money()">
+    </div>
+     <span id="money" style="color: red;" class="intext"></span>
+	    <div class="mui-input-row">
+			<label class="mui-navigate-right" href="#">借款时间</label>
+			<select name="select" id="select_k2" class="num">
+			</select>
+		</div>
+    <div class="mui-input-row">
+        <label>月还款金额</label>
+        <input type="text" class="mui-input-clear Interest" placeholder="0" readonly="readonly" value="">
+    </div>
+        <button type="button" class="mui-btn mui-btn-success">计算月还款金额</button>
+        <div class="agreement" style="margin-left: 50px; color: red;">月还款金额采用等额本息还款</div>
+        <div class="agreement" style="margin-left: 20px; color: red;"><input type="radio" checked>我已阅读并同意快易贷的<a href="useragree.html" class="reg-xy">《隐私条款》</a>和 <a href="useragree1.html" class="reg-xy">《服务条款》</a> </div>
+    <div class="mui-button-row">
+        <button type="button" class="mui-btn mui-btn-primary money_pay" >申请借款</button>
+    </div>
+</form>
+</div>
+</body>
+</html>
+<script>
+//调用
+var check;
+	$(document).ready(function(){
+		var id='1';
+		//调用用户信息的接口（负责人：常晓飞）
+		$.ajax({
+		   type: "post",
+		   url: "http://www.mywebsitezhang.xin/index.php/index/user/getUserInfo",
+		   data: {"id":id},
+		   dataType: 'jsonp',
+		   jsonp: "callback",
+		   success: function(msg){
+		       console.log(msg);
+		   	//借款人的姓名
+		    $(".name").val(msg.realname);
+		    //借款人的身份证号
+		    $(".idcard").val(msg.idcard);
+		    //借款人的手机号
+		    $(".telphone").val(msg.tel);
+		   }
+		});
+		//调用借款时间的规则接口（张琪）
+        $.ajax({
+            type: "post",
+            url: "http://www.mywebsitezhang.xin/index.php/index/toloan/getToloanRule",
+            dataType: 'jsonp',
+            jsonp: "callback",
+            success: function(msg){
+                console.log(msg);
+                 var str ="";
+               　       $.each(msg, function(i, item){
+               		   str +='<option value='+item['from_month']+'><span>'+item['from_month']+'</span>月</option>';
+　　				  });
+               $("#select_k2").html(str);
+            }
+        });
+   });
+   //婚姻状况
+   function Marital_status(){
+     var marital = $(".Marital").val();
+      var label = $(".Marital").prev().text();
+     if(marital==""){
+     	 $("#hunyin").text(label+"不能为空");
+     	 return false;
+     }
+     if(marital == "已婚" || marital == "未婚"){
+		 $("#hunyin").text("");
+     }else{
+       $("#hunyin").text(label+"格式错误");
+         return false
+     }
+   }
+  //资金用途
+  function purpose(){
+  	var purpose = $(".purpose").val();
+  	var han = /^[\u4e00-\u9fa5]+$/;
+  	if(purpose == ""){
+  		$("#purpose").text("资金用途不能为空");
+        return false;
+  	}else if(!han.test(purpose)){
+        $("#purpose").text("资金用途请为数字");
+        return false;
+    }else{
+  	   $("#purpose").text("");
+  	}
+  }
+  //还款来源
+  function fromMoney()
+  {
+  	var fromMoney = $(".fromMoney").val();
+      var han = /^[\u4e00-\u9fa5]+$/;
+  	 if(fromMoney == ""){
+  	 	$("#fromMoney").text("还款来源不能为空");
+         return false;
+  	 }else if(!han.test(fromMoney)){
+         $("#fromMoney").text("还款来源请为汉字");
+         return false;
+     }else{
+  	   $("#fromMoney").text("");
+  	 }
+  }
+  //借款金额
+  function money()
+  {
+  	var money = $(".money").val();
+  	var reg=/[0-9]/;
+  	if(money == ""){
+  		mui.alert('借款金额不能为空','提示','确定');
+  		return false;
+  	}else if(!reg.test(money)){
+  	   $("#money").text("借款金额格式错误");
+  		return false;
+  	}
+  	if(money<1000){
+  	   $("#money").text("借款金额不能低于1000元");
+  		return false;
+  	}else if(money>1000000){
+  	$("#money").text("借款金额不能高于100万");
+  		return false;
+  	}else{
+     	$("#money").text("");
+  	}
+  }
+  //籍贯的正则验证
+  function jiguan()
+  {
+      var jiguan = $(".jiguan").val();
+      var han = /^[\u4e00-\u9fa5]+$/;
+      if(jiguan == ""){
+          $("#jiguan").text("籍贯不能为空");
+          return false;
+      }else if(!han.test(jiguan)){
+          $("#jiguan").text("请输入汉字");
+          return false;
+      }else{
+          $("#jiguan").text("");
+      }
+  }
+  //计算还款金额
+  $(document).on("click",".mui-btn-success",function(){
+		//点击之前判断用户的借款金额，借款月份是否选择
+		var money = $(".money").val();
+		var reg=/[0-9]/;
+		if(money == ""){
+            check =false;
+            mui.alert('借款金额不能为空','提示','确定');
+            return false;
+	  	}else if(!reg.test(money)){
+            check =false;
+            mui.alert('借款金额为纯数字','提示','确定');
+            check =false;
+	  		return false;
+	  	}
+	  	if(money<1000){
+            check =false;
+            mui.alert('借款金额不能低于1000','提示','确定');
+	  		return false;
+	  	}else if(money>1000000){
+            check =false;
+            mui.alert('借款金额不能高于100万','提示','确定');
+	  		return false;
+	  	}
+	  	//借款时间的选中
+        var month = "";
+        $("#select_k2").each(function(i,item){
+                month = $(this).val();
+        })
+      //调用借款的
+      $.ajax({
+          type: "post",
+          url: "http://www.mywebsitezhang.xin/index.php/index/toloan/getAverageCapitalMethod",
+          data: {"money":money,"month":month},
+          dataType: 'jsonp',
+          jsonp: "callback",
+          success: function(msg){
+              console.log(msg);
+              if(msg.code == 400){
+                    $(".Interest").val(msg.month_stillMoney+"元");
+              }
+          }
+      })
+  	})
+    //借款申请提交
+    $(document).on("click",".money_pay",function(){
+        mui(".mui-input-group input").each(function () {
+            //若当前input为空，则alert提醒
+            if(!this.value||(this.value)==""){
+                var label = this.previousElementSibling;
+                mui.alert(label.innerText+"不允许为空");
+                check = false;
+                return false;
+            }else{
+                check = true;
+            }
+        });
+        $(".intext").each(function(i,item){
+            error_info = $(this).text();
+            if(error_info != ""){
+                var label = $(this).prev().text();
+                mui.alert(error_info);
+                check = false;
+                return false;
+            }else{
+                check = true;
+            }
+        });
+        console.log(check);
+//校验通过，继续执行业务逻辑
+        if(check){
+           //获取表单提交的数据信息
+            //获取当前用户的id
+            var uid = 1;
+            //获取真实姓名
+            var name = $(".name").val();
+            //获取身份账号
+            var idcard = $(".idcard").val();
+            //获取手机号
+            var telphone = $(".telphone").val();
+            //获取用户的婚姻状况
+            var marital = $(".Marital").val();
+            //获取职业的选择
+            var Occupation = "";
+            $("#select_k1").each(function(i,item){
+                Occupation = $(this).val();
+            });
+            //获取籍贯
+            var jiguan = $(".jiguan").val();
+            //获取学历
+            var Occupation = "";
+            $("#select_k1").each(function(i,item){
+                Occupation = $(this).val();
+            });
+            //获取资金用途
+            var capital = "";
+            $("#select_k3").each(function(i,item){
+                capital = $(this).val();
+            });
+            //获取还款来源
+            var fromMoney = $(".fromMoney").val();
+            //获取借款金额
+            var money = $(".money").val();
+            //获取借款时间
+            var month = "";
+            $("#select_k2").each(function(i,item){
+                month = $(this).val();
+            })
+            $.ajax({
+                type: "post",
+                url: "http://www.mywebsitezhang.xin/index.php/index/toloan/setToloanInfo",
+                data: {"uid":uid,"name":name,"idcard":idcard,"tel":telphone,"is_married":marital,"bronsite":jiguan,"knowledge":Occupation,"moneyroad":capital,"moneyinfo":fromMoney,"money":money,"usetime":month},
+                dataType: 'jsonp',
+                jsonp: "callback",
+                success: function(msg){
+                    console.log(msg);
+                    if(msg.code == "400"){
+                        mui.alert("借款申请已提交,请等待工作人员审核");
+                    }
+                }
+            });
+        }
+    })
+</script>
