@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="format-detection" content="telephone=no,email=no,adress=no"/>
-<title>首页</title>
+<title>登录</title>
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <script type="text/javascript" src="script/jquery.js"></script>
 <script>
@@ -48,11 +48,24 @@
           <span>记住用户名</span><a href="#">忘记密码?</a> </div>
         <input class="btn-submit" style="border:none; cursor:pointer;" type="button" value="登　录" onClick="">
       </form>
-      <div class="m-ljzc"> 没有账号？<a href="#">立即注册</a> </div>
+     <div class="m-ljzc"><a href="" class="sdkqq">QQ</a></div>
+      <div class="m-ljzc"> 没有账号？<a href="./register.html">立即注册</a> </div>
     </div>
   </div>
 </div>
 <script>
+      window.onload=function () {
+      	  var obj=$(".sdkqq");
+          $.ajax({
+              type:"get",
+              url:"http://www.mywebsitezhang.xin/index.php/index/sdkqq/createUrl",
+              dataType:"jsonp",
+              jsonp:"callback",
+              success:function(msg){
+                  obj.attr("href",msg.url);
+              }
+          })
+      }
 		//<![CDATA[
 		           var loginError = false;
 		           

@@ -99,7 +99,7 @@ body[0].removeChild(mybg);
             <input id="_spring_security_remember_me" type="hidden" name="_spring_security_remember_me" value="true">
             <input id="authCode" type="text" name="authCode" class="c-txt c-code" maxlength="4"  placeholder="请输入验证码">
           </div>
-          <span class="c-yzm check"><img style="height: 100%;" src="http://www.tp5.com/yzm.php"></span>
+          <span class="c-yzm check"><img style="height: 100%;" src="http://www.mywebsitezhang.xin/yzm.php"></span>
           <p id="j_yzmErrorDiv"></p>
         </div>
         <div class="m-field m-yzm">
@@ -114,7 +114,7 @@ body[0].removeChild(mybg);
         <div class="agreement"> 我已阅读并同意阳光易贷的<a href="useragree.html" class="reg-xy">《隐私条款》</a>和 <a href="useragree1.html" class="reg-xy">《服务条款》</a> </div>
         <input id="registerForm:submitButton" type="submit" name="registerForm:submitButton" value="同意并继续" style="border:none;cursor:pointer;" class="btn-submit mt20" onClick="return checkAll();">
       </form>
-      <div class="m-ljzc"> 已有账号　<a href="/phone/plogin">立即登录</a> </div>
+      <div class="m-ljzc"> 已有账号　<a href="./login.html">立即登录</a> </div>
     </div>
   </div>
 </div>
@@ -133,8 +133,7 @@ $("#allmm").bind("click",function(){
 						//刷新验证码
 			$('.check').click(function(){
         		var src = $(this).children('img').attr('src');
-        		alert(src);
-       			 $(this).children('img').attr('src','http://www.tp5.com/yzm.php?code = '+Math.random());
+       			 $(this).children('img').attr('src','http://www.mywebsitezhang.xin/yzm.php?code = '+Math.random());
    				 })
 			//获取验证码
 			$(".c-hqyzm").click(function(){
@@ -145,7 +144,7 @@ $("#allmm").bind("click",function(){
 				}
 				$.ajax({
 					type:"get",
-					url:"http://www.tp5.com/index.php/index/note/notecallback",
+					url:"http://www.mywebsitezhang.xin/index.php/index/note/notecallback",
 					data:{
 						"tel":tel,
 					},
@@ -183,7 +182,7 @@ $("#allmm").bind("click",function(){
 				}
 				$.ajax({
 					type:"get",
-					url:"http://www.tp5.com/index.php/index/user/userreg",
+					url:"http://www.mywebsitezhang.xin/index.php/index/user/userreg",
 					data:{
 						"tel":tel,
 						"password":password,
