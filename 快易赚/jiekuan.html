@@ -108,12 +108,13 @@
 //调用
 var check;
 	$(document).ready(function(){
-		var id='1';
+		//获取用户的id
+		var userId=sessionStorage.getItem("userid");
 		//调用用户信息的接口（负责人：常晓飞）
 		$.ajax({
 		   type: "post",
 		   url: "http://www.mywebsitezhang.xin/index.php/index/user/getUserInfo",
-		   data: {"id":id},
+		   data: {"id":userId},
 		   dataType: 'jsonp',
 		   jsonp: "callback",
 		   success: function(msg){
@@ -331,16 +332,19 @@ var check;
             $("#select_k2").each(function(i,item){
                 month = $(this).val();
             })
+            var myDate = new Date();
+            var now_time = myDate.toLocaleString( );
             $.ajax({
                 type: "post",
                 url: "http://www.mywebsitezhang.xin/index.php/index/toloan/setToloanInfo",
-                data: {"uid":uid,"name":name,"idcard":idcard,"tel":telphone,"is_married":marital,"bronsite":jiguan,"knowledge":Occupation,"moneyroad":capital,"moneyinfo":fromMoney,"money":money,"usetime":month},
+                data: {"uid":uid,"name":name,"idcard":idcard,"tel":telphone,"is_married":marital,"bronsite":jiguan,"knowledge":Occupation,"moneyroad":capital,"moneyinfo":fromMoney,"money":money,"usetime":month,"creat_time":now_time,"status":0},
                 dataType: 'jsonp',
                 jsonp: "callback",
                 success: function(msg){
                     console.log(msg);
                     if(msg.code == "400"){
                         mui.alert("借款申请已提交,请等待工作人员审核");
+                        window.location.href='借款记录.html';
                     }
                 }
             });

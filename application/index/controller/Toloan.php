@@ -1,6 +1,7 @@
 <?php
 namespace app\index\controller;
 /**
+ * 借贷模块的接口
  * Created by PhpStorm.
  * User: zq
  * Date: 2017/12/4
@@ -51,22 +52,37 @@ class Toloan extends Controller
     {
         $request = Request::instance();
         $getInfo = $request->param();
-        $data = json_decode($getInfo,true);
         $rule = new Toloanrule();
+        //将借款信息入库借款表
         $info = $rule->setToloanInfo($getInfo);
         return $request->param("callback")."(".json_encode($info).")";
     }
     /**
-     * 借款的详细信息接
-     * @author zq <[1040657944@qq.com]>
-     * @return [json] [LoanInfo]
+     * 借贷记录的接口
+     * @return json
      */
-    public function getLoanInfo()
+    public function GetToloanRecord()
     {
-        
-
+        $request = Request::instance();
+        $userid = $request->param("userid");
+        //调用查询借贷记录的接口
+        $rule = new Toloanrule();
+        $GetToloanInfo = $rule ->getUserToloanInfo($userid);
+        return $request->param("callback")."(".json_encode($GetToloanInfo).")";
     }
-    
-
+    /**
+     * 获取点击更多信息的接口
+     * @param userid,page
+     * @return json
+     */
+    public function GetPageInfo()
+    {
+        $request = Request::instance();
+        $userid = $request->param("userid");
+        $page = $request->param("p");
+        $rule = new Toloanrule();
+        $pageInfo = $rule->getPageInfo($userid,$page);
+        return $request->param("callback")."(".json_encode($pageInfo).")";
+    }
 }
 
