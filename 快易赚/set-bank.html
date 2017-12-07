@@ -48,6 +48,7 @@
 			}
    			
    			$(window).load(function(){
+<<<<<<< HEAD
 				$(".loading").fadeOut();
 				var param = [];
 				param = parseUrl();  //获取参数数组
@@ -55,6 +56,13 @@
 				//uid
 				var uid= param.uid;
 				
+=======
+//				$(".loading").fadeOut();
+//				var param = [];
+//				param = parseUrl();  //获取参数数组
+				//uid
+				var uid=sessionStorage.getItem("userid");
+>>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
 				//当页面加载的时候 就发送一次ajax 获取我的银行卡
 				$.ajax({
 					type:"POST",

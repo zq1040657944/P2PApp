@@ -158,6 +158,45 @@ class Toloanrule extends Model
             return  $message;
         }
 
+<<<<<<< HEAD
+=======
+    }
+    /**
+     * 支付
+     * @return [type] [description]
+     */
+    public function pay_man($userid,$pay_money,$pwd)
+    {
+        if($userid == ""){
+            $message = [
+                'code'=> "4001",
+                'message' => "参数错误",
+            ];
+            return  $message;
+        }
+        $userInfo = Db::name('userinfo')->where('uid',$userid)->find();
+        if($userInfo)
+        {
+            if($userInfo['pay_password'] != MD5($pwd)){
+                $message = [
+                'code'=> "4005",
+                'message' => "支付密码错误",
+                ];
+                return  $message;
+            }else{
+               $new_money = $userInfo['money']+$pay_money;
+              $res = Db::table('p_userinfo')->where('uid',$userid)->setField('money',$new_money);
+              if($res){
+                    $message = [
+                    'code'=> "4000",
+                    'message' => "充值成功",
+                    ];
+                    return  $message;
+              }
+            }
+
+        }
+>>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
     }   
 
 }

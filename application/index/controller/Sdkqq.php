@@ -97,10 +97,17 @@ class Sdkqq extends Controller {
         $type=1;
         $return=$userModel->sdkCheck($app_id,$type);
         if($return['userid']==""){
+<<<<<<< HEAD
             header("location:http://127.0.0.1:8020/appt/binduser.html?__hbt=1512459177542&openid=$app_id&type=1");
         }else{
             $userid=$return['userid'];
             header("location:http://127.0.0.1:8020/appt/index.html?__hbt=1512456318047&userid=$userid&type=1");
+=======
+            header("location:http://www.mywebsitezhang.xin/快易赚/binduser.html?__hbt=1512459177542&openid=$app_id&type=1");
+        }else{
+            $userid=$return['userid'];
+            header("location:http://http://www.mywebsitezhang.xin/快易赚/index.html?__hbt=1512456318047&userid=$userid&type=1");
+>>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
         }
 
     }

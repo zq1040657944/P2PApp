@@ -35,6 +35,7 @@ class Note extends Controller
         }
         return $request->param("callback")."(".json_encode(['code'=>$code,'msg'=>$msg]).")";
     }
+<<<<<<< HEAD
     public function forGetpwd(){
         $request=Request::instance();
         $request->param("callback");
@@ -60,6 +61,8 @@ class Note extends Controller
         $siteEr=['code'=>$code,'msg'=>$msg];
         return $request->param('callback')."(".json_encode($siteEr).")";
     }
+=======
+>>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
     public function noteCallback(){
         $request=Request::instance();
         $request->param("callback");

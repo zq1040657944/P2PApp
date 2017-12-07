@@ -84,5 +84,22 @@ class Toloan extends Controller
         $pageInfo = $rule->getPageInfo($userid,$page);
         return $request->param("callback")."(".json_encode($pageInfo).")";
     }
+<<<<<<< HEAD
+=======
+    /**
+     * 支付
+     * @return [type] [description]
+     */
+    public function payInfo()
+    {
+        $request = Request::instance();
+        $userid = $request->param("userid");
+        $pay_money = $request->param("pay_money");
+        $pwd = $request->param("pwd");
+        $rule = new Toloanrule();
+        $payInfo = $rule->pay_man($userid,$pay_money,$pwd);
+        return $request->param("callback")."(".json_encode($payInfo).")";
+    }
+>>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
 }
 

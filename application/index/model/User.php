@@ -60,10 +60,16 @@ class User extends Model{
     public function checkTel($tel){
         $userTel=Db::table("p_user")->where('tel',$tel)->find();
         if(empty($userTel)){
+<<<<<<< HEAD
             //为空返回 手机号不存在
             return true;
         }else{
             //手机号存在
+=======
+            //为空返回
+            return true;
+        }else{
+>>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
             return false;
         }
     }
@@ -218,6 +224,7 @@ class User extends Model{
         }
         return ['code'=>$code,'msg'=>$msg];
     }
+<<<<<<< HEAD
     /**
      * 修改密码
      */
@@ -233,6 +240,9 @@ class User extends Model{
         }
         return ['code'=>$code,'msg'=>$msg];
     }
+=======
+
+>>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
     /**
      * 修改手机号
      */
@@ -247,7 +257,10 @@ class User extends Model{
         }
         $data=['tel'=>$tel];
         $res=Db::table("p_user")->where("id",$userid)->update($data);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
         if($res){
             $code="200";
             $msg="修改成功";

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+<title>首页</title>
+<link rel="stylesheet" type="text/css" href="css/setting.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/sweet-alert.css" />
+<script type="text/javascript" src="script/jquery.js"></script>
+<script type="text/javascript" src="script/column.js"></script>
+</head>
+<body>
+<!-- 页面头部 -->
+<section>
+  <div class="navigation-bar"><span>支付密码</span></div>
+</section>
+		<div id='input'>
+			<input type="password" class="form-control input-lg" name="old_pwd" placeholder="请输入6位支付密码"> 
+			<span id="pay" style="color: red;"></span>
+		</div>			
+<button type="button" class="waves-button form-control login-button input-lg waves-effect waves-effect" tabindex="4" data-dismiss="modal">确定</button>
+</body>
+</html>
+<script type="text/javascript">
+	//点击确定
+	$(document).on("click",".waves-button",function(){
+		    //验证数据信息
+		 		var userId=sessionStorage.getItem("userid");
+		 		var pay_money=sessionStorage.getItem("pay_money");
+		 		var input_lg = $(".form-control").val();
+			 		$.ajax({
+					type:"get",
+					url:"http://www.mywebsitezhang.xin/index.php/index/toloan/payinfo",
+					data:{"userid":userId,"pay_money":pay_money,"pwd":input_lg},
+					dataType:"jsonp",
+					jsonp:"callback",
+					success:function(msg){
+						if(msg.code == 4000){
+							location.href='pay_ok.html';
+						}else if(msg.code == 4005){
+							$("#pay").text(msg.message);
+						}
+					}
+			})
+	})
+</script>

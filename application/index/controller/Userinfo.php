@@ -54,7 +54,10 @@ class Userinfo extends Controller
         $return=$userModel->delMessage($id);
         return $this->request->param("callback")."(".json_encode($return).")";
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
     /**
      * 实名认证
      */
@@ -65,6 +68,9 @@ class Userinfo extends Controller
         $userModel=new \app\index\model\Userinfo();
         $retuen=$userModel->checkName($userid,$rename,$card);
         return $this->request->param("callback")."(".json_encode($retuen).")";
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
     }
 }
