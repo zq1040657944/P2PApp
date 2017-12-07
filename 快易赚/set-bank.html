@@ -48,13 +48,11 @@
 			}
    			
    			$(window).load(function(){
-				$(".loading").fadeOut();
-				var param = [];
-				param = parseUrl();  //获取参数数组
-				
+//				$(".loading").fadeOut();
+//				var param = [];
+//				param = parseUrl();  //获取参数数组
 				//uid
-				var uid= param.uid;
-				
+				var uid=sessionStorage.getItem("userid");
 				//当页面加载的时候 就发送一次ajax 获取我的银行卡
 				$.ajax({
 					type:"POST",

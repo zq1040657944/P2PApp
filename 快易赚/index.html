@@ -192,8 +192,7 @@ body[0].removeChild(mybg);
 						}
 						$('.swiper-wrapper').html(str);
 					}
-				})
-				
+				})	
 				//产品列表
 				$.ajax({
 					url:"http://www.mywebsitezhang.xin/index.php/index/shopinterface/shopList",
@@ -227,7 +226,7 @@ body[0].removeChild(mybg);
 		}
 		//获取用户登录的信息
 		var userId=sessionStorage.getItem("userid");
-          if(userId==null){
+          if(userId== null){
               $("#local").html("<a href='./register.html'> <img src='images/register.png'/> 注册 </a><a href='./login.html'> <img src='images/login.png' />登录</a>");
           }else{
               $("#local").html("<a href='.st.html'> <img src='images/invest.png' /> 投资 </a><a href='./login.html'> <img src='images/login.png' />退出</a>");
