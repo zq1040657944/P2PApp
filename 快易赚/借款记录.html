@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+<title>首页</title>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<script type="text/javascript" src="script/jquery.js"></script>
+</head>
+<body>
+<!-- 页面头部 -->
+<section>
+  <div class="navigation-bar"> <a href="javascript:history.go(-1)" class="z-01"></a> <span>借款记录</span> <a href="index.html" class="z-02"></a> </div>
+</section>
+<!-- 中间内容 -->
+<div class="wrapper">
+  <div class="personalform">
+    <div class="tzjl-con1" style="min-height:150px;padding-top:100px;text-align:center;background-color:#fff; display:none">您最近还没有投资记录！ </div>
+	  <div class="c-tabs-cnt c-tzjlinfo" style=" padding-bottom:60px;">
+          <table style="width: 100%">
+            <tbody>
+              <tr>
+                <th align="left" width="40%" style="padding-left:10px;">借款时间<span class="tbline" style="margin-top:15px;"></span></th>
+                <th width="25%" align="center">金额(元)<span class="tbline" style="margin-top:15px;"></span></th>
+                <th align="right" width="25%" style="padding-right:10px;">申请状态</th>
+              </tr>
+              <tbody id='box'>
+              </tbody>
+            </tbody>
+          </table>
+          <div class="clear"></div>
+          <div class="addmore"><a href="javascript:void(0);" title="查看更多" class="btn-ckgd">查看更多↓</a> </div>
+      </div>
+  </div>
+  <div class="clear"></div>
+  <input type="hidden" value="2" id="page"/>
+</div>
+<!-- 页面底部 -->
+<!-- 页面底部 -->
+<nav class="footer border_t" id="footer"> 
+	<a href="index.html" class="" id="jx"><span></span>首页</a> 
+	<a href="list.html" id="lc" class=""><span></span>理财</a> 
+	<a href="toloan.html" id="jk" class=""><span></span>借款</a> 
+	<a href="usercenter.html" id="cf" class="nav_on"><span></span>我的账户</a> 
+</nav>
+</body>
+</html>
+<script>
+		var userId=sessionStorage.getItem("userid");//获取用户的id
+$(function(){
+			if(userId != null){
+					$.ajax({
+					 type: "post",
+				   url: "http://www.mywebsitezhang.xin/index.php/index/toloan/getToloanRecord",
+				   data: {"userid":userId},
+				   dataType: 'jsonp',
+				   jsonp: "callback",
+				   success: function(msg){
+//				   	console.log(msg);
+				   	var str='';
+				      $.each(msg.data,function(i,item){
+				      	str+=' <tr>\
+			                <td align="left" width="40%" style="padding-left:10px; color:#4A4A4A;"><span class="tbline">'+item['creat_time']+'</span> </td>\
+			                <td style="color:#0caffe;" align="center"><span class="tbline"></span><i>'+item['money']+'</i></td>\
+			                <td align="right" style="padding-right:10px;"><a href="#">'+item['status']+'</a></td>\
+			              </tr>';
+				      })
+				      $("#box").html(str);
+				   }
+				});
+			}else{
+				window.location.href= 'index.html';
+			}	
+})
+//点击更多加载更多的借款信息
+$(document).on("click",".btn-ckgd",function(){
+	  //设定当前页
+	  var p = $("#page").val();
+	   if($(".btn-ckgd").text() == "查看更多↓"){
+	   	$.ajax({
+					 type: "post",
+				   url: "http://www.mywebsitezhang.xin/index.php/index/toloan/GetPageInfo",
+				   data: {"userid":userId,"p":p},
+				   dataType: 'jsonp',
+				   jsonp: "callback",
+				   success: function(msg){
+				   	if(msg.code == 4000){
+					   		var str='';
+					      $.each(msg.data,function(i,item){
+					      	str+=' <tr>\
+				                <td align="left" width="40%" style="padding-left:10px; color:#4A4A4A;"><span class="tbline">'+item['creat_time']+'</span> </td>\
+				                <td style="color:#0caffe;" align="center"><span class="tbline"></span><i>'+item['money']+'</i></td>\
+				                <td align="right" style="padding-right:10px;"><a href="#">'+item['status']+'</a></td>\
+				              </tr>';
+					      })
+					      $("#box").append(str);
+					     var page = parseInt(msg.page)+parseInt(1);//获取当前页数
+					     $("#page").val(page);
+				   	}else if(msg.code==4005){
+				   		 $(".btn-ckgd").text("没有更多借款信息了");
+				   	}
+				   }
+				});
+	   }
+})
+</script>

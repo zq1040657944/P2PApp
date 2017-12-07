@@ -1,0 +1,47 @@
+{
+	"index.html": {
+		"refer": [
+			"login.html",
+			"toloan.html",
+			"usercenter.html",
+			"list.html",
+			"register.html",
+			"infor.html"
+		]
+	},
+	"login.html": {
+		"refer": [
+			"index.html"
+		]
+	},
+	"usercenter.html": {
+		"refer": [
+			"index.html",
+			"toloan.html"
+		]
+	},
+	"list.html": {
+		"refer": [
+			"toloan.html",
+			"index.html"
+		]
+	},
+	"toloan.html": {
+		"refer": [
+			"usercenter.html",
+			"list.html",
+			"jiekuan.html",
+			"index.html"
+		]
+	},
+	"infor.html": {
+		"refer": [
+			"infor4.html"
+		]
+	},
+	"jiekuan.html": {
+		"refer": [
+			"toloan.html"
+		]
+	}
+}
