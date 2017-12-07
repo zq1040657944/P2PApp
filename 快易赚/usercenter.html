@@ -11,12 +11,7 @@
 <body>
 <!-- 页面头部 -->
 <section>
-<<<<<<< HEAD
-	 
-  <div class="navigation-bar"><span id="error"></span><a href="#" class="z-04"></a> <span>会员中心</span> <a href="#" class="z-03"></a> </div>
-=======
   <div class="navigation-bar"> <a href="#" class="z-04"></a> <span>会员中心</span> <a href="#" class="z-03"></a> </div>
->>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
 </section>
 <!-- 中间内容 -->
 <div class="summary">
@@ -29,28 +24,17 @@
   </div>
 </div>
 <div class="personal">
-<<<<<<< HEAD
-  <div class="personal-list"> <a class="plist" href="#"> <span class="picon1"></span><span class="ptit">充值</span><span class="iconarrow"></span> </a> <a class="plist" href="investment.html"> <span class="picon2"></span><span class="ptit">投资记录</span><span class="iconarrow"></span> </a> <a class="plist" href="借款记录.html"> <span class="picon7"></span><span class="ptit">借款记录</span><span class="iconarrow"></span> </a><a class="plist" href="#"> <span class="picon3"></span><span class="ptit">提现</span><span class="iconarrow"></span> </a> </div>
-=======
   <div class="personal-list"> <a class="plist" href="pay_set.htm"> <span class="picon1"></span><span class="ptit">充值</span><span class="iconarrow"></span> </a> <a class="plist" href="investment.html"> <span class="picon2"></span><span class="ptit">投资记录</span><span class="iconarrow"></span> </a> <a class="plist" href="借款记录.html"> <span class="picon7"></span><span class="ptit">借款记录</span><span class="iconarrow"></span> </a><a class="plist" href="#"> <span class="picon3"></span><span class="ptit">提现</span><span class="iconarrow"></span> </a> </div>
->>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
   <div class="personalout"> <a class="plist" href="./message.html"> <span class="picon5"></span><span class="ptit">系统消息（<i class="pink">0</i> 条未读）</span><span class="iconarrow"></span> </a> </div>
   <div class="personalout"> <a class="plist" href="safety.html"> <span class="picon4"></span><span class="ptit">安全设置</span><span class="iconarrow"></span> </a> </div>
   <div class="personalout" id="exit"> <a class="plist" href="javascript:void(0)"> <span class="picon6"></span><span class="ptit">退出账号</span><span class="iconarrow"></span> </a> </div>
 </div>
 <!-- 页面底部 -->
 <nav class="footer border_t" id="footer"> 
-<<<<<<< HEAD
-	<a href="index.html" class="nav_on" id="jx"><span></span>首页</a> 
-	<a href="list.html" id="lc" class=""><span></span>理财</a> 
-	<a href="toloan.html" id="jk" class=""><span></span>借款</a> 
-	<a href="usercenter.html" id="userinfo" class=""><span></span>我的账户</a> 
-=======
 	<a href="index.html" class="" id="jx"><span></span>首页</a> 
 	<a href="list.html" id="lc" class=""><span></span>理财</a> 
 	<a href="toloan.html" id="jk" class=""><span></span>借款</a> 
 	<a href="usercenter.html" id="userinfo" class="nav_on"><span></span>我的账户</a> 
->>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
 </nav>
 </body>
 <script>
@@ -64,15 +48,6 @@
 		}else{
 			$.ajax({
 				type:"get",
-<<<<<<< HEAD
-				data:{"userid":userId},
-				dataType:"jsonp",
-				jsonp:"callback",
-				url:"http://www.mywebsitezhang.xin/index.php/index/userinfo/gainuser",
-				success:function(msg){
-					var userinfo=msg.userinfo[0];
-					if(userinfo['img']==null){
-=======
 				url:"http://www.mywebsitezhang.xin/index.php/index/userinfo/gainuser",
 				data:{"userid":userId},
 				dataType:"jsonp",
@@ -80,7 +55,6 @@
 				success:function(msg){
 					var userinfo=msg.userinfo[0];
 					if(userinfo['img']== ''){
->>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
 						$("#photoImage").attr("src","images/avatar1.png");
 					}else{
 						$("#photoImage").attr("src",userinfo['img']);

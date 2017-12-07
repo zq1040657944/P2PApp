@@ -157,12 +157,9 @@ class Toloanrule extends Model
             ];
             return  $message;
         }
-
-<<<<<<< HEAD
-=======
     }
     /**
-     * 支付
+     * 支付接口
      * @return [type] [description]
      */
     public function pay_man($userid,$pay_money,$pwd)
@@ -196,7 +193,6 @@ class Toloanrule extends Model
             }
 
         }
->>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
     }   
 
 }

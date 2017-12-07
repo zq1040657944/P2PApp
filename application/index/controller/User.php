@@ -56,22 +56,12 @@ class User extends Controller{
         $tel=$this->request->param("tel");
         $userModel=new \app\index\model\User();
         $res=$userModel->checkTel($tel);
-<<<<<<< HEAD
-
-        if($res){
-           $code="1007";
-            $msg="手机号不存在";
-        }else{
-            $code="1004";
-            $msg="手机号码存在";
-=======
         if($res){
            $code="1007";
             $msg="手机号已经存在";
         }else{
             $code="1004";
             $msg="手机号码不存在";
->>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
         }
         $return=['code'=>$code,"msg"=>$msg];
         return $this->request->param("callback")."(".json_encode($return).")";
@@ -147,7 +137,6 @@ class User extends Controller{
         $return=$UserModel->modelUpdatetel($userid,$authoud,$tel);
         return $this->request->param("callback")."(".json_encode($return).")";
     }
-<<<<<<< HEAD
     /**
      * 验证手机验证码
      */
@@ -171,6 +160,4 @@ class User extends Controller{
         $return=$userModel->forgetSavepwd($pwd,$tel);
         return $this->request->param("callback")."(".json_encode($return).")";
     }
-=======
->>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
 }

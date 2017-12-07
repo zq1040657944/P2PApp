@@ -237,10 +237,42 @@ class Payment extends Controller
 
 			return Request::instance()->param('addCard')."(".$msg.")";
 		}
-		 /*
-     * 订单状态修改
-     *
-     */
+		 /**
+		 * addPayPwd 添加我的支付密码
+		 * @param $uid
+		 * @return json $msg  
+		 */
+		 public function addPayPwd(){
+			//更改用户信息
+			$uid = Request::instance()->param('uid');
+			$pwd = Request::instance()->param('pwd');
+			//查询出当前用户信息
+			$list = \think\Db::name('userinfo')
+				->where('uid',$uid)
+				->find();
+			
+
+			//设置支付密码
+			$upPayPwd = \think\Db::name('userinfo')
+				->where('uid',$uid)
+				->update(['pay_password'=>md5($pwd)]);
+			
+			//判断是否设置成功
+			if($upPayPwd > 0){
+				$msg = [
+					'code' => 210,	
+					'msg'  => '修改密码成功',
+					'data'     => $msg,
+				];			
+			}else{
+				$msg = [
+					'code' => 211,
+					'msg'  => '修改密码失败',
+				];
+			}
+			return Request::instance()->param('pay_password')."(".json_encode($msg).")";
+		 }
+   
    
 		 
 }

@@ -47,7 +47,7 @@
 	<a href="index.html" class="nav_on" id="jx"><span></span>首页</a> 
 	<a href="list.html" id="lc" class=""><span></span>理财</a> 
 	<a href="toloan.html" id="jk" class=""><span></span>借款</a> 
-	<a href="usercenter.html" id="userinfo" class=""><span></span>我的账户</a> 
+	<a href="usercenter.html" id="cf" class=""><span></span>我的账户</a> 
 </nav>
 <!--合作机构-->
 <div id="allmenu" style="display:none;">
@@ -183,37 +183,70 @@ body[0].removeChild(mybg);
 						var len = msg.length;
 						for(var i=0;i<len;i++){
 							if(i==0){
-								str += '<a class="swiper-slide swiper-slide-duplicate" href="#" target="_blank" style="width: 640px; height: 75px;"><img src="http://192.168.1.214/Now/P2PApp/public/uploads/'+msg[i]['file']+'" height="75px" ></a> ';
+								str += '<a class="swiper-slide swiper-slide-duplicate" href="#" target="_blank" style="width: 640px; height: 75px;"><img src="http://www.mywebsitezhang.xin/uploads/'+msg[i]['file']+'" height="75px" ></a> ';
 							}else if(i==len-1){
-								str += '<a class="swiper-slide swiper-slide-duplicate swiper-slide-visible swiper-slide-active" href="#" target="_blank" style="width: 640px; height: 75px;"><img src="http://192.168.1.214/Now/P2PApp/public/uploads/'+msg[i]['file']+'" height="75px" ></a>';
+								str += '<a class="swiper-slide swiper-slide-duplicate swiper-slide-visible swiper-slide-active" href="#" target="_blank" style="width: 640px; height: 75px;"><img src="http://www.mywebsitezhang.xin/uploads/'+msg[i]['file']+'" height="75px" ></a>';
 							}else{
-								str += '<a class="swiper-slide" href="#" target="_blank" style="width: 640px; height: 75px;"><img src="http://192.168.1.214/Now/P2PApp/public/uploads/'+msg[i]['file']+'" height="75px" ></a> ';
+								str += '<a class="swiper-slide" href="#" target="_blank" style="width: 640px; height: 75px;"><img src="http://www.mywebsitezhang.xin/uploads/'+msg[i]['file']+'" height="75px" ></a> ';
 							}
 						}
 						$('.swiper-wrapper').html(str);
 					}
-<<<<<<< HEAD
 				})
 				
-=======
-				})	
->>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
 				//产品列表
 				$.ajax({
 					url:"http://www.mywebsitezhang.xin/index.php/index/shopinterface/shopList",
 					async:false,
 					dataType:"jsonp",
 					jsonp:"callback",
-					success:function(msg){
+					success:function(text){
+						var msg = text.data;
 						var str = '';
 						for(var i=0;i<msg.length;i++){
-							str += '<div class="index-pad" d="'+msg[i]['sid']+'"> <a class="index-list index-che" href="javascript:void(0);"><div class="list-tit clear"> <span class="fl tit-name"><i></i><strong>'+msg[i]['sname']+'</strong></span> </div><div class="list-main"><div class="main-l"> <span class="per">'+msg[i]['salary']*100+'<i>%</i> </div><div class="main-m main-m-1"> <span>'+msg[i]['money']/10000+'.<em>00</em><i>万</i></span> </div><div class="main-m main-m-2"> <span class="day">'+msg[i]['time']+'<i>天</i></span> </div><div class="main-r"> <span class="circle-blue circle-c57"></span> <span class="val-per">'+msg[i]['intermoney']/msg[i]['money']+'<i>%</i></span> </div></div></a> </div>';
+							var val = msg[i]['intermoney']/msg[i]['money']*100;
+							var len = val.toString().indexOf(".");
+							if(len == -1){
+								number = val;
+							}else{
+								var number = val.toString().substr(0,len);
+							}
+							str += '<div class="index-pad" d="'+msg[i]['sid']+'"> <a class="index-list index-che" href="javascript:void(0);"><div class="list-tit clear"> <span class="fl tit-name"><i></i><strong>'+msg[i]['sname']+'</strong></span> </div><div class="list-main"><div class="main-l"> <span class="per">'+msg[i]['salary']*100+'<i>%</i> </div><div class="main-m main-m-1"> <span>'+msg[i]['money']/10000+'.<em>00</em><i>万</i></span> </div><div class="main-m main-m-2"> <span class="day">'+msg[i]['time']+'<i>天</i></span> </div><div class="main-r"> <span class="circle-blue circle-c'+number+'"></span> <span class="val-per">'+val+'<i>%</i></span> </div></div></a> </div>';
 						}
 						$('.index-list-wrap').html(str);
 					}
 				})
 			});
 			
+			//查看更多
+			$(document).on('click','.index-more',function(){
+				var obj = $(this);
+				//查看更多
+				$.ajax({
+					url:"http://www.mywebsitezhang.xin/index.php/index/shopinterface/shopPage",
+					type:"post",
+					data:{'limit':'0,100'},
+					async:false,
+					dataType:"jsonp",
+					jsonp:"callback",
+					success:function(text){
+						var msg = text.data;
+						var str = '';
+						for(var i=0;i<msg.length;i++){
+							var val = msg[i]['intermoney']/msg[i]['money']*100;
+							var len = val.toString().indexOf(".");
+							if(len == -1){
+								number = val;
+							}else{
+								var number = val.toString().substr(0,len);
+							}
+							str += '<div class="index-pad" d="'+msg[i]['sid']+'"> <a class="index-list index-che" href="javascript:void(0);"><div class="list-tit clear"> <span class="fl tit-name"><i></i><strong>'+msg[i]['sname']+'</strong></span> </div><div class="list-main"><div class="main-l"> <span class="per">'+msg[i]['salary']*100+'<i>%</i> </div><div class="main-m main-m-1"> <span>'+msg[i]['money']/10000+'.<em>00</em><i>万</i></span> </div><div class="main-m main-m-2"> <span class="day">'+msg[i]['time']+'<i>天</i></span> </div><div class="main-r"> <span class="circle-blue circle-c'+number+'"></span> <span class="val-per">'+val+'<i>%</i></span> </div></div></a> </div>';
+						}
+						$('.index-list-wrap').html(str);
+						obj.remove();
+					}
+				})
+			});
 			$(document).on('click','.index-pad',function(){
 				var d = $(this).attr('d');
 				sessionStorage.setItem("infoId", d); 
@@ -231,16 +264,12 @@ body[0].removeChild(mybg);
 		}
 		//获取用户登录的信息
 		var userId=sessionStorage.getItem("userid");
-<<<<<<< HEAD
           if(userId==null){
-=======
-          if(userId== null){
->>>>>>> 6b57e8ffdeab1af1d48db40790f776029d203c71
               $("#local").html("<a href='./register.html'> <img src='images/register.png'/> 注册 </a><a href='./login.html'> <img src='images/login.png' />登录</a>");
           }else{
               $("#local").html("<a href='.st.html'> <img src='images/invest.png' /> 投资 </a><a href='./login.html'> <img src='images/login.png' />退出</a>");
           }
-          $("#userinfo").click(function(){
+		   $("#userinfo").click(function(){
 			if(userId==null){
 				$("#error").html("<font style='color: red;'>请先登录!</font>").show(500).delay(500).hide(500);
 				location.href="./login.html";

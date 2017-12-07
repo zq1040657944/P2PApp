@@ -262,7 +262,7 @@ var check;
           jsonp: "callback",
           success: function(msg){
               console.log(msg);
-              if(msg.code == 400){
+              if(msg.code == 4000){
                     $(".Interest").val(msg.month_stillMoney+"元");
               }
           }
@@ -342,7 +342,7 @@ var check;
                 jsonp: "callback",
                 success: function(msg){
                     console.log(msg);
-                    if(msg.code == "400"){
+                    if(msg.code == "4000"){
                         mui.alert("借款申请已提交,请等待工作人员审核");
                         window.location.href='借款记录.html';
                     }
