@@ -1,0 +1,1332 @@
+---------------------------------------------------------------
+[ 2017-12-03T18:35:21+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery211019890969267169822_1512297283253&password=123456&authCode=1234&_=1512297283254
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery211019890969267169822_1512297283253&password=123456&authCode=1234&_=1512297283254 [运行时间：3.399412s][吞吐率：0.29req/s] [内存消耗：1,803.21kb] [文件加载：40]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery211019890969267169822_1512297283253',
+  'password' => '123456',
+  'authCode' => '1234',
+  '_' => '1512297283254',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-03T19:34:59+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21105322313985250229_1512300875170&username=15055100132&password=123456&authCode=9034&_=1512300875171
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21105322313985250229_1512300875170&username=15055100132&password=123456&authCode=9034&_=1512300875171 [运行时间：1.133731s][吞吐率：0.88req/s] [内存消耗：1,852.34kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21105322313985250229_1512300875170',
+  'username' => '15055100132',
+  'password' => '123456',
+  'authCode' => '9034',
+  '_' => '1512300875171',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.085160s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.456698s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` = '15055100132' LIMIT 1 [ RunTime:0.022977s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:47:01+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21104334596239861237_1512301610789&password=123456&authCode=5053&_=1512301610790
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21104334596239861237_1512301610789&password=123456&authCode=5053&_=1512301610790 [运行时间：0.622168s][吞吐率：1.61req/s] [内存消耗：1,851.05kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21104334596239861237_1512301610789',
+  'password' => '123456',
+  'authCode' => '5053',
+  '_' => '1512301610790',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.022694s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.188367s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.035189s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:48:08+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery211013616001479772355_1512301679315&password=123456&authCode=2381&_=1512301679316
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery211013616001479772355_1512301679315&password=123456&authCode=2381&_=1512301679316 [运行时间：0.418527s][吞吐率：2.39req/s] [内存消耗：1,850.99kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery211013616001479772355_1512301679315',
+  'password' => '123456',
+  'authCode' => '2381',
+  '_' => '1512301679316',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004050s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.185831s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.018538s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:48:17+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery211013616001479772355_1512301679315&password=123456&authCode=2381&_=1512301679316
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery211013616001479772355_1512301679315&password=123456&authCode=2381&_=1512301679316 [运行时间：0.408377s][吞吐率：2.45req/s] [内存消耗：1,851.19kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery211013616001479772355_1512301679315',
+  'password' => '123456',
+  'authCode' => '2381',
+  '_' => '1512301679316',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003175s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.200522s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.001542s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:49:52+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21102255104307252973_1512301781989&password=123456&authCode=2658&_=1512301781990
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21102255104307252973_1512301781989&password=123456&authCode=2658&_=1512301781990 [运行时间：0.290541s][吞吐率：3.44req/s] [内存消耗：1,850.94kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21102255104307252973_1512301781989',
+  'password' => '123456',
+  'authCode' => '2658',
+  '_' => '1512301781990',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002646s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.135017s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.001296s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:51:06+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21108039892982847734_1512301854030&password=123456&authCode=3374&_=1512301854031
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21108039892982847734_1512301854030&password=123456&authCode=3374&_=1512301854031 [运行时间：0.322693s][吞吐率：3.10req/s] [内存消耗：1,850.94kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21108039892982847734_1512301854030',
+  'password' => '123456',
+  'authCode' => '3374',
+  '_' => '1512301854031',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004924s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.187596s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.001530s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:51:14+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21108039892982847734_1512301854030&password=123456&authCode=3374&_=1512301854031
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21108039892982847734_1512301854030&password=123456&authCode=3374&_=1512301854031 [运行时间：0.319993s][吞吐率：3.13req/s] [内存消耗：1,851.05kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21108039892982847734_1512301854030',
+  'password' => '123456',
+  'authCode' => '3374',
+  '_' => '1512301854031',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002318s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.171174s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.001268s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:53:33+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21107290611331187558_1512302004350&password=123456&authCode=9912&_=1512302004351
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21107290611331187558_1512302004350&password=123456&authCode=9912&_=1512302004351 [运行时间：0.159084s][吞吐率：6.29req/s] [内存消耗：1,803.13kb] [文件加载：40]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21107290611331187558_1512302004350',
+  'password' => '123456',
+  'authCode' => '9912',
+  '_' => '1512302004351',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-03T19:54:26+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21106359475433425965_1512302056781&password=123456&authCode=4627&_=1512302056782
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21106359475433425965_1512302056781&password=123456&authCode=4627&_=1512302056782 [运行时间：0.393221s][吞吐率：2.54req/s] [内存消耗：1,850.94kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21106359475433425965_1512302056781',
+  'password' => '123456',
+  'authCode' => '4627',
+  '_' => '1512302056782',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002911s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.230663s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.031716s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:55:16+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21109700513855997015_1512302108358&password=123456&authCode=6322&_=1512302108359
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21109700513855997015_1512302108358&password=123456&authCode=6322&_=1512302108359 [运行时间：0.368561s][吞吐率：2.71req/s] [内存消耗：1,850.94kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21109700513855997015_1512302108358',
+  'password' => '123456',
+  'authCode' => '6322',
+  '_' => '1512302108359',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013987s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.227616s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.001608s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:56:08+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21106477255355717564_1512302158860&password=123456&authCode=8474&_=1512302158861
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21106477255355717564_1512302158860&password=123456&authCode=8474&_=1512302158861 [运行时间：0.252878s][吞吐率：3.95req/s] [内存消耗：1,850.00kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21106477255355717564_1512302158860',
+  'password' => '123456',
+  'authCode' => '8474',
+  '_' => '1512302158861',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002846s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.147700s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.001659s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:56:48+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21106477255355717564_1512302158860&username=15055100139&password=123456&authCode=8474&_=1512302158862
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21106477255355717564_1512302158860&username=15055100139&password=123456&authCode=8474&_=1512302158862 [运行时间：0.307327s][吞吐率：3.25req/s] [内存消耗：1,851.73kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21106477255355717564_1512302158860',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '8474',
+  '_' => '1512302158862',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002999s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.156584s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` = '15055100139' LIMIT 1 [ RunTime:0.001695s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:57:19+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21106477255355717564_1512302158860&username=15055100139&password=123456&authCode=8474&_=1512302158863
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21106477255355717564_1512302158860&username=15055100139&password=123456&authCode=8474&_=1512302158863 [运行时间：0.316362s][吞吐率：3.16req/s] [内存消耗：1,852.59kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21106477255355717564_1512302158860',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '8474',
+  '_' => '1512302158863',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002898s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.139291s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` = '15055100139' LIMIT 1 [ RunTime:0.001404s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:57:54+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery211005967619187791762_1512302246975&username=15055100139&password=123456&authCode=7741&_=1512302246976
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery211005967619187791762_1512302246975&username=15055100139&password=123456&authCode=7741&_=1512302246976 [运行时间：0.228158s][吞吐率：4.38req/s] [内存消耗：1,803.27kb] [文件加载：40]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery211005967619187791762_1512302246975',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '7741',
+  '_' => '1512302246976',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-03T19:58:30+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery211012323166577897315_1512302294414&password=123456&authCode=6139&_=1512302294415
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery211012323166577897315_1512302294414&password=123456&authCode=6139&_=1512302294415 [运行时间：0.445037s][吞吐率：2.25req/s] [内存消耗：1,850.88kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery211012323166577897315_1512302294414',
+  'password' => '123456',
+  'authCode' => '6139',
+  '_' => '1512302294415',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007743s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.225180s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.001290s ]
+---------------------------------------------------------------
+[ 2017-12-03T19:59:39+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21105623193361228422_1512302368822&username=15055100139&password=123456&authCode=4802&_=1512302368823
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21105623193361228422_1512302368822&username=15055100139&password=123456&authCode=4802&_=1512302368823 [运行时间：0.465555s][吞吐率：2.15req/s] [内存消耗：1,852.59kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21105623193361228422_1512302368822',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '4802',
+  '_' => '1512302368823',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004190s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.198381s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` = '15055100139' LIMIT 1 [ RunTime:0.001469s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:02:04+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21104943686942693819_1512302515384&password=123456&authCode=1548&_=1512302515385
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21104943686942693819_1512302515384&password=123456&authCode=1548&_=1512302515385 [运行时间：0.578725s][吞吐率：1.73req/s] [内存消耗：1,850.94kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21104943686942693819_1512302515384',
+  'password' => '123456',
+  'authCode' => '1548',
+  '_' => '1512302515385',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.010027s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.251879s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.025595s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:05:35+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21106621130208889177_1512302716700&password=123456&authCode=0368&_=1512302716701
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21106621130208889177_1512302716700&password=123456&authCode=0368&_=1512302716701 [运行时间：0.473945s][吞吐率：2.11req/s] [内存消耗：1,851.32kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21106621130208889177_1512302716700',
+  'password' => '123456',
+  'authCode' => '0368',
+  '_' => '1512302716701',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020121s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.164648s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.001146s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:05:58+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21106621130208889177_1512302716700&username=15055100139&password=123456&authCode=0368&_=1512302716702
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21106621130208889177_1512302716700&username=15055100139&password=123456&authCode=0368&_=1512302716702 [运行时间：0.507752s][吞吐率：1.97req/s] [内存消耗：1,853.10kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21106621130208889177_1512302716700',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '0368',
+  '_' => '1512302716702',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005738s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.224269s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` = '15055100139' LIMIT 1 [ RunTime:0.001879s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:06:15+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21106120999665600626_1512302766127&username=15055100139&password=123456&authCode=2288&_=1512302766128
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21106120999665600626_1512302766127&username=15055100139&password=123456&authCode=2288&_=1512302766128 [运行时间：0.565731s][吞吐率：1.77req/s] [内存消耗：1,853.10kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21106120999665600626_1512302766127',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '2288',
+  '_' => '1512302766128',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007973s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.269478s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` = '15055100139' LIMIT 1 [ RunTime:0.001997s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:07:17+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238 [运行时间：0.386411s][吞吐率：2.59req/s] [内存消耗：1,851.32kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery211045950868832386327_1512302829237',
+  'password' => '123456',
+  'authCode' => '9393',
+  '_' => '1512302829238',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003272s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.248790s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.001705s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:08:39+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238 [运行时间：0.384976s][吞吐率：2.60req/s] [内存消耗：1,851.50kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery211045950868832386327_1512302829237',
+  'password' => '123456',
+  'authCode' => '9393',
+  '_' => '1512302829238',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005197s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.173771s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.001844s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:08:44+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238 [运行时间：0.388949s][吞吐率：2.57req/s] [内存消耗：1,851.73kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery211045950868832386327_1512302829237',
+  'password' => '123456',
+  'authCode' => '9393',
+  '_' => '1512302829238',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012410s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.213867s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.001771s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:09:06+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238 [运行时间：0.502089s][吞吐率：1.99req/s] [内存消耗：1,851.79kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery211045950868832386327_1512302829237',
+  'password' => '123456',
+  'authCode' => '9393',
+  '_' => '1512302829238',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002567s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.325408s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` IS NULL LIMIT 1 [ RunTime:0.002464s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:12:11+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238 [运行时间：0.146602s][吞吐率：6.82req/s] [内存消耗：1,808.22kb] [文件加载：40]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery211045950868832386327_1512302829237',
+  'password' => '123456',
+  'authCode' => '9393',
+  '_' => '1512302829238',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-03T20:12:50+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238 [运行时间：0.539091s][吞吐率：1.85req/s] [内存消耗：1,853.55kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery211045950868832386327_1512302829237',
+  'password' => '123456',
+  'authCode' => '9393',
+  '_' => '1512302829238',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.020113s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.284781s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:13:24+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery211045950868832386327_1512302829237&password=123456&authCode=9393&_=1512302829238 [运行时间：0.078858s][吞吐率：12.68req/s] [内存消耗：943.76kb] [文件加载：30]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery211045950868832386327_1512302829237',
+  'password' => '123456',
+  'authCode' => '9393',
+  '_' => '1512302829238',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-03T20:14:31+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21104340775920668376_1512303255673&password=123456&authCode=5768&_=1512303255674
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21104340775920668376_1512303255673&password=123456&authCode=5768&_=1512303255674 [运行时间：0.105959s][吞吐率：9.44req/s] [内存消耗：943.32kb] [文件加载：30]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21104340775920668376_1512303255673',
+  'password' => '123456',
+  'authCode' => '5768',
+  '_' => '1512303255674',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-03T20:15:40+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21109456675016311511_1512303328759&username=15055100139&password=123456&authCode=3063&_=1512303328760
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21109456675016311511_1512303328759&username=15055100139&password=123456&authCode=3063&_=1512303328760 [运行时间：0.147702s][吞吐率：6.77req/s] [内存消耗：943.51kb] [文件加载：30]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21109456675016311511_1512303328759',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '3063',
+  '_' => '1512303328760',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-12-03T20:16:14+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21107578781224658344_1512303365208&username=15055100139&password=123456&authCode=3412&_=1512303365209
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21107578781224658344_1512303365208&username=15055100139&password=123456&authCode=3412&_=1512303365209 [运行时间：1.132794s][吞吐率：0.88req/s] [内存消耗：1,886.47kb] [文件加载：45]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21107578781224658344_1512303365208',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '3412',
+  '_' => '1512303365209',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008795s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.169158s ]
+[ error ] [2]Illegal string offset 'password'[F:\sendm\app\P2PApp\application\index\model\User.php:27]
+---------------------------------------------------------------
+[ 2017-12-03T20:16:23+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21107578781224658344_1512303365208&username=15055100139&password=123456&authCode=3412&_=1512303365209
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21107578781224658344_1512303365208&username=15055100139&password=123456&authCode=3412&_=1512303365209 [运行时间：0.329138s][吞吐率：3.04req/s] [内存消耗：1,886.66kb] [文件加载：45]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21107578781224658344_1512303365208',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '3412',
+  '_' => '1512303365209',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002804s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.167144s ]
+[ error ] [2]Illegal string offset 'password'[F:\sendm\app\P2PApp\application\index\model\User.php:27]
+---------------------------------------------------------------
+[ 2017-12-03T20:16:56+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21107578781224658344_1512303365208&username=15055100139&password=123456&authCode=3412&_=1512303365209
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21107578781224658344_1512303365208&username=15055100139&password=123456&authCode=3412&_=1512303365209 [运行时间：0.343190s][吞吐率：2.91req/s] [内存消耗：1,853.52kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21107578781224658344_1512303365208',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '3412',
+  '_' => '1512303365209',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003020s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.131313s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` = '15055100139' LIMIT 1 [ RunTime:0.001229s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:17:38+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21107578781224658344_1512303365208&username=15055100139&password=123456&authCode=3412&_=1512303365209
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21107578781224658344_1512303365208&username=15055100139&password=123456&authCode=3412&_=1512303365209 [运行时间：0.288350s][吞吐率：3.47req/s] [内存消耗：1,853.52kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21107578781224658344_1512303365208',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '3412',
+  '_' => '1512303365209',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002494s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.141521s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` = '15055100139' LIMIT 1 [ RunTime:0.001962s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:18:20+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21107578781224658344_1512303365208&username=15055100139&password=123456&authCode=3412&_=1512303365209
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21107578781224658344_1512303365208&username=15055100139&password=123456&authCode=3412&_=1512303365209 [运行时间：0.414538s][吞吐率：2.41req/s] [内存消耗：1,853.77kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21107578781224658344_1512303365208',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '3412',
+  '_' => '1512303365209',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009547s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.219719s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` = '15055100139' LIMIT 1 [ RunTime:0.001578s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:19:06+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21107578781224658344_1512303365208&username=15055100139&password=123456&authCode=3412&_=1512303365209
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21107578781224658344_1512303365208&username=15055100139&password=123456&authCode=3412&_=1512303365209 [运行时间：0.577652s][吞吐率：1.73req/s] [内存消耗：1,853.53kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21107578781224658344_1512303365208',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '3412',
+  '_' => '1512303365209',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.026253s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.298789s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` = '15055100139' LIMIT 1 [ RunTime:0.001596s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:19:54+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21104995693621036661_1512303584045&username=15055100139&password=123456&authCode=6748&_=1512303584046
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21104995693621036661_1512303584045&username=15055100139&password=123456&authCode=6748&_=1512303584046 [运行时间：0.474745s][吞吐率：2.11req/s] [内存消耗：1,853.06kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21104995693621036661_1512303584045',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '6748',
+  '_' => '1512303584046',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004619s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.256544s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` = '15055100139' LIMIT 1 [ RunTime:0.001468s ]
+---------------------------------------------------------------
+[ 2017-12-03T20:21:19+08:00 ] 127.0.0.1 127.0.0.1 GET /index.php/index/user/login?callback=jQuery21104835312543504777_1512303670685&username=15055100139&password=123456&authCode=6580&_=1512303670686
+[ info ] www.tp5.com/index.php/index/user/login?callback=jQuery21104835312543504777_1512303670685&username=15055100139&password=123456&authCode=6580&_=1512303670686 [运行时间：0.305490s][吞吐率：3.27req/s] [内存消耗：1,853.06kb] [文件加载：41]
+[ info ] [ LANG ] F:\sendm\app\P2PApp\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=1t5aofcblcacc71ss6bb1rctm4',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://127.0.0.1:8020/appt/login.html?__hbt=1512297275822',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.86 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.tp5.com',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'jQuery21104835312543504777_1512303670685',
+  'username' => '15055100139',
+  'password' => '123456',
+  'authCode' => '6580',
+  '_' => '1512303670686',
+)
+[ info ] [ RUN ] app\index\controller\User->login[ F:\sendm\app\P2PApp\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004461s ] mysql:host=127.0.0.1;port=3306;dbname=p2papp;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `p_user` [ RunTime:0.148999s ]
+[ sql ] [ SQL ] SELECT * FROM `p_user` WHERE  `tel` = '15055100139' LIMIT 1 [ RunTime:0.001502s ]
