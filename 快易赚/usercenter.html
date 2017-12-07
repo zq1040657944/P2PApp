@@ -11,33 +11,69 @@
 <body>
 <!-- 页面头部 -->
 <section>
-  <div class="navigation-bar"> <a href="安全设置.html" class="z-04"></a> <span>会员中心</span> <a href="index.html" class="z-03"></a> </div>
+  <div class="navigation-bar"><span id="error"></span><a href="#" class="z-04"></a> <span>会员中心</span> <a href="#" class="z-03"></a> </div>
 </section>
 <!-- 中间内容 -->
 <div class="summary">
-  <div class="head"><img id="photoImage" src="images/avatar1.png" alt="" style="width:80px;height:80px;z-index:0;"> <span class="username">zhuchaoyou</span>
+  <div class="head"><img id="photoImage" src="" alt="" style="width:80px;height:80px;z-index:0;"> <span class="username">zhuchaoyou</span>
     <div class="headamount">
       <div class="p-amount"> <i>0.00 </i><br>
         累计收益（元） </div>
-      <div class="p-amount"> <i>
-        <label> 0.00</label>
-        </i><br>
-        可用余额（元） </div>
+      <div class="p-amount"><font id="usable"><i>0.00</i></font><br>可用余额（元） </div>
     </div>
   </div>
 </div>
 <div class="personal">
-  <div class="personal-list"><a class="plist" href="#"> <span class="picon1"></span><span class="ptit">充值</span><span class="iconarrow"></span> </a> <a class="plist" href="投资记录.html"> <span class="picon2"></span><span class="ptit">投资记录</span><span class="iconarrow"></span> </a> <a class="plist" href="借款记录.html"> <span class="picon7"></span><span class="ptit">借款记录</span><span class="iconarrow"></span> </a><a class="plist" href="#"> <span class="picon3"></span><span class="ptit">提现</span><span class="iconarrow"></span> </a> </div>
-  <div class="personalout"><a class="plist" href="#"> <span class="picon5"></span><span class="ptit">系统消息（<i class="pink">0</i> 条未读）</span><span class="iconarrow"></span> </a> </div>
-  <div class="personalout"><a class="plist" href="安全设置.html"> <span class="picon4"></span><span class="ptit">安全设置</span><span class="iconarrow"></span> </a> </div>
-  <div class="personalout"><a class="plist" href="#"> <span class="picon6"></span><span class="ptit">退出账号</span><span class="iconarrow"></span> </a> </div>
+  <div class="personal-list"> <a class="plist" href="#"> <span class="picon1"></span><span class="ptit">充值</span><span class="iconarrow"></span> </a> <a class="plist" href="investment.html"> <span class="picon2"></span><span class="ptit">投资记录</span><span class="iconarrow"></span> </a> <a class="plist" href="借款记录.html"> <span class="picon7"></span><span class="ptit">借款记录</span><span class="iconarrow"></span> </a><a class="plist" href="#"> <span class="picon3"></span><span class="ptit">提现</span><span class="iconarrow"></span> </a> </div>
+  <div class="personalout"> <a class="plist" href="./message.html"> <span class="picon5"></span><span class="ptit">系统消息（<i class="pink">0</i> 条未读）</span><span class="iconarrow"></span> </a> </div>
+  <div class="personalout"> <a class="plist" href="safety.html"> <span class="picon4"></span><span class="ptit">安全设置</span><span class="iconarrow"></span> </a> </div>
+  <div class="personalout" id="exit"> <a class="plist" href="javascript:void(0)"> <span class="picon6"></span><span class="ptit">退出账号</span><span class="iconarrow"></span> </a> </div>
 </div>
 <!-- 页面底部 -->
 <nav class="footer border_t" id="footer"> 
-	<a href="index.html" class="" id="jx"><span></span>首页</a> 
+	<a href="index.html" class="nav_on" id="jx"><span></span>首页</a> 
 	<a href="list.html" id="lc" class=""><span></span>理财</a> 
 	<a href="toloan.html" id="jk" class=""><span></span>借款</a> 
-	<a href="usercenter.html" id="cf" class="nav_on"><span></span>我的账户</a> 
+	<a href="usercenter.html" id="userinfo" class=""><span></span>我的账户</a> 
 </nav>
 </body>
+<script>
+	var userId;
+	window.onload=function(){
+		//判断用户是否登录
+		userId=sessionStorage.getItem("userid");
+		if(userId==null){
+			$("#error").html("<font style='color: red;'>请先<a href='./login.html' style='font-size: 18px;'>登录</a>!</font>");
+			location.href="./login.html";
+		}else{
+			$.ajax({
+				type:"get",
+				data:{"userid":userId},
+				dataType:"jsonp",
+				jsonp:"callback",
+				url:"http://www.mywebsitezhang.xin/index.php/index/userinfo/gainuser",
+				success:function(msg){
+					var userinfo=msg.userinfo[0];
+					if(userinfo['img']==null){
+						$("#photoImage").attr("src","images/avatar1.png");
+					}else{
+						$("#photoImage").attr("src",userinfo['img']);
+					}
+					if(userinfo['username']==null){
+						$(".username").html("<font style='color: red;'>"+userinfo['tel']+"</font>");
+					}else{
+						$(".username").html("<font style='color: #0062CC;'>"+userinfo['username']+"</font>");
+					}
+					$("#usable").html("<i>"+userinfo['money']+"</i>");
+					$(".pink").html(msg.countmessage);
+				}
+			})
+		}
+		$("#exit").click(function(){
+			sessionStorage.removeItem("userid");
+			$("#error").html("<font style='color: red;'>退出登录成功!</font>").show(400).delay(400).hide(400);
+			location.href="./login.html";
+		})
+	}
+</script>
 </html>

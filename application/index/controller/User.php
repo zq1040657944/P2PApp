@@ -4,6 +4,8 @@ namespace app\index\controller;
 use think\Controller;
 use think\Db;
 use think\Request;
+use think\Session;
+
 /**
 *用户中心模块
  */
@@ -90,5 +92,49 @@ class User extends Controller{
         $userModel=new \app\index\model\User();
         $info = $userModel->getUserInfo($id);
         return $request->param("callback")."(".json_encode($info).")";
+    }
+    /**
+     * 判断是否实名
+     */
+    public function checkAutonym(){
+        $userid=$this->request->param("userid");
+        $userModel=new \app\index\model\User();
+        $return=$userModel->modelAutonym($userid);
+        return $this->request->param("callback")."(".json_encode($return).")";
+    }
+
+    /**
+     * @param $userid
+     * 判断用户登录状态
+     */
+    public function checkLine(){
+        $userid=$this->request->param("userid");
+        $userModel=new \app\index\model\User();
+        $return=$userModel->modelLine($userid);
+        return $this->request->param("callback")."(".json_encode($return).")";
+    }
+
+    /**
+     * 验证原密码
+     */
+    public function ckeckOldpwd(){
+        $userid=$this->request->param("userid");
+        $oldpwd=$this->request->param("oldpwd");
+        $newpwd=$this->request->param("newpwd");
+        $userModel=new \app\index\model\User();
+        $return=$userModel->modelOld($userid,$oldpwd,$newpwd);
+        return $this->request->param("callback")."(".json_encode($return).")";
+    }
+
+    /**
+     * 修改手机号
+     */
+    public function updateTel(){
+        $userid=$this->request->param("userid");
+        $authoud=$this->request->param("authoud");
+        $tel=$this->request->param("newtel");
+        $UserModel=new \app\index\model\User($userid,$authoud,$tel);
+        $return=$UserModel->modelUpdatetel($userid,$authoud,$tel);
+        return $this->request->param("callback")."(".json_encode($return).")";
     }
 }

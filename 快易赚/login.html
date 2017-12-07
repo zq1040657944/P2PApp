@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="format-detection" content="telephone=no,email=no,adress=no"/>
 <title>登录</title>
-<link href="css/mui.min.css" rel="stylesheet"/>
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <script type="text/javascript" src="script/jquery.js"></script>
 <script>
@@ -17,6 +16,7 @@
 <section>
   <div class="navigation-bar"> <a href="javascript:history.go(-1)" class="z-01"></a> <span>欢迎登录</span> <a href="index.html" class="z-02"></a> </div>
 </section>
+<center><span id="content"></span></center>
 <!-- 中间内容 -->
 <div class="register">
   <div class="wrapper-reg">
@@ -25,12 +25,12 @@
       <form action="" method="post" id="user-login-form" accept-charset="UTF-8" class="reg-form">
         <div class="m-field">
           <div class="iconuser"></div>
-          <input id="j_username" type="text" name="j_username" value="15055100139" class="c-txt" maxlength="26" onBlur="return checkUsername()" placeholder="请输入用户名/手机号/邮箱" style="color: rgb(74, 74, 74);">
+          <input id="j_username" type="text" name="j_username"  class="c-txt" maxlength="26" onBlur="return checkUsername()" placeholder="请输入用户名/手机号/邮箱" style="color: rgb(74, 74, 74);">
           <p id="j_usernameErrorDiv"></p>
         </div>
         <div class="m-field">
           <div class="iconpwd"></div>
-          <input id="j_password2" type="text" name="j_password2" value="请输入密码" class="c-txt" maxlength="26" style="background-position: 0 -472px;" placeholder="请输入密码">
+          <input id="j_password2" type="password" name="j_password2"  class="c-txt" maxlength="26" style="background-position: 0 -472px;" placeholder="请输入密码">
           <input id="j_password" type="password" name="j_password" value="" maxlength="26" onBlur="checkPassword()" style="display: none;" class="c-txt" placeholder="请输入密码">
           <p id="j_passwordErrorDiv"></p>
         </div>
@@ -309,6 +309,8 @@
 			     	});
 			     	//用户点击登录访问jsonp接口
 			     	$(".btn-submit").click(function(){
+			     		
+//			     		var pwd=$("#j_password2").val();
 			     		var username=$("#j_username").val();
 			     		var authCode=$('#authCode').val();
 							$.ajax({
@@ -322,23 +324,22 @@
 								dataType:'jsonp',
 								jsonp:'callback',	
 								success:function(msg){
-								
 									if(msg.code=="1002"){
-										alert(msg.msg);
+										$("#content").html("<font style='color: red;'>"+msg.msg+"</font>").show(400).delay(400).hide(400);
 										return false;
 									}else if(msg.code=="1001"){
-										alert(msg.msg);
+										$("#content").html("<font style='color: red;'>"+msg.msg+"</font>").show(400).delay(400).hide(400);
 										return false;
 									}else{
-//										mui.alert('登录成功');
-//										 setCookie('userid',msg.msg);
+										$("#content").html("<font style='color: red;'>登录成功!</font>").show(400).delay(400).hide(400);
 										sessionStorage.setItem("userid",msg.msg);
-										location.href='index.html';
+										location.href="./index.html";
 									}
 								}
 							})
-			     })
-			    //刷新验证码
+			     	})
+			     	
+			     	//刷新验证码
 			    $('.c-yzm').click(function(){
         		var src = $(this).children('img').attr('src');
        			 $(this).children('img').attr('src','http://www.mywebsitezhang.xin/yzm.php?code = '+Math.random());

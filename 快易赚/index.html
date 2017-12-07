@@ -47,7 +47,7 @@
 	<a href="index.html" class="nav_on" id="jx"><span></span>首页</a> 
 	<a href="list.html" id="lc" class=""><span></span>理财</a> 
 	<a href="toloan.html" id="jk" class=""><span></span>借款</a> 
-	<a href="usercenter.html" id="cf" class=""><span></span>我的账户</a> 
+	<a href="usercenter.html" id="userinfo" class=""><span></span>我的账户</a> 
 </nav>
 <!--合作机构-->
 <div id="allmenu" style="display:none;">
@@ -232,5 +232,14 @@ body[0].removeChild(mybg);
           }else{
               $("#local").html("<a href='.st.html'> <img src='images/invest.png' /> 投资 </a><a href='./login.html'> <img src='images/login.png' />退出</a>");
           }
+          $("#userinfo").click(function(){
+			if(userId==null){
+				$("#error").html("<font style='color: red;'>请先登录!</font>").show(500).delay(500).hide(500);
+				location.href="./login.html";
+				return false;
+			}else{
+				location.href="./userinfo.html";
+			}
+		})
 </script>
 </html>

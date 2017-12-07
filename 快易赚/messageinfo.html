@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title id="title">我的信息</title>
+<meta name="keywords" content="阳光易贷" />
+<meta name="description" content="阳光易贷" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimal-ui" />
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta content="black" name="apple-mobile-web-app-status-bar-style" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="apple-mobile-web-app-capable" content="yes" /><!-- 删除苹果默认的工具栏和菜单栏 -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black" /><!-- 设置苹果工具栏颜色 -->
+<meta name="format-detection" content="telphone=no, email=no" /><!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+<link rel="apple-touch-icon-precomposed" href="images/logo57.png"/>
+<link rel="stylesheet" type="text/css" href="css/setting.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/logo57.png"/>
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/logo72.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/logo144.png"/>
+<link rel="icon" href="images/logo57.png">
+<script type="text/javascript" src="script/jquery.js"></script>
+<style type="text/css">
+a:active{star:expression(this.onFocus=this.blur());}
+a:focus,button:focus{outline:none; -moz-outline:none;}
+:focus{outline:none;}
+/*Reset Css*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,img,area,param{margin:0; padding:0;}
+html,body{height:100%;}
+select{*behavior: url("select.htc");}/*IE6,IE7select*/
+ol,ul{padding-left:0; list-style-type:none; list-style:none;}
+img{border:none; display:inline-block; vertical-align:middle;}
+th{font-style:normal;font-weight:normal;}
+h1,h2,h3,h4,h5,h6{font-size:100%; font-weight:normal;}
+address, caption, cite, code, dfn, em, th, var,strong {font-style:normal;font-weight:normal;}
+input{display:inline-block;vertical-align:middle;}
+fieldset{border:none;}
+legend{display:none;}
+body{font-family:\5FAE\8F6F\96C5\9ED1,arial,sans-serif;color:#333; -webkit-text-size-adjust:none;/*Google Chrome*/font-size:14px; line-height:20px;}
+
+.mb-30{margin-bottom:30px;}
+.mb-20{margin-bottom:20px;}
+.mb-10{margin-bottom:10px;}
+.mt-30{margin-top:30px;}
+.mt-20{margin-top:20px;}
+.mt-10{margin-top:10px;}
+.title-1{line-height:30px; font-size:20px; text-align:center; margin-bottom:20px;}
+.title-2{line-height:30px; font-size:18px; font-weight:600;}
+.number{height:24px; text-align:right; padding-right:10%; margin-bottom:30px;}
+.instr{height:24px;}
+
+.xy-main{width:94%; margin:40px auto 10px;}
+.table{border-collapse: collapse; width:100%;}
+.table td,.table th{border:1px solid #333; text-align:center; height:30px; line-height:30px;}
+.table th{font-weight:bold;}
+.table-2{border-collapse: collapse; width:100%;}
+.table-2 td,.table-2 th{border:1px solid #333; padding:8px 10px;}
+.table-2 td{text-align:left;}
+.table-2 th{text-align:left; font-weight:normal;}
+.legalPerson li{height:24px;}
+.legalPerson-2 li{height:40px; line-height:40px;}
+.xian{display:inline-block; width:80px; height:20px; vertical-align:middle; border-bottom:1px solid #333;}
+.xian-2{display:inline-block; width:40px; height:20px; vertical-align:middle; border-bottom:1px solid #333;}
+.instr-2 li.no-1 p{text-indent:28px; margin-bottom:10px;}
+.instr-2 li{height:auto !important; height:24px; min-height:24px; margin-bottom:10px;}
+.instr-2 li.no-2 p{margin-bottom:10px;}
+</style>
+</head>
+
+<body>
+<section>
+  <div class="navigation-bar"> <a href="#" class="z-01"></a> <span>我的消息</span> <a href="#" class="z-02"></a> </div>
+</section>
+<center><span id="error"></span></center>
+<!-- 注册协议更改09.23 by sunyang -->
+<div class="clearfix xy-main">
+	<h1 class="title-1"></h1>
+	<p style="margin-left: 150px;" id="time"></p>
+    <p id="content"> </p>
+    
+    
+</div>
+<div class="form-group">
+	<button type="button" class="waves-button form-control login-button input-lg  default waves-effect waves-effect" tabindex="5" id="btn-pay-pass" style="background: red;">点击删除</button>
+</div>
+</body>
+<script>
+	window.onload=function(){
+		function GetQueryString(name){
+	            var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+	            var r = window.location.search.substr(1).match(reg);
+	            if(r!=null)return  unescape(r[2]); return null;
+	    }
+		id=GetQueryString("id")
+		$.ajax({
+            type:"get",
+            url:"http://www.mywebsitezhang.xin/index.php/index/userinfo/messageinfo",
+            data:{"id":id},
+            dataType:"jsonp",
+            jsonp:"callback",
+            success:function(msg){
+            	$("#time").html("发送时间："+msg.sendtime);
+                $(".title-1").html("<font style='color: red;'>"+msg.title+"</font>");
+                $("#title").html(msg.title);
+                $("#content").html(msg.content);
+            }
+        })
+		$("#btn-pay-pass").click(function(smg){
+			$.ajax({
+				type:"get",
+				url:"http://www.mywebsitezhang.xin/index.php/index/userinfo/messagedel",
+				data:{"id":id},
+				dataType:"jsonp",
+				jsonp:"callback",
+				success:function(msg){
+					if(msg.code=="200"){
+						$("#error").html("<font style='color: red;'>修改成功!</font>").show(400).delay(400).hide(400);
+						location.href="./message.html";
+						return true;
+					}else{
+						$("#error").html("<font style='color: red;'>删除失败!</font>").show(400).delay(400).hide(400);
+						return false;
+					}
+				}
+			});
+		})
+	}
+</script>
+</html>

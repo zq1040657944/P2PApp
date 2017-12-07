@@ -20,6 +20,21 @@ class Note extends Controller
      * 1004 电话号码已经存在
      */
     public $callback;
+    public function updateTel(){
+        $request=Request::instance();
+        $round=rand(1000,9999);
+        Session::set('note',$round);
+        $tel=$request->param("tel");
+        $return=$this->noteCheck($tel,$round);
+        if($return){
+            $code="200";
+            $msg="发送成功";
+        }else{
+            $code="1003";
+            $msg="发送失败";
+        }
+        return $request->param("callback")."(".json_encode(['code'=>$code,'msg'=>$msg]).")";
+    }
     public function noteCallback(){
         $request=Request::instance();
         $request->param("callback");
