@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="format-detection" content="telephone=no,email=no,adress=no"/>
+<title>我的消息</title>
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<script type="text/javascript" src="script/jquery.js"></script>
+</head>
+<body>
+<section>
+  <div class="navigation-bar"> <a href="#" class="z-01"></a> <span>安全设置</span> <a href="#" class="z-02"></a> </div>
+</section>
+
+<!-- 中间内容 -->
+<div class="personal">
+  <div class="personal-list"> 
+  	<a class='plist' href='messageinfo.html?id="+v.mid+"'> <span class='ptit p15'>标题</span><span class='iconarrow'></span><span class='auto-icon'><font style='color: red'>状态</font></span></a>
+  </div>
+</div>
+</body>
+<script>
+	var userId;
+	window.onload=function(){
+		var userId=sessionStorage.getItem("userid");
+		$.ajax({
+			type:"get",
+			url:"http://www.mywebsitezhang.xin/index.php/index/userinfo/onmessage",
+            dataType:"jsonp",
+			jsonp:"callback",
+			data:{"userid":userId},
+			success:function(msg){
+				if(msg==""){
+					$(".personal-list").html("<font style='color: red;'>您还没有信息</font>");
+					return false;
+				}
+				var str="";
+				$.each(msg,function (k,v) {
+				    if(v.status==1){
+				        sta="未读";
+                    }else {
+				        sta="已读";
+                    }
+                    str+="<a class='plist' href='messageinfo.html?id="+v.mid+"'> <span class='ptit p15'>"+v.title+"</span><span class='iconarrow'></span><span class='auto-icon'><font style='color: red'>"+sta+"</font></span></a>";
+                })
+                $(".personal-list").append(str);
+			}
+		});
+	}
+</script>
+</html>

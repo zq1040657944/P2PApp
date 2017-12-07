@@ -21,6 +21,7 @@ class User extends Model{
      * 100 成功返回 {userid}返回用户信息
      * 104 参数错误
      * 1005 用户不存在
+     * 1008 密码不正确
      */
     public function userLogin($username,$pwd,$authCode,$sessionCode){
         //验证验证码是否正确
@@ -84,6 +85,8 @@ class User extends Model{
             $data=['tel'=>$tel,'password'=>md5($pwd),'creattiome'=>date("Y-m-d H:i:s",time())];
             $res=Db::table("p_user")->insert($data);
             $lastUserid=Db::table("p_user")->getLastInsID();
+            $data_type=['uid'=>$lastUserid];
+            Db::table("p_userinfo")->insert($data_type);
             if($res){
                $code=200;
                $msg=$lastUserid;
@@ -176,5 +179,67 @@ class User extends Model{
             'realname' => $userInfo['realname']
         );
         return $success;
+    }
+
+    /**
+     * @param $userid
+     * 验证是否实名
+     */
+    public function modelAutonym($userid){
+        $res=Db::table("p_user")->where("id",$userid)->find();
+        return ['code'=>$res['status']];
+    }
+
+    /**
+     * @param $userid
+     * 判断用户登录状态
+     */
+    public function modelLine($userid){
+        $res=Db::table("p_user")->where("id",$userid)->find();
+        return ['code'=>$res['linestatus']];
+    }
+    public function modelOld($userid,$oldpwd,$newpwd){
+        $res=Db::table("p_user")->where("id",$userid)->where("password",md5($oldpwd))->find();
+        if(empty($res)){
+            //密码不正确
+            $code="1008";
+            $msg="原密码密码不正确";
+        }else{
+            $data=['password'=>md5($newpwd)];
+            $str=Db::table("p_user")->where("id",$userid)->update($data);
+            if($str){
+                $code="200";
+                $msg="修改成功";
+            }else{
+                $code="1006";
+                $msg="修改失败";
+            }
+        }
+        return ['code'=>$code,'msg'=>$msg];
+    }
+
+    /**
+     * 修改手机号
+     */
+    public function modelUpdatetel($userid,$authode,$tel){
+        $sauthod=Session::get("note");
+        if($authode!=$sauthod){
+            return ['code'=>1001,$msg="验证码不正确"];
+        }
+        $telCheck=Db::table("p_user")->where("tel",$tel)->find();
+        if(!empty($telCheck)){
+            return ['code'=>1004,"msg"=>"电话号码已经存在"];
+        }
+        $data=['tel'=>$tel];
+        $res=Db::table("p_user")->where("id",$userid)->update($data);
+        if($res){
+            $code="200";
+            $msg="修改成功";
+        }else{
+            $code="1006";
+            $msg="修改失败";
+        }
+        return ['code'=>$code,'msg'=>$msg];
+
     }
 }

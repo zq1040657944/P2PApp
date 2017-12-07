@@ -169,6 +169,7 @@
 			   	 				$(".m-field").show();
 			   	 				$("#hidden").html("<input type='hidden' id='abstr' value='1' />");
 			   	 				$(".btn-submit").show();
+			   	 				$("#code").html("<font style='color: red;'>您还没有在本平台注册请您输入注册的密码谢谢!</font>").show(500).delay(500).hide(500);
 			   	 				return false;
 			   	 			}else{
 			   	 				$("#site").hide();
@@ -189,6 +190,7 @@
 			   	 	if($("#abstr").length>0){
 			   	 		//存在隐藏域说明是没有注册
 			   	 		var password=$("#j_password2").val();
+			   	 		
 			   	 		var openid=GetQueryString("openid");
 			   	 		if(password==""){
                             $("#code").html("<font style='color: red;'>密码不能为空!</font>").show(400).delay(400).hide(400); 
